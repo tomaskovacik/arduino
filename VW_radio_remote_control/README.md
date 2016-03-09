@@ -6,7 +6,7 @@ arduino 1.0 stuff up related to audi radios  (probably also for vw, skoda, seat)
 - audi_MFSW_eletric_connection_schematics.pdf is how and where is what connected in car ...
 - remote_control_codes_control_unit_to_radio.ods and steering_wheel_to_control_unit.ods analyzis of OLS ouput in opendocument format
 
-using ebay LCD shield(2x16) with 5 buttons on A0 
+using ebay LCD shield(2x16) with 5 buttons on A0
 output (remote signal) is on pin 2
 
 more info:
@@ -32,62 +32,61 @@ code is always 0x41 0xE8 X 0xFF-X
 
 discovered codes on my audi concert I unit:
 
-0x00 	Volume down
-0x01 	mem/cd1
-0x03 	mem/cd3
-0x05 	mem/cd5
-0x07 	search up
-0x09 	reg on/off
-0x0B 	tp
-0x11 	AM
-0x15 	AS-STORE
-0x17 	FM
-0x1D 	search down
-0x20 	AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
-0x22 	AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
-0x24 	AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
-0x26 	AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
-0x29 	TP
-0x2B 	search up
-0x3C 	seek up
-0x40 	LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0x42 	LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0x44 	LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0x46 	LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0x50 	Seek down/FR
-0x52 	Seek down/FR
-0x54 	Seek down/FR
-0x56 	Seek down/FR
-0x60 	Seek down/FR
-0x62 	seek down
-0x64 	seek down
-0x80 	Volume up
-0x81 	Volume up
-0x82 	Volume up
-0x83 	Volume up
-0x84 	Volume up
-0x85 	Volume up
-0x86 	Volume up
-0x89 	-2 Volume down bas/treble down/fade rear/bal left
-0x8B 	-4 Volume down bas/treble down/fade rear/bal left
-0x8D 	-6 Volume down bas/treble down/fade rear/bal left
-0x8F 	-8 Volume down/fade rear/bal left
-0x97 	TP
-0x9B 	SCAN
-0xA0 	MODE
-0xA2 	MODE
-0xA4 	MODE
-0xA6 	MODE
-0xC0 	RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0xC2 	RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0xC4 	RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0xC6 	RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
-0xD0 	Seek up/FF
-0xD2 	Seek up/FF
-0xD4 	Seek up/FF
-0xD6 	Seek up/FF
-0xE0 	seek up
-0xE2 	seek up
-0xE4 	seek up
-0xE6 	seek up
-
+- 0x00: Volume down
+- 0x01: mem/cd1
+- 0x03: mem/cd3
+- 0x05: mem/cd5
+- 0x07: search up
+- 0x09: reg on/off
+- 0x0B: tp
+- 0x11: AM
+- 0x15: AS-STORE
+- 0x17: FM
+- 0x1D: search down
+- 0x20: AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
+- 0x22: AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
+- 0x24: AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
+- 0x26: AM->AM+AS->FM1->FM2->FM1+AS->FM2->AS/in CD mode “RD”
+- 0x29: TP
+- 0x2B: search up
+- 0x3C: seek up
+- 0x40: LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0x42: LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0x44: LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0x46: LEFT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0x50: Seek down/FR
+- 0x52: Seek down/FR
+- 0x54: Seek down/FR
+- 0x56: Seek down/FR
+- 0x60: Seek down/FR
+- 0x62: seek down
+- 0x64: seek down
+- 0x80: Volume up
+- 0x81: Volume up
+- 0x82: Volume up
+- 0x83: Volume up
+- 0x84: Volume up
+- 0x85: Volume up
+- 0x86: Volume up
+- 0x89: -2 Volume down bas/treble down/fade rear/bal left
+- 0x8B: -4 Volume down bas/treble down/fade rear/bal left
+- 0x8D: -6 Volume down bas/treble down/fade rear/bal left
+- 0x8F: -8 Volume down/fade rear/bal left
+- 0x97: TP
+- 0x9B: SCAN
+- 0xA0: MODE
+- 0xA2: MODE
+- 0xA4: MODE
+- 0xA6: MODE
+- 0xC0: RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0xC2: RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0xC4: RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0xC6: RIGHT FM1 6-5-4-3-2-1-FM2 6-5-4-3-2-1
+- 0xD0: Seek up/FF
+- 0xD2: Seek up/FF
+- 0xD4: Seek up/FF
+- 0xD6: Seek up/FF
+- 0xE0: seek up
+- 0xE2: seek up
+- 0xE4: seek up
+- 0xE6:	seek up
