@@ -4,7 +4,8 @@
  * Audi/Volkswagen Audi Interface
  * 
  * Target: arduino atmega328(tested)
- *         attinu85 (tested)
+ *         attiny85 (tested)
+ *         atmega8 (tested)
  * 
  * 
  * Author: Vincent
@@ -34,7 +35,7 @@
  * UNO,Duemilanove,nanoe ... atmegax8 base boards:
  * RADIO PIN -> arduino pin 
  * 
- * DataOut   -> digital 2 (INT0)
+   * DataOut   -> digital 2 (INT0)
  * DataIn    -> digital 13(PB5)
  * Clock     -> digital 12(PB4)
  *
@@ -80,26 +81,28 @@
 
 
 
-//#if defined(__AVR_ATmega8__) || defined(__AVR_ATmega128__)
-//#define TCCR2A TCCR2
-//#define TCCR2B TCCR2
-//#define COM2A1 COM21
-//#define COM2A0 COM20
-//#define OCR2A OCR2
-//#define TIMSK2 TIMSK
-//#define OCIE2A OCIE2
-//#define TIMER2_COMPA_vect TIMER2_COMP_vect
-//#define TIMSK1 TIMSK
-//#define TIFR1 TIFR
-//#define ICIE1 TICIE1
-//#define TIMSK0 TIMSK
-//#define TIFR2 TIFR
-//#define OCF2A OCF2
-//#define TCCR0A TCCR0
-//#define TCCR0B TCCR0
-//#define EIMSK GICR
-//#define OCIE0A OCIE0
-//#endif
+#if defined(__AVR_ATmega8__) || defined(__AVR_ATmega128__)
+#define TCCR2A TCCR2
+#define TCCR2B TCCR2
+#define COM2A1 COM21
+#define COM2A0 COM20
+#define OCR2A OCR2
+#define TIMSK2 TIMSK
+#define OCIE2A OCIE2
+#define TIMER2_COMPA_vect TIMER2_COMP_vect
+#define TIMSK1 TIMSK
+#define TIFR1 TIFR
+#define ICIE1 TICIE1
+#define TIMSK0 TIMSK
+#define TIFR0 TIFR
+#define OCF2A OCF2
+#define TCCR0A TCCR0
+#define TCCR0B TCCR0
+#define EIMSK GICR
+#define OCIE0A OCIE0
+#define EICRA MCUCR
+#define EIFR GIFR
+#endif
 
 // uncoment this to have original fSerial outputs for PJRC players
 //#define PJRC
@@ -107,7 +110,7 @@
 /* enable hex control command on Serial line to control mpd control
  * script with shyd.de control script
  */
-//#define JUST_HEX_TO_Serial
+#define JUST_HEX_TO_Serial
 
 /* enable bluetooth module control over Serial line
  * XS3868
@@ -123,13 +126,13 @@
  * ANDROID HEADPRONES SUPPORT
  * HTC: 3buttons, 220ohm previous|0ohm play/pause|470ohm next
  */
-#define ANDROID_HEADPHONES
+//#define ANDROID_HEADPHONES
 
 /*
  * ANDROID HEADPHONES SUPORT
  * SONY: 1button mode: 1xpush play/pause;2xpush previous;3xpush next
  */
-#define ANDROID_HEADPHONES_ONE_BUTTON
+//#define ANDROID_HEADPHONES_ONE_BUTTON
 
 #ifdef ANDROID_HEADPHONES_ONE_BUTTON //just to be shure
 #define ANDROID_HEADPHONES
@@ -2383,7 +2386,7 @@ int main()
 
 {
 #ifdef BLUETOOTH
-  Serial.begin(115200);
+  Serial.begin(9600);
 #else
   Serial.begin(9600);
 #endif
@@ -2455,7 +2458,7 @@ Init_VWCDC();
 
 
 }
-
+#ifdef ANDROID_HEADPHONES
 static void android_buttons(){
 
     //android headphone control, this is fired every 50ms
@@ -2512,6 +2515,7 @@ static void android_buttons(){
     }
 #endif
 }
+#endif
 
 static void printstr_p(const char *s)
 
