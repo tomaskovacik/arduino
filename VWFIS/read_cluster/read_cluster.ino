@@ -130,7 +130,7 @@ void setup() {
   lcd.begin(16,2);
   lcd.home();
   lcd.clear();
-  pinMode(FIS_READ_ENA,INPUT);//_PULLUP); //no need to pullup radio internaly has pullup
+  pinMode(FIS_READ_ENA,INPUT);//no pull up! this is inactive state low, active is high
   pinMode(FIS_READ_DATA,INPUT_PULLUP);
   attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line,CHANGE);
 }
