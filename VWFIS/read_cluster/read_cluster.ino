@@ -18,10 +18,11 @@ volatile uint8_t FIS_READ_newmsg2=0;
 volatile uint8_t FIS_READ_adrok=0;
 volatile uint8_t FIS_READ_cksumok=0;
 volatile uint8_t FIS_READ_tmp_cksum=0;
-volatile uint8_t FIS_READ_ENABLE_LINE_STATE=0;
+
+volatile uint64_t prev_update = 0;
 
 void FIS_READ_read_data_line(){
-  if (!digitalRead(FIS_READ_CLK) /*&& FIS_READ_ENABLE_LINE_STATE*/){//used only if interrupt is "CHANGE" no "FALLING"
+  if (!digitalRead(FIS_READ_CLK)){
     if(!FIS_READ_adrok){
       FIS_READ_read_adr();
     }
@@ -57,8 +58,13 @@ void FIS_READ_read_cksum(){
       FIS_READ_tmp_cksum=FIS_READ_tmp_cksum+(0xFF^((FIS_READ_msg1>>i) & 0xFF))
         +(0xFF^((FIS_READ_msg2>>i) & 0xFF));
     }
-    if((FIS_READ_tmp_cksum%256)==FIS_READ_cksum)
+    if((FIS_READ_tmp_cksum%256)==FIS_READ_cksum){
     FIS_READ_cksumok=1;
+    } else {
+      FIS_READ_msg1 = 0x00000000;
+      FIS_READ_msg2 = 0x00000000;
+      FIS_READ_cksumok=0;
+    }
     FIS_READ_msgbit=0;
   }
 
@@ -116,11 +122,17 @@ void FIS_READ_read_adr(){
 }
 
 void FIS_READ_detect_ena_line(){
- // FIS_READ_ENABLE_LINE_STATE=digitalRead(FIS_READ_ENA);
   if (digitalRead(FIS_READ_ENA)){ //Enable line changed to HIGH -> data on data line are valid
+    //init all again
+    FIS_READ_msgbit=0;
+    FIS_READ_newmsg1=0;
+    FIS_READ_newmsg2=0;
+    FIS_READ_adrok=0;
+    FIS_READ_cksumok=0;
+    FIS_READ_tmp_cksum=0;
     attachInterrupt(FIS_READ_intCLK,FIS_READ_read_data_line,CHANGE); //can be changed to CHANGE->uncoment "if (!digitalRead(FIS_READ_CLK)){" in FIS_READ_read_data_line function
   } else {
-    detachInterrupt(FIS_READ_intCLK);
+  detachInterrupt(FIS_READ_intCLK);
   }
 }
 
@@ -132,25 +144,47 @@ void setup() {
   lcd.clear();
   pinMode(FIS_READ_ENA,INPUT);//no pull up! this is inactive state low, active is high
   pinMode(FIS_READ_DATA,INPUT_PULLUP);
+  if (!digitalRead(FIS_READ_ENA)){
+  digitalWrite(FIS_READ_ENA,HIGH);
+  delay(1);
+  digitalWrite(FIS_READ_ENA,LOW);
+  }
   attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line,CHANGE);
 }
 
 void loop() {
   if(FIS_READ_cksumok){ //whole packet received and checksum is ok    
-    lcd.home();
-    lcd.clear();
-   // lcd.print(FIS_READ_adr,DEC); // debug
-   // lcd.setCursor (3,0);// debug
+   // lcd.clear();
+   lcd.home();
     for(int i=56;i>=0;i=i-8){
-      lcd.write(0xFF^((FIS_READ_msg1>>i) & 0xFF));
+      int c = (0xFF^((FIS_READ_msg1>>i) & 0xFF));
+      if (c == 102 ) c=95;
+      lcd.write(c);
     }
     lcd.setCursor(0,1);
     for(int i=56;i>=0;i=i-8){
+      int c = (0xFF^((FIS_READ_msg2>>i) & 0xFF));
+      if (c == 102 ) c=95;
       lcd.write(0xFF^((FIS_READ_msg2>>i) & 0xFF));   
     }
     FIS_READ_cksumok=0;
+    prev_update=millis();
+    if (!digitalRead(FIS_READ_ENA)){ 
+      digitalWrite(FIS_READ_ENA,HIGH);
+      delay(1);
+      digitalWrite(FIS_READ_ENA,LOW);
+    }
+  } else {
+    if (millis() - prev_update > 1000 ) {//leave text for 1000ms
+      lcd.clear();
+      prev_update=millis();
+       if (!digitalRead(FIS_READ_ENA)){ 
+        digitalWrite(FIS_READ_ENA,HIGH);
+        delay(1);
+        digitalWrite(FIS_READ_ENA,LOW);
+      }
+    }
   }
- // delay(1000);
 }
 
 
