@@ -1,3 +1,7 @@
+// do not forget to put pull down resistor on enable line
+// pull up on data/clk line is made usng internal pullup
+
+
 #define FIS_READ_intCLK 1 //interupt on FIS_READ_CLK line
 #define FIS_READ_CLK 3 //clk pin 3 - int1
 #define FIS_READ_DATA 12 //data pin 12
@@ -18,11 +22,11 @@ volatile uint8_t FIS_READ_newmsg2=0;
 volatile uint8_t FIS_READ_adrok=0;
 volatile uint8_t FIS_READ_cksumok=0;
 volatile uint8_t FIS_READ_tmp_cksum=0;
+volatile uint8_t FIS_READ_lcd_ack=1; //tell everyone on bus, we are here!
 
 volatile uint64_t prev_update = 0;
 
-void FIS_READ_read_data_line(){
-  if (!digitalRead(FIS_READ_CLK)){
+void FIS_READ_read_data_line(){ //fired on falling edge
     if(!FIS_READ_adrok){
       FIS_READ_read_adr();
     }
@@ -35,7 +39,6 @@ void FIS_READ_read_data_line(){
     else if (!FIS_READ_cksumok){
       FIS_READ_read_cksum();
     }
-  }
 }
 
 void FIS_READ_read_cksum(){
@@ -58,6 +61,7 @@ void FIS_READ_read_cksum(){
       FIS_READ_tmp_cksum=FIS_READ_tmp_cksum+(0xFF^((FIS_READ_msg1>>i) & 0xFF))
         +(0xFF^((FIS_READ_msg2>>i) & 0xFF));
     }
+    if (!FIS_READ_cksumok){//d we display what we reveived last time?
     if((FIS_READ_tmp_cksum%256)==FIS_READ_cksum){
     FIS_READ_cksumok=1;
     } else {
@@ -66,6 +70,7 @@ void FIS_READ_read_cksum(){
       FIS_READ_cksumok=0;
     }
     FIS_READ_msgbit=0;
+    }
   }
 
 }
@@ -114,15 +119,16 @@ void FIS_READ_read_adr(){
     FIS_READ_adr = (FIS_READ_adr<<1);
     FIS_READ_msgbit++;
   }
-  if (FIS_READ_msgbit==8)// && FIS_READ_adr==0xF)
+  if (FIS_READ_msgbit==8)
   {
     FIS_READ_adrok=1;
     FIS_READ_msgbit=0;
   }
 }
 
-void FIS_READ_detect_ena_line(){
-  if (digitalRead(FIS_READ_ENA)){ //Enable line changed to HIGH -> data on data line are valid
+
+
+void FIS_READ_detect_ena_line_rising(){
     //init all again
     FIS_READ_msgbit=0;
     FIS_READ_newmsg1=0;
@@ -130,32 +136,31 @@ void FIS_READ_detect_ena_line(){
     FIS_READ_adrok=0;
     FIS_READ_cksumok=0;
     FIS_READ_tmp_cksum=0;
-    attachInterrupt(FIS_READ_intCLK,FIS_READ_read_data_line,CHANGE); //can be changed to CHANGE->uncoment "if (!digitalRead(FIS_READ_CLK)){" in FIS_READ_read_data_line function
-  } else {
-  detachInterrupt(FIS_READ_intCLK);
-  }
+    attachInterrupt(FIS_READ_intCLK,FIS_READ_read_data_line,FALLING);//data are valid on falling edge of CLK 
+    attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line_falling,FALLING); //if enable changed to low, data on data line are no more valid
+}
+
+void FIS_READ_detect_ena_line_falling(){
+  detachInterrupt(FIS_READ_intCLK);//enable is low, data on data line are no more valid
+  detachInterrupt(FIS_READ_intENA);
+  attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line_rising,RISING);
 }
 
 void setup() { 
-  attachInterrupt(FIS_READ_intCLK,FIS_READ_read_data_line,CHANGE);
-  pinMode(FIS_READ_CLK,INPUT_PULLUP);
   lcd.begin(16,2);
   lcd.home();
   lcd.clear();
-  pinMode(FIS_READ_ENA,INPUT);//no pull up! this is inactive state low, active is high
+  pinMode(FIS_READ_CLK,INPUT_PULLUP);
   pinMode(FIS_READ_DATA,INPUT_PULLUP);
-  if (!digitalRead(FIS_READ_ENA)){
-  digitalWrite(FIS_READ_ENA,HIGH);
-  delay(1);
-  digitalWrite(FIS_READ_ENA,LOW);
-  }
-  attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line,CHANGE);
+  pinMode(FIS_READ_ENA,INPUT);//no pull up! this is inactive state low, active is high
+  digitalWrite(FIS_READ_ENA,LOW);//disable pullup
+  attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line_rising,RISING);
 }
 
 void loop() {
   if(FIS_READ_cksumok){ //whole packet received and checksum is ok    
+    lcd.home();
    // lcd.clear();
-   lcd.home();
     for(int i=56;i>=0;i=i-8){
       int c = (0xFF^((FIS_READ_msg1>>i) & 0xFF));
       if (c == 102 ) c=95;
@@ -169,21 +174,31 @@ void loop() {
     }
     FIS_READ_cksumok=0;
     prev_update=millis();
-    if (!digitalRead(FIS_READ_ENA)){ 
-      digitalWrite(FIS_READ_ENA,HIGH);
-      delay(1);
-      digitalWrite(FIS_READ_ENA,LOW);
-    }
+    FIS_READ_lcd_ack=1;
   } else {
-    if (millis() - prev_update > 1000 ) {//leave text for 1000ms
+    if ((millis() - prev_update) > 1000 ){ //leave text for 1000ms
       lcd.clear();
+      FIS_READ_lcd_ack=1;
       prev_update=millis();
-       if (!digitalRead(FIS_READ_ENA)){ 
-        digitalWrite(FIS_READ_ENA,HIGH);
-        delay(1);
-        digitalWrite(FIS_READ_ENA,LOW);
-      }
     }
+  }
+  if (FIS_READ_lcd_ack){
+    detachInterrupt(FIS_READ_intENA);
+    detachInterrupt(FIS_READ_intCLK);
+    pinMode(FIS_READ_ENA,INPUT);
+    digitalWrite(FIS_READ_ENA,LOW);//disable pullup
+    if (!digitalRead(FIS_READ_ENA)){
+        pinMode(FIS_READ_ENA,OUTPUT);
+//        delay(100);
+        digitalWrite(FIS_READ_ENA,HIGH);
+        delay(3);
+        digitalWrite(FIS_READ_ENA,LOW);
+        FIS_READ_lcd_ack=0;
+    }
+  pinMode(FIS_READ_ENA,INPUT);
+  digitalWrite(FIS_READ_ENA,LOW);//disable pullup
+  delay(50);
+  attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line_rising,RISING);
   }
 }
 
