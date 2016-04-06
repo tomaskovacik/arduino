@@ -36,8 +36,8 @@
 //1,0,0,1,0,0,1,1};
 
 //WRITE TO CLUSTER
-String FIS_WRITE_line1="AUDI_KLUB";
-String FIS_WRITE_line2="SLOVENSKO";
+String FIS_WRITE_line1="FIS protocol emulator by kovo"; //upper line 8characters are static, more then 8 will rotate
+String FIS_WRITE_line2="http://kovo-blog.blogspot.sk"; //lover line 8characters are static, more then 8 will rotate
 String FIS_WRITE_sendline1="        ";
 String FIS_WRITE_sendline2="        ";
 long FIS_WRITE_rotary_position_line1=-8;
