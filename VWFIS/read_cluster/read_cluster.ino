@@ -149,7 +149,10 @@ void FIS_READ_detect_ena_line_falling(){
 void setup() { 
   lcd.begin(16,2);
   lcd.home();
+  lcd.print("FIS cluster emu");
+  delay (1000);
   lcd.clear();
+  Serial.begin(9600);
   pinMode(FIS_READ_CLK,INPUT_PULLUP);
   pinMode(FIS_READ_DATA,INPUT_PULLUP);
   pinMode(FIS_READ_ENA,INPUT);//no pull up! this is inactive state low, active is high
@@ -160,17 +163,21 @@ void setup() {
 void loop() {
   if(FIS_READ_cksumok){ //whole packet received and checksum is ok    
     lcd.home();
+    Serial.write("\n");
    // lcd.clear();
     for(int i=56;i>=0;i=i-8){
       int c = (0xFF^((FIS_READ_msg1>>i) & 0xFF));
       if (c == 102 ) c=95;
       lcd.write(c);
+      Serial.write(c);
     }
     lcd.setCursor(0,1);
+    Serial.write("\n");
     for(int i=56;i>=0;i=i-8){
       int c = (0xFF^((FIS_READ_msg2>>i) & 0xFF));
       if (c == 102 ) c=95;
-      lcd.write(0xFF^((FIS_READ_msg2>>i) & 0xFF));   
+      lcd.write(c);
+      Serial.write(c);   
     }
     FIS_READ_cksumok=0;
     prev_update=millis();
@@ -191,13 +198,13 @@ void loop() {
         pinMode(FIS_READ_ENA,OUTPUT);
 //        delay(100);
         digitalWrite(FIS_READ_ENA,HIGH);
-        delay(3);
+        //delay(3);
         digitalWrite(FIS_READ_ENA,LOW);
         FIS_READ_lcd_ack=0;
     }
   pinMode(FIS_READ_ENA,INPUT);
   digitalWrite(FIS_READ_ENA,LOW);//disable pullup
-  delay(50);
+  //delay(50);
   attachInterrupt(FIS_READ_intENA,FIS_READ_detect_ena_line_rising,RISING);
   }
 }
