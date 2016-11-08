@@ -46,7 +46,7 @@ char FIS_WRITE_CHAR_FROM_SERIAL;
 int FIS_WRITE_line=1;
 long FIS_WRITE_last_refresh=0;
 int FIS_WRITE_nl=0;
-volatile uint8_t FIS_WRITE_ACKSTATE=1;
+volatile uint8_t FIS_WRITE_ACKSTATE=0;
 //END WRITE TO CLUSTER
 
 //WRITE TO CLUSTER
@@ -226,15 +226,14 @@ void FIS_WRITE_sendByte(int Byte){
 }
 
 void FIS_WRITE_startENA(){
-  //detachInterrupt(FIS_WRITE_ENAINT);
   pinMode(FIS_WRITE_ENA,INPUT);
   digitalWrite(FIS_WRITE_ENA,LOW);//disable pullup
   while (!digitalRead(FIS_WRITE_ENA)) {
   pinMode(FIS_WRITE_ENA,OUTPUT);
   digitalWrite(FIS_WRITE_ENA,HIGH);
-  delay(FIS_WRITE_STARTPULSEW);
+  delayMicroseconds(FIS_WRITE_STARTPULSEW);
   digitalWrite(FIS_WRITE_ENA,LOW);
-  delay(FIS_WRITE_STARTPULSEW);
+  delayMicroseconds(FIS_WRITE_STARTPULSEW);
   digitalWrite(FIS_WRITE_ENA,HIGH);
   }
 }
