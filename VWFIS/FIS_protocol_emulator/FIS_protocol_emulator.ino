@@ -232,7 +232,10 @@ void FIS_WRITE_startENA(){
   while (!digitalRead(FIS_WRITE_ENA)) {
   pinMode(FIS_WRITE_ENA,OUTPUT);
   digitalWrite(FIS_WRITE_ENA,HIGH);
-  delay(10); //min 10!
+  delay(FIS_WRITE_STARTPULSEW);
+  digitalWrite(FIS_WRITE_ENA,LOW);
+  delay(FIS_WRITE_STARTPULSEW);
+  digitalWrite(FIS_WRITE_ENA,HIGH);
   }
 }
 
