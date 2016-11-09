@@ -6,3 +6,12 @@ section dedicated to 3wire comunication betwen radio and cluster (FIS) on vw gro
   real FIS cluster over 3 line bus.
 - `read_cluster` emulates an FIS cluster.  It listens on the 3 line bus like
   a real FIS cluster would and writes what it receives to a 2x16 character LCD.
+
+all of this is tested in setup on bench: writing to display:
+
+https://www.youtube.com/watch?v=8igXlCWadeE
+
+reading display:
+https://www.youtube.com/watch?v=ANw7_7F3OmM
+
+
