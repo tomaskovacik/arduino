@@ -4,7 +4,7 @@
 
 #define FIS_READ_intCLK 1 //interupt on FIS_READ_CLK line
 #define FIS_READ_CLK 3 //clk pin 3 - int1
-#define FIS_READ_DATA 12 //data pin 12
+#define FIS_READ_DATA 11 //data pin 11
 #define FIS_READ_ENA 2 //enable pin 2 int0
 #define FIS_READ_intENA 0 //interupt on FIS_READ_ENA line
 
@@ -183,7 +183,7 @@ void loop() {
     prev_update=millis();
     FIS_READ_lcd_ack=1;
   } else {
-    if ((millis() - prev_update) > 1000 ){ //leave text for 1000ms
+    if ((millis() - prev_update) > 500 ){ //leave text for 1000ms
       lcd.clear();
       FIS_READ_lcd_ack=1;
       prev_update=millis();
@@ -196,9 +196,9 @@ void loop() {
     digitalWrite(FIS_READ_ENA,LOW);//disable pullup
     if (!digitalRead(FIS_READ_ENA)){
         pinMode(FIS_READ_ENA,OUTPUT);
-//        delay(100);
+        delay(1);
         digitalWrite(FIS_READ_ENA,HIGH);
-        //delay(3);
+        delay(3);
         digitalWrite(FIS_READ_ENA,LOW);
         FIS_READ_lcd_ack=0;
     }
