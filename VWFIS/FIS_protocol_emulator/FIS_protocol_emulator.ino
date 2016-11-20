@@ -189,11 +189,13 @@ void FIS_WRITE_sendTEXT(String FIS_WRITE_line1,String FIS_WRITE_line2) {
 
   for (int i = 0; i <= 7; i++)
   { 
+    if(FIS_WRITE_line1[i] > 96) FIS_WRITE_line1[i]=FIS_WRITE_line1[i]-32;
     FIS_WRITE_sendByte(0xFF^FIS_WRITE_line1[i]);
     FIS_WRITE_CRC+=FIS_WRITE_line1[i];
   }
     for (int i = 0; i <= 7; i++)
-  { 
+  {
+    if(FIS_WRITE_line2[i] > 96) FIS_WRITE_line2[i]=FIS_WRITE_line2[i]-32;
     FIS_WRITE_sendByte(0xFF^FIS_WRITE_line2[i]);
     FIS_WRITE_CRC+=FIS_WRITE_line2[i];
   }
