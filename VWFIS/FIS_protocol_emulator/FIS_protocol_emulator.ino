@@ -3,15 +3,37 @@
 //ena  pin 2
 
 //WRITE TO CLUSTER
-#define FIS_WRITE_ENA PB2
+#define FIS_WRITE_ENA 2
 #define FIS_WRITE_ENAINT 0
-#define FIS_WRITE_CLK PB0
-#define FIS_WRITE_DATA PB1
+#define FIS_WRITE_CLK 3 
+#define FIS_WRITE_DATA 4 
 #define FIS_WRITE_PULSEW 50
 #define FIS_WRITE_STARTPULSEW 100
-#define FIS_WRITE_START 0xF //something like address, first byte is always 0xf but 0xf0 also works
+#define FIS_WRITE_START 15 //something like address, first byte is always 15
 //END WRITE TO CLUSTER
 
+//#define BINCODE 000011111011111010101010101110111011011010111100101100111010101010111101101011001011001110110000101010011011111010110100101101101011111010010011
+//                000011111011111010101010101110111011011010111100101100111010101010111101101011001011001110110000101010011011111010110100101101101011111010010011
+
+//int BINCODE[144]={
+//0,0,0,0,1,1,1,1,
+//1,0,1,1,1,1,1,0,
+//1,0,1,0,1,0,1,0,
+//1,0,1,1,1,0,1,1,
+//1,0,1,1,0,1,1,0,
+//1,0,1,1,1,1,0,0,
+//1,0,1,1,0,0,1,1,
+//1,0,1,0,1,0,1,0,
+//1,0,1,1,1,1,0,1,
+//1,0,1,0,1,1,0,0,
+//1,0,1,1,0,0,1,1,
+//1,0,1,1,0,0,0,0,
+//1,0,1,0,1,0,0,1,
+//1,0,1,1,1,1,1,0,
+//1,0,1,1,0,1,0,0,
+//1,0,1,1,0,1,1,0,
+//1,0,1,1,1,1,1,0,
+//1,0,0,1,0,0,1,1};
 
 //WRITE TO CLUSTER
 String FIS_WRITE_line1="FIS PROTOCOL EMULATOR BY KOVO"; //upper line 8characters are static, more then 8 will rotate
@@ -39,47 +61,48 @@ void setup(){
 //WRITE TO CLUSTER
 pinMode(FIS_WRITE_ENA, OUTPUT);
 digitalWrite(FIS_WRITE_ENA,LOW);
-//pinMode(FIS_WRITE_ENA,INPUT);
-//digitalWrite(FIS_WRITE_ENA,LOW);//disable pullup
-//attachInterrupt(FIS_WRITE_ENAINT,FIS_WRITE_ACK,FALLING);
+pinMode(FIS_WRITE_ENA,INPUT);
+digitalWrite(FIS_WRITE_ENA,LOW);//disable pullup https://www.arduino.cc/en/Reference/DigitalWrite
+attachInterrupt(FIS_WRITE_ENAINT,FIS_WRITE_ACK,FALLING);
 pinMode(FIS_WRITE_CLK, OUTPUT); 
 digitalWrite(FIS_WRITE_CLK, HIGH);
 pinMode(FIS_WRITE_DATA, OUTPUT); 
 digitalWrite(FIS_WRITE_DATA, HIGH);
+Serial.begin(9600);
 //END WRITE TO CLUSTER
 }
 
 void loop(){
 //WRITE TO CLUSTER
-//if (Serial.available()) {
-//        FIS_WRITE_CHAR_FROM_SERIAL=(char)Serial.read();
-//        Serial.print(FIS_WRITE_CHAR_FROM_SERIAL);
-//        if (FIS_WRITE_CHAR_FROM_SERIAL == '\n') {
-//          FIS_WRITE_nl=1;
-//          if (FIS_WRITE_line==1){
-//            FIS_WRITE_line=2;
-//          } else {
-//            FIS_WRITE_line=1;
-//           }
-//        } else {
-//          if (FIS_WRITE_line==1){
-//              if (FIS_WRITE_nl){
-//                FIS_WRITE_nl=0;
-//                FIS_WRITE_line1="";
-//                FIS_WRITE_rotary_position_line1=-8;
-//                }
-//              FIS_WRITE_line1+=FIS_WRITE_CHAR_FROM_SERIAL;
-//          } else {
-//              if (FIS_WRITE_nl){
-//                FIS_WRITE_nl=0;
-//                FIS_WRITE_line2="";
-//                FIS_WRITE_rotary_position_line2=-8;
-//                }
-//               FIS_WRITE_line2+=FIS_WRITE_CHAR_FROM_SERIAL;
-//          }
-//        }
-//
-// }
+if (Serial.available()) {
+        FIS_WRITE_CHAR_FROM_SERIAL=(char)Serial.read();
+        Serial.print(FIS_WRITE_CHAR_FROM_SERIAL);
+        if (FIS_WRITE_CHAR_FROM_SERIAL == '\n') {
+          FIS_WRITE_nl=1;
+          if (FIS_WRITE_line==1){
+            FIS_WRITE_line=2;
+          } else {
+            FIS_WRITE_line=1;
+           }
+        } else {
+          if (FIS_WRITE_line==1){
+              if (FIS_WRITE_nl){
+                FIS_WRITE_nl=0;
+                FIS_WRITE_line1="";
+                FIS_WRITE_rotary_position_line1=-8;
+                }
+              FIS_WRITE_line1+=FIS_WRITE_CHAR_FROM_SERIAL;
+          } else {
+              if (FIS_WRITE_nl){
+                FIS_WRITE_nl=0;
+                FIS_WRITE_line2="";
+                FIS_WRITE_rotary_position_line2=-8;
+                }
+               FIS_WRITE_line2+=FIS_WRITE_CHAR_FROM_SERIAL;
+          }
+        }
+
+ }
    
   int FIS_WRITE_line1_length=FIS_WRITE_line1.length();
   int FIS_WRITE_line2_length=FIS_WRITE_line2.length();
@@ -125,7 +148,6 @@ void loop(){
       // Serial.println("refresh");
       //FIS_WRITE_sendTEXT(FIS_WRITE_sendline1,FIS_WRITE_sendline2);
       FIS_WRITE_last_refresh=millis();
-      FIS_WRITE_ACKSTATE=1;
     //end refresh
   }
   if (FIS_WRITE_ACKSTATE){
@@ -137,15 +159,15 @@ void loop(){
 
 //WRITE TO CLUSTER
 
-//void FIS_WRITE_ACK(){
-//  detachInterrupt(FIS_WRITE_ENAINT);
-//   FIS_WRITE_ACKSTATE=1;
-//};
+void FIS_WRITE_ACK(){
+  detachInterrupt(FIS_WRITE_ENAINT);
+   FIS_WRITE_ACKSTATE=1;
+};
 
 void FIS_WRITE_sendTEXT(String FIS_WRITE_line1,String FIS_WRITE_line2) {
   
-//  Serial.println(FIS_WRITE_line1);
-//  Serial.println(FIS_WRITE_line2);
+  Serial.println(FIS_WRITE_line1);
+  Serial.println(FIS_WRITE_line2);
   int FIS_WRITE_line1_length=FIS_WRITE_line1.length();
   int FIS_WRITE_line2_length=FIS_WRITE_line2.length();
     if (FIS_WRITE_line1_length<=8){
@@ -204,23 +226,23 @@ void FIS_WRITE_sendByte(int Byte){
 }
 
 void FIS_WRITE_startENA(){
-//  pinMode(FIS_WRITE_ENA,INPUT);
-//  digitalWrite(FIS_WRITE_ENA,LOW);//disable pullup
-//  while (!digitalRead(FIS_WRITE_ENA)) {
+  pinMode(FIS_WRITE_ENA,INPUT);
+  digitalWrite(FIS_WRITE_ENA,LOW);//disable pullup
+  while (!digitalRead(FIS_WRITE_ENA)) {
   pinMode(FIS_WRITE_ENA,OUTPUT);
   digitalWrite(FIS_WRITE_ENA,HIGH);
   delayMicroseconds(FIS_WRITE_STARTPULSEW);
   digitalWrite(FIS_WRITE_ENA,LOW);
   delayMicroseconds(FIS_WRITE_STARTPULSEW);
   digitalWrite(FIS_WRITE_ENA,HIGH);
-//  }
+  }
 }
 
 void FIS_WRITE_stopENA(){
  digitalWrite(FIS_WRITE_ENA,LOW);
-// pinMode(FIS_WRITE_ENA,INPUT);
-// digitalWrite(FIS_WRITE_ENA,LOW);//disable pullup
-// attachInterrupt(FIS_WRITE_ENAINT,FIS_WRITE_ACK,FALLING);
+ pinMode(FIS_WRITE_ENA,INPUT);
+ digitalWrite(FIS_WRITE_ENA,LOW);//disable pullup
+ attachInterrupt(FIS_WRITE_ENAINT,FIS_WRITE_ACK,FALLING);
 }
 //END WRITE TO CLUSTER
 
