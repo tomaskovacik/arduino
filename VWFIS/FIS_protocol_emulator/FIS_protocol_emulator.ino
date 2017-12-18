@@ -1,3 +1,9 @@
+/*
+ * uncoment if you are using VW
+ */
+ 
+//#define VW
+
 //data pin 4
 //clk  pin 3
 //ena  pin 2
@@ -9,7 +15,7 @@
 #define FIS_WRITE_DATA 4 
 #define FIS_WRITE_PULSEW 50
 #define FIS_WRITE_STARTPULSEW 100
-#define FIS_WRITE_START 15 //something like address, first byte is always 15
+#define FIS_WRITE_START 0xF0 //something like address, first byte is always 15
 //END WRITE TO CLUSTER
 
 //#define BINCODE 000011111011111010101010101110111011011010111100101100111010101010111101101011001011001110110000101010011011111010110100101101101011111010010011
@@ -180,8 +186,11 @@ void FIS_WRITE_sendTEXT(String FIS_WRITE_line1,String FIS_WRITE_line2) {
         FIS_WRITE_line2+=" ";
       }
     }
-
+#ifdef VW 
+ uint8_t FIS_WRITE_CRC=(FIS_WRITE_START);
+#else
   uint8_t FIS_WRITE_CRC=(0xFF^FIS_WRITE_START);
+#endif
 
   FIS_WRITE_startENA();
 
@@ -190,18 +199,32 @@ void FIS_WRITE_sendTEXT(String FIS_WRITE_line1,String FIS_WRITE_line2) {
   for (int i = 0; i <= 7; i++)
   { 
     if(FIS_WRITE_line1[i] > 96) FIS_WRITE_line1[i]=FIS_WRITE_line1[i]-32;
+#ifdef VW 
+    FIS_WRITE_sendByte(FIS_WRITE_line1[i]);
+    FIS_WRITE_CRC+=FIS_WRITE_line1[i];
+#else
     FIS_WRITE_sendByte(0xFF^FIS_WRITE_line1[i]);
     FIS_WRITE_CRC+=FIS_WRITE_line1[i];
+#endif
+
   }
     for (int i = 0; i <= 7; i++)
   {
     if(FIS_WRITE_line2[i] > 96) FIS_WRITE_line2[i]=FIS_WRITE_line2[i]-32;
+#ifdef VW 
+    FIS_WRITE_sendByte(FIS_WRITE_line2[i]);
+    FIS_WRITE_CRC+=FIS_WRITE_line2[i];
+#else
     FIS_WRITE_sendByte(0xFF^FIS_WRITE_line2[i]);
     FIS_WRITE_CRC+=FIS_WRITE_line2[i];
-  }
-  
-  FIS_WRITE_sendByte(FIS_WRITE_CRC%0x100);
+#endif   
 
+  }
+#ifdef VW 
+FIS_WRITE_sendByte(FIS_WRITE_CRC);
+#else
+  FIS_WRITE_sendByte(FIS_WRITE_CRC%0x100);
+#endif
   FIS_WRITE_stopENA();
 
 }
