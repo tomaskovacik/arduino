@@ -203,25 +203,28 @@ void decode_i2c(uint8_t data[howmanybytesinpacket]) {
     switch (subaddress) {
       case 0:
         { // input selector
+          
           Serial.print("Input selector: ");
+          //Serial.print(c,HEX);
+          //Serial.print(" ");
           switch (c & B0000111) {
             case 1:
-              Serial.println("IN 2 selected");
+              Serial.println("TAPE selected (IN2)");
               break;
             case 2:
-              Serial.println("IN 2 selected");
+              Serial.println("FM/AM selected (IN1) ");
               break;
             case 3:
-              Serial.println("AM mono selected");
+              Serial.println("TP selected (AM mono)");
               break;
 
           }
-          switch (c & B0100000) {
+          switch (c & B01000111) {
             case 0:
-              Serial.println("0dB diferential input gain (IN3)");
+              Serial.println("CD selected (0dB diferential input gain (IN3))");
               break;
-            case 1:
-              Serial.println("-6dB diferential input gain (IN3)");
+            case 40:
+              Serial.println("CD selected (-6dB diferential input gain (IN3))");
               break;
 
           }
@@ -263,9 +266,9 @@ void decode_i2c(uint8_t data[howmanybytesinpacket]) {
           //          Serial.println(20 - (((c >> 5) & B00000111) * 10));
           volume = (20 - (((c >> 5) & B00000111) * 10)) + (((c >> 2) & B00000111) * (-1.25)) + ((c & B00000011) * (-0.31));
           Serial.print(volume);
-          Serial.println("dB");
+          Serial.print("dB");
           Serial.print(" ( ");
-          Serial.println(c,HEX);
+          Serial.print(c,HEX);
           Serial.println(" )");
         }
         break;
@@ -415,24 +418,24 @@ void decode_i2c(uint8_t data[howmanybytesinpacket]) {
         //5th and 6th bit
         switch ((c >> 5) & B00000011) {
           case 0:
-            Serial.print("160mV ZC Window Threshold (WIN = 00)");
+            Serial.println("160mV ZC Window Threshold (WIN = 00)");
             break;
           case 1:
-            Serial.print("80mV ZC Window Threshold (WIN = 01)");
+            Serial.println("80mV ZC Window Threshold (WIN = 01)");
             break;
           case 2:
-            Serial.print("40mV ZC Window Threshold (WIN = 10)");
+            Serial.println("40mV ZC Window Threshold (WIN = 10)");
             break;
           case 3:
-            Serial.print("20mV ZC Window Threshold (WIN = 11)");
+            Serial.println("20mV ZC Window Threshold (WIN = 11)");
             break;
         }
         switch ((c >> 7) & B00000011) {
           case 0:
-            Serial.print("Nonsymmetrical Bass Cut");
+            Serial.println("Nonsymmetrical Bass Cut");
             break;
           case 1:
-            Serial.print("Symmetrical Bass Cut");
+            Serial.println("Symmetrical Bass Cut");
             break;
         }
         break;
