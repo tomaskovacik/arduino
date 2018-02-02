@@ -1,0 +1,468 @@
+Input selector: IN 2 selected
+Loudness: -16.2500000000dB
+volume 84
+Bass: 4dB, Trebble: -2dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Mute: Soft Mute with slow slope (I = Imin)
+Zero Crossing Mute On
+160mV ZC Window Threshold (WIN = 00)Nonsymmetrical Bass Cut
+
+
+power up radio:
+Input selector: IN 2 selected
+Loudness: -16.2500000000dB
+volume 84
+Bass: 4dB, Trebble: -2dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Mute: Soft Mute with slow slope (I = Imin)
+Zero Crossing Mute On
+160mV ZC Window Threshold (WIN = 00)Nonsymmetrical Bass Cut
+
+
+volume up:
+
+Loudness: -15.0000000000dB
+volume 80
+Loudness: -13.7500000000dB
+volume 76
+Loudness: -12.5000000000dB
+volume 72
+Loudness: -11.2500000000dB
+volume 68
+Loudness: -10.0000000000dB
+volume 64
+Loudness: -8.7500000000dB
+volume 60
+Loudness: -7.5000000000dB
+volume 56
+Loudness: -6.2500000000dB
+volume 52
+Loudness: -5.0000000000dB
+volume 48
+Loudness: -3.7500000000dB
+volume 44
+Loudness: -2.5000000000dB
+volume 40
+Loudness: -1.2500000000dB
+volume 36
+Loudness: -0.0000000000dB
+volume 32
+Loudness: -0.0000000000dB
+volume 28
+Loudness: -0.0000000000dB
+volume 24
+Loudness: -0.0000000000dB
+volume 20
+Loudness: -0.0000000000dB
+volume 16
+Loudness: -0.0000000000dB
+volume 12
+Loudness: -0.0000000000dB
+volume 8
+Loudness: -0.0000000000dB
+volume 4
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+Loudness: -0.0000000000dB
+volume 0
+
+
+volume down:
+Loudness: -1.2500000000dB
+volume 4
+Loudness: -2.5000000000dB
+volume 8
+Loudness: -3.7500000000dB
+volume 12
+Loudness: -5.0000000000dB
+volume 16
+Loudness: -6.2500000000dB
+volume 20
+Loudness: -7.5000000000dB
+volume 24
+Loudness: -8.7500000000dB
+volume 28
+Loudness: -10.0000000000dB
+volume 32
+Loudness: -11.2500000000dB
+volume 36
+Loudness: -12.5000000000dB
+volume 40
+Loudness: -13.7500000000dB
+volume 44
+Loudness: -15.0000000000dB
+volume 48
+Loudness: -16.2500000000dB
+volume 52
+Loudness: -17.5000000000dB
+volume 56
+Loudness: -18.7500000000dB
+volume 60
+Loudness: -18.7500000000dB
+volume 64
+Loudness: -18.7500000000dB
+volume 68
+Loudness: -18.7500000000dB
+volume 72
+Loudness: -18.7500000000dB
+volume 76
+Loudness: -18.7500000000dB
+volume 80
+Loudness: -18.7500000000dB
+volume 84
+Loudness: -18.7500000000dB
+volume 88
+Loudness: -18.7500000000dB
+volume 92
+Loudness: -18.7500000000dB
+volume 96
+Loudness: -18.7500000000dB
+volume 100
+Loudness: -18.7500000000dB
+volume 104
+Loudness: -18.7500000000dB
+volume 108
+Loudness: -18.7500000000dB
+volume 112
+Loudness: -18.7500000000dB
+volume 116
+Loudness: -18.7500000000dB
+volume 120
+Loudness: -18.7500000000dB
+volume 124
+Loudness: -18.7500000000dB
+volume 128
+Loudness: -18.7500000000dB
+volume 132
+Loudness: -18.7500000000dB
+volume 136
+Loudness: -18.7500000000dB
+volume 140
+Loudness: -18.7500000000dB
+volume 144
+Loudness: -18.7500000000dB
+volume 148
+Loudness: -18.7500000000dB
+volume 152
+Loudness: -18.7500000000dB
+volume 156
+Loudness: -18.7500000000dB
+volume 160
+Loudness: -18.7500000000dB
+volume 164
+Loudness: -18.7500000000dB
+volume 168
+Loudness: -18.7500000000dB
+volume 172
+Loudness: -18.7500000000dB
+volume 176
+Loudness: -18.7500000000dB
+volume 180
+Loudness: -18.7500000000dB
+volume 184
+Loudness: -18.7500000000dB
+volume 188
+Loudness: -18.7500000000dB
+volume 192
+Loudness: -18.7500000000dB
+volume 196
+Loudness: -18.7500000000dB
+volume 200
+Loudness: -18.7500000000dB
+volume 204
+Loudness: -18.7500000000dB
+volume 208
+Loudness: -18.7500000000dB
+volume 212
+Loudness: -18.7500000000dB
+volume 216
+Loudness: -18.7500000000dB
+volume 220
+Loudness: -18.7500000000dB
+volume 224
+Loudness: -18.7500000000dB
+volume 228
+Loudness: -18.7500000000dB
+volume 232
+Loudness: -18.7500000000dB
+volume 236
+Loudness: -18.7500000000dB
+volume 240
+Loudness: -18.7500000000dB
+volume 244
+Loudness: -18.7500000000dB
+volume 248
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+Loudness: -18.7500000000dB
+volume 252
+
+
+
+fade:
+
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+
+
+this works but display did not change, so 
+lets try ballance:
+
+
+
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+
+
+works, try again fade:
+
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -2.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -2.50dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -3.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -3.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+
+
+now display show what it supose to show ... this is important cose without this, displiay (driven by original motorola mcu will be out of sync with audio procesor)
+
+trebble:
+
+Bass: 4dB, Trebble: 0dB
+Bass: 4dB, Trebble: 2dB
+Bass: 4dB, Trebble: 0dB
+Bass: 4dB, Trebble: -2dB
+Bass: 4dB, Trebble: 0dB
+Bass: 4dB, Trebble: 2dB
+Bass: 4dB, Trebble: 4dB
+Bass: 4dB, Trebble: 6dB
+Bass: 4dB, Trebble: 8dB
+Bass: 4dB, Trebble: 10dB
+Bass: 4dB, Trebble: 12dB
+treble at +6, go back to 0:
+Bass: 4dB, Trebble: 10dB
+Bass: 4dB, Trebble: 8dB
+Bass: 4dB, Trebble: 6dB
+Bass: 4dB, Trebble: 4dB
+Bass: 4dB, Trebble: 2dB
+Bass: 4dB, Trebble: 0dB
+treble at 0, go to -6:
+Bass: 4dB, Trebble: -2dB
+Bass: 4dB, Trebble: -4dB
+Bass: 4dB, Trebble: -6dB
+Bass: 4dB, Trebble: -8dB
+Bass: 4dB, Trebble: -10dB
+Bass: 4dB, Trebble: 16dB
+trebble -6 go back to 0
+Bass: 4dB, Trebble: -10dB
+Bass: 4dB, Trebble: -8dB
+Bass: 4dB, Trebble: -6dB
+Bass: 4dB, Trebble: -4dB
+Bass: 4dB, Trebble: -2dB
+Bass: 4dB, Trebble: 0dB
+Bass: 4dB, Trebble: 2dB
+Bass: 4dB, Trebble: 0dB
+Bass: 4dB, Trebble: 2dB
+
+
+we are out of sync, cose display is showing 0 and here we are at +2dB for trebble :(
+
+
+lets check bass:
+
+Bass: 2dB, Trebble: 2dB
+Bass: 0dB, Trebble: 2dB
+Bass: -2dB, Trebble: 2dB
+Bass: -4dB, Trebble: 2dB
+Bass: -6dB, Trebble: 2dB
+Bass: -8dB, Trebble: 2dB
+Bass: -10dB, Trebble: 2dB
+Bass: -10dB, Trebble: 2dB
+Bass: -10dB, Trebble: 2dB
+Bass: -10dB, Trebble: 2dB
+Bass: -10dB, Trebble: 2dB
+Bass: -10dB, Trebble: 2dB
+Bass: -10dB, Trebble: 2dB
+Bass: -8dB, Trebble: 2dB
+Bass: -6dB, Trebble: 2dB
+Bass: -4dB, Trebble: 2dB
+Bass: -2dB, Trebble: 2dB
+Bass: 0dB, Trebble: 2dB
+Bass: 2dB, Trebble: 2dB
+Bass: 4dB, Trebble: 2dB
+Bass: 6dB, Trebble: 2dB
+Bass: 8dB, Trebble: 2dB
+Bass: 10dB, Trebble: 2dB
+Bass: 12dB, Trebble: 2dB
+Bass: 14dB, Trebble: 2dB
+Bass: 14dB, Trebble: 2dB
+Bass: 14dB, Trebble: 2dB
+Bass: 14dB, Trebble: 2dB
+Bass: 14dB, Trebble: 2dB
+Bass: 14dB, Trebble: 2dB
+Bass: 14dB, Trebble: 2dB
+Bass: 12dB, Trebble: 2dB
+Bass: 10dB, Trebble: 2dB
+Bass: 8dB, Trebble: 2dB
+Bass: 6dB, Trebble: 2dB
+Bass: 4dB, Trebble: 2dB
+Bass: 2dB, Trebble: 2dB
+Bass: 0dB, Trebble: 2dB
+
+
+
+same ... display showed: -1 for bass and here we are at 0 :(
+
+
+switch input: MODE -> going for TAPE cose no tape drive instaled, then for CD:
+
+we are at TAPE MODE ... nothing here TAPE is IN2, display showing TAPE:( go for CD:
+
+display showing CD1 TR1, here should by i2c command for switching to IN3 input... going back to FM:
+
+dispaly showing 107,5 , FM led is turned on, also RDS, but nothing here, try to select FM, (we are at FM1):
+
+Input selector: IN 1 selected ... 
+
+try AM:
+
+ok, nothing happend, this is fine, am/fm is switched eslwere
+
+I thing it is, this sux :( 
+

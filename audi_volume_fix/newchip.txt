@@ -1,0 +1,1695 @@
+powering 12V supply:
+
+
+
+powering up radio:
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Input selector: CD selected (0dB diferential input gain (IN3))
+Input selector: FM/AM selected (IN1) 
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+volume -59.37dB ( FE )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Loudness: -17.5000000000dB
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+Loudness: -18.7500000000dB
+volume -55.62dB ( F2 )
+volume -54.37dB ( EE )
+volume -53.12dB ( EA )
+volume -51.87dB ( E6 )
+volume -50.62dB ( E2 )
+volume -49.37dB ( DE )
+volume -48.12dB ( DA )
+volume -46.87dB ( D6 )
+volume -45.62dB ( D2 )
+volume -44.37dB ( CE )
+volume -43.12dB ( CA )
+volume -41.87dB ( C6 )
+volume -40.62dB ( C2 )
+volume -39.37dB ( BE )
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.43dB ( 9B )
+
+
+
+MODE:
+volume -33.43dB ( AB )
+volume -38.43dB ( BB )
+volume -43.43dB ( CB )
+volume -45.93dB ( D3 )
+volume -48.43dB ( DB )
+volume -50.93dB ( E3 )
+volume -53.43dB ( EB )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Input selector: CD selected (0dB diferential input gain (IN3))
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -55.62dB ( F2 )
+volume -54.37dB ( EE )
+volume -53.12dB ( EA )
+volume -51.87dB ( E6 )
+volume -50.62dB ( E2 )
+volume -49.37dB ( DE )
+volume -48.12dB ( DA )
+volume -46.87dB ( D6 )
+volume -45.62dB ( D2 )
+volume -44.37dB ( CE )
+volume -43.12dB ( CA )
+volume -41.87dB ( C6 )
+volume -40.62dB ( C2 )
+volume -39.37dB ( BE )
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.43dB ( 9B )
+ we are in CD MODE, presing MODE again:
+volume -33.43dB ( AB )
+volume -38.43dB ( BB )
+volume -43.43dB ( CB )
+volume -45.93dB ( D3 )
+volume -48.43dB ( DB )
+volume -50.93dB ( E3 )
+volume -53.43dB ( EB )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Input selector: FM/AM selected (IN1) 
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -55.62dB ( F2 )
+volume -54.37dB ( EE )
+volume -53.12dB ( EA )
+volume -51.87dB ( E6 )
+volume -50.62dB ( E2 )
+volume -49.37dB ( DE )
+volume -48.12dB ( DA )
+volume -46.87dB ( D6 )
+volume -45.62dB ( D2 )
+volume -44.37dB ( CE )
+volume -43.12dB ( CA )
+volume -41.87dB ( C6 )
+volume -40.62dB ( C2 )
+volume -39.37dB ( BE )
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.43dB ( 9B )
+
+we are in FM mode, presing AM:
+volume -33.43dB ( AB )
+volume -38.43dB ( BB )
+volume -43.43dB ( CB )
+volume -45.93dB ( D3 )
+volume -48.43dB ( DB )
+volume -50.93dB ( E3 )
+volume -53.43dB ( EB )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -55.62dB ( F2 )
+volume -54.37dB ( EE )
+volume -53.12dB ( EA )
+volume -51.87dB ( E6 )
+volume -50.62dB ( E2 )
+volume -49.37dB ( DE )
+volume -48.12dB ( DA )
+volume -46.87dB ( D6 )
+volume -45.62dB ( D2 )
+volume -44.37dB ( CE )
+volume -43.12dB ( CA )
+volume -41.87dB ( C6 )
+volume -40.62dB ( C2 )
+volume -39.37dB ( BE )
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.43dB ( 9B )
+
+
+AM MODE, presing FM:
+volume -33.43dB ( AB )
+volume -38.43dB ( BB )
+volume -43.43dB ( CB )
+volume -45.93dB ( D3 )
+volume -48.43dB ( DB )
+volume -50.93dB ( E3 )
+volume -53.43dB ( EB )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -55.62dB ( F2 )
+volume -54.37dB ( EE )
+volume -53.12dB ( EA )
+volume -51.87dB ( E6 )
+volume -50.62dB ( E2 )
+volume -49.37dB ( DE )
+volume -48.12dB ( DA )
+volume -46.87dB ( D6 )
+volume -45.62dB ( D2 )
+volume -44.37dB ( CE )
+volume -43.12dB ( CA )
+volume -41.87dB ( C6 )
+volume -40.62dB ( C2 )
+volume -39.37dB ( BE )
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.43dB ( 9B )
+
+
+TAPE:
+volume -33.43dB ( AB )
+volume -38.43dB ( BB )
+volume -43.43dB ( CB )
+volume -45.93dB ( D3 )
+volume -48.43dB ( DB )
+volume -50.93dB ( E3 )
+volume -53.43dB ( EB )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+
+
+Input selector: TAPE selected (IN2)
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -55.62dB ( F2 )
+volume -54.37dB ( EE )
+volume -53.12dB ( EA )
+volume -51.87dB ( E6 )
+volume -50.62dB ( E2 )
+volume -49.37dB ( DE )
+volume -48.12dB ( DA )
+volume -46.87dB ( D6 )
+volume -45.62dB ( D2 )
+volume -44.37dB ( CE )
+volume -43.12dB ( CA )
+volume -41.87dB ( C6 )
+volume -40.62dB ( C2 )
+volume -39.37dB ( BE )
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.43dB ( 9B )
+
+
+EJECT:volume -33.43dB ( AB )
+volume -38.43dB ( BB )
+volume -43.43dB ( CB )
+volume -45.93dB ( D3 )
+volume -48.43dB ( DB )
+volume -50.93dB ( E3 )
+volume -53.43dB ( EB )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Input selector: FM/AM selected (IN1) 
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -55.62dB ( F2 )
+volume -54.37dB ( EE )
+volume -53.12dB ( EA )
+volume -51.87dB ( E6 )
+volume -50.62dB ( E2 )
+volume -49.37dB ( DE )
+volume -48.12dB ( DA )
+volume -46.87dB ( D6 )
+volume -45.62dB ( D2 )
+volume -44.37dB ( CE )
+volume -43.12dB ( CA )
+volume -41.87dB ( C6 )
+volume -40.62dB ( C2 )
+volume -39.37dB ( BE )
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.43dB ( 9B )
+
+
+FM MODE, 
+
+seting volume up:
+volume -27.81dB ( 99 )
+volume -27.18dB ( 97 )
+volume -26.56dB ( 95 )
+volume -25.31dB ( 91 )
+volume -24.06dB ( 8D )
+volume -22.81dB ( 89 )
+Loudness: -17.5000000000dB
+volume -21.56dB ( 85 )
+volume -20.31dB ( 81 )
+volume -19.06dB ( 7D )
+Loudness: -16.2500000000dB
+volume -17.81dB ( 79 )
+Loudness: -15.0000000000dB
+volume -16.56dB ( 75 )
+Loudness: -13.7500000000dB
+volume -15.31dB ( 71 )
+Loudness: -12.5000000000dB
+volume -14.06dB ( 6D )
+Loudness: -11.2500000000dB
+volume -12.81dB ( 69 )
+Loudness: -10.0000000000dB
+volume -11.56dB ( 65 )
+volume -10.31dB ( 61 )
+volume -9.06dB ( 5D )
+volume -8.43dB ( 5B )
+volume -7.81dB ( 59 )
+volume -7.18dB ( 57 )
+volume -6.56dB ( 55 )
+volume -5.93dB ( 53 )
+volume -5.31dB ( 51 )
+volume -4.68dB ( 4F )
+volume -4.06dB ( 4D )
+volume -3.43dB ( 4B )
+volume -2.81dB ( 49 )
+Loudness: -8.7500000000dB
+volume -2.18dB ( 47 )
+Loudness: -7.5000000000dB
+volume -1.56dB ( 45 )
+volume -0.93dB ( 43 )
+volume -0.31dB ( 41 )
+volume 0.32dB ( 3F )
+volume 0.94dB ( 3D )
+volume 1.57dB ( 3B )
+volume 2.19dB ( 39 )
+volume 2.82dB ( 37 )
+volume 3.44dB ( 35 )
+volume 4.07dB ( 33 )
+volume 5.32dB ( 2F )
+volume 6.57dB ( 2B )
+volume 7.82dB ( 27 )
+volume 9.07dB ( 23 )
+volume 9.69dB ( 21 )
+volume 10.32dB ( 1F )
+volume 10.94dB ( 1D )
+volume 11.57dB ( 1B )
+volume 12.19dB ( 19 )
+volume 12.82dB ( 17 )
+volume 13.44dB ( 15 )
+volume 14.07dB ( 13 )
+volume 14.69dB ( 11 )
+volume 15.32dB ( F )
+volume 15.94dB ( D )
+volume 16.57dB ( B )
+volume 17.19dB ( 9 )
+volume 17.82dB ( 7 )
+
+
+fade:
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -2.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -2.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -3.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -3.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -5.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -5.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -6.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -6.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -7.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -7.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -8.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -8.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -10.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -10.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -11.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -11.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -12.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -12.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -13.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -13.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -15.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -15.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -16.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -16.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -15.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -15.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -13.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -13.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -12.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -12.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -11.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -11.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -10.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -10.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -8.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -8.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -7.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -7.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -6.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -6.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -5.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -5.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -3.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -3.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -2.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -2.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: -1.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -3.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -3.75dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -5.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -5.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -6.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -6.25dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -7.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -7.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -8.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -8.75dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -10.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -10.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -12.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -12.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -13.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -13.75dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -15.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -15.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -16.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -16.25dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -17.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -17.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: Muted
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: Muted
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -17.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -17.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -16.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -16.25dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -15.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -15.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -13.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -13.75dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -12.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -12.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -11.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -11.25dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -10.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -10.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -8.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -8.75dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -7.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -7.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -6.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -6.25dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -5.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -5.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -3.75dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -3.75dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -2.50dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+
+
+
+
+bal:
+
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: -1.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -2.50dB
+Speaker Attenuator left rear: -2.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -3.75dB
+Speaker Attenuator left rear: -3.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -5.00dB
+Speaker Attenuator left rear: -5.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -6.25dB
+Speaker Attenuator left rear: -6.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -7.50dB
+Speaker Attenuator left rear: -7.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -8.75dB
+Speaker Attenuator left rear: -8.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -10.00dB
+Speaker Attenuator left rear: -10.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -11.25dB
+Speaker Attenuator left rear: -11.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -13.75dB
+Speaker Attenuator left rear: -13.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -15.00dB
+Speaker Attenuator left rear: -15.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -16.25dB
+Speaker Attenuator left rear: -16.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -17.50dB
+Speaker Attenuator left rear: -17.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -18.75dB
+Speaker Attenuator left rear: -18.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -17.50dB
+Speaker Attenuator left rear: -17.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -16.25dB
+Speaker Attenuator left rear: -16.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -15.00dB
+Speaker Attenuator left rear: -15.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -13.75dB
+Speaker Attenuator left rear: -13.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -12.50dB
+Speaker Attenuator left rear: -12.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -11.25dB
+Speaker Attenuator left rear: -11.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -8.75dB
+Speaker Attenuator left rear: -8.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -7.50dB
+Speaker Attenuator left rear: -7.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -6.25dB
+Speaker Attenuator left rear: -6.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -5.00dB
+Speaker Attenuator left rear: -5.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -3.75dB
+Speaker Attenuator left rear: -3.75dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -2.50dB
+Speaker Attenuator left rear: -2.50dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: -1.25dB
+Speaker Attenuator left rear: -1.25dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -2.50dB
+Speaker Attenuator left rear: -2.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -6.25dB
+Speaker Attenuator left rear: -6.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -7.50dB
+Speaker Attenuator left rear: -7.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -8.75dB
+Speaker Attenuator left rear: -8.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -10.00dB
+Speaker Attenuator left rear: -10.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -11.25dB
+Speaker Attenuator left rear: -11.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -12.50dB
+Speaker Attenuator left rear: -12.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -13.75dB
+Speaker Attenuator left rear: -13.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -15.00dB
+Speaker Attenuator left rear: -15.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -17.50dB
+Speaker Attenuator left rear: -17.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -18.75dB
+Speaker Attenuator left rear: -18.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -17.50dB
+Speaker Attenuator left rear: -17.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -16.25dB
+Speaker Attenuator left rear: -16.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -13.75dB
+Speaker Attenuator left rear: -13.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -12.50dB
+Speaker Attenuator left rear: -12.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -11.25dB
+Speaker Attenuator left rear: -11.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -10.00dB
+Speaker Attenuator left rear: -10.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -8.75dB
+Speaker Attenuator left rear: -8.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -7.50dB
+Speaker Attenuator left rear: -7.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -6.25dB
+Speaker Attenuator left rear: -6.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -5.00dB
+Speaker Attenuator left rear: -5.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -3.75dB
+Speaker Attenuator left rear: -3.75dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -2.50dB
+Speaker Attenuator left rear: -2.50dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: -1.25dB
+Speaker Attenuator left rear: -1.25dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+
+
+tre:
+
+Bass: -2dB, Trebble: 2dB
+volume 16.88dB ( A )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 4dB
+volume 16.57dB ( B )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 8dB
+volume 15.94dB ( D )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 12dB
+volume 15.63dB ( E )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 10dB
+volume 15.63dB ( E )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 4dB
+volume 16.57dB ( B )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 2dB
+volume 16.88dB ( A )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -2dB
+volume 18.44dB ( 5 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -4dB
+volume 19.07dB ( 3 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -6dB
+volume 19.38dB ( 2 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -10dB
+volume 19.69dB ( 1 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 16dB
+volume 20.00dB ( 0 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -10dB
+volume 19.69dB ( 1 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -8dB
+volume 19.69dB ( 1 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -6dB
+volume 19.38dB ( 2 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -4dB
+volume 19.07dB ( 3 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: -2dB
+volume 18.44dB ( 5 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+
+
+bas: 
+Bass: 0dB, Trebble: 0dB
+volume 17.50dB ( 8 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 2dB, Trebble: 0dB
+volume 17.19dB ( 9 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 2dB, Trebble: 0dB
+volume 17.19dB ( 9 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 4dB, Trebble: 0dB
+volume 17.19dB ( 9 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 6dB, Trebble: 0dB
+volume 16.88dB ( A )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 6dB, Trebble: 0dB
+volume 16.88dB ( A )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 6dB, Trebble: 0dB
+volume 16.88dB ( A )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 2dB, Trebble: 0dB
+volume 17.19dB ( 9 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 2dB, Trebble: 0dB
+volume 17.19dB ( 9 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: 0dB, Trebble: 0dB
+volume 17.50dB ( 8 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -4dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -4dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -6dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -6dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -8dB, Trebble: 0dB
+volume 18.13dB ( 6 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -10dB, Trebble: 0dB
+volume 18.13dB ( 6 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -8dB, Trebble: 0dB
+volume 18.13dB ( 6 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -6dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -6dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -4dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -4dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Bass: -2dB, Trebble: 0dB
+volume 17.82dB ( 7 )
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+
+
+
+
+SCAN:
+volume 7.82dB ( 27 )
+volume -2.18dB ( 47 )
+volume -7.18dB ( 57 )
+volume -12.18dB ( 67 )
+volume -17.18dB ( 77 )
+volume -22.18dB ( 87 )
+volume -27.18dB ( 97 )
+volume -32.18dB ( A7 )
+volume -37.18dB ( B7 )
+volume -42.18dB ( C7 )
+volume -44.68dB ( CF )
+volume -47.18dB ( D7 )
+volume -49.68dB ( DF )
+volume -52.18dB ( E7 )
+volume -54.68dB ( EF )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -54.37dB ( EE )
+volume -51.87dB ( E6 )
+volume -49.37dB ( DE )
+volume -46.87dB ( D6 )
+volume -44.37dB ( CE )
+volume -41.87dB ( C6 )
+volume -39.37dB ( BE )
+volume -36.87dB ( B6 )
+volume -34.37dB ( AE )
+volume -31.87dB ( A6 )
+volume -29.37dB ( 9E )
+volume -26.87dB ( 96 )
+volume -24.37dB ( 8E )
+volume -21.87dB ( 86 )
+volume -19.37dB ( 7E )
+volume -16.87dB ( 76 )
+volume -14.37dB ( 6E )
+volume -11.87dB ( 66 )
+volume -10.62dB ( 62 )
+volume -9.37dB ( 5E )
+volume -8.12dB ( 5A )
+volume -6.87dB ( 56 )
+volume -5.62dB ( 52 )
+volume -4.37dB ( 4E )
+volume -3.12dB ( 4A )
+volume -1.87dB ( 46 )
+volume -0.62dB ( 42 )
+volume 0.63dB ( 3E )
+volume 1.88dB ( 3A )
+volume 3.13dB ( 36 )
+volume 4.38dB ( 32 )
+volume 5.63dB ( 2E )
+volume 6.88dB ( 2A )
+volume 8.13dB ( 26 )
+volume 8.75dB ( 24 )
+volume 9.38dB ( 22 )
+volume 10.00dB ( 20 )
+volume 10.63dB ( 1E )
+volume 11.25dB ( 1C )
+volume 11.88dB ( 1A )
+volume 12.50dB ( 18 )
+volume 13.13dB ( 16 )
+volume 13.75dB ( 14 )
+volume 14.38dB ( 12 )
+volume 15.00dB ( 10 )
+volume 15.63dB ( E )
+volume 16.25dB ( C )
+volume 16.88dB ( A )
+volume 17.82dB ( 7 )
+
+
+volume 7.82dB ( 27 )
+volume -2.18dB ( 47 )
+volume -7.18dB ( 57 )
+volume -12.18dB ( 67 )
+volume -17.18dB ( 77 )
+volume -22.18dB ( 87 )
+volume -27.18dB ( 97 )
+volume -32.18dB ( A7 )
+volume -37.18dB ( B7 )
+volume -42.18dB ( C7 )
+volume -44.68dB ( CF )
+volume -47.18dB ( D7 )
+volume -49.68dB ( DF )
+volume -52.18dB ( E7 )
+volume -54.68dB ( EF )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -54.37dB ( EE )
+volume -51.87dB ( E6 )
+volume -49.37dB ( DE )
+volume -46.87dB ( D6 )
+volume -44.37dB ( CE )
+volume -41.87dB ( C6 )
+volume -39.37dB ( BE )
+volume -36.87dB ( B6 )
+volume -34.37dB ( AE )
+volume -31.87dB ( A6 )
+volume -29.37dB ( 9E )
+volume -26.87dB ( 96 )
+volume -24.37dB ( 8E )
+volume -21.87dB ( 86 )
+volume -19.37dB ( 7E )
+volume -16.87dB ( 76 )
+volume -14.37dB ( 6E )
+volume -11.87dB ( 66 )
+volume -10.62dB ( 62 )
+volume -9.37dB ( 5E )
+volume -8.12dB ( 5A )
+volume -6.87dB ( 56 )
+
+volume -5.62dB ( 52 )
+volume -4.37dB ( 4E )
+volume -3.12dB ( 4A )
+volume -1.87dB ( 46 )
+volume -0.62dB ( 42 )
+volume 0.63dB ( 3E )
+volume 1.88dB ( 3A )
+volume 3.13dB ( 36 )
+volume 4.38dB ( 32 )
+volume 5.63dB ( 2E )
+volume 6.88dB ( 2A )
+volume 8.13dB ( 26 )
+volume 8.75dB ( 24 )
+volume 9.38dB ( 22 )
+
+volume 10.00dB ( 20 )
+volume 10.63dB ( 1E )
+volume 11.25dB ( 1C )
+volume 11.88dB ( 1A )
+volume 12.50dB ( 18 )
+volume 13.13dB ( 16 )
+volume 13.75dB ( 14 )
+volume 14.38dB ( 12 )
+volume 15.00dB ( 10 )
+volume 15.63dB ( E )
+volume 16.25dB ( C )
+volume 16.88dB ( A )
+volume 17.82dB ( 7 )
+
+
+
+stvolume 7.82dB ( 27 )
+avolume -2.18dB ( 47 )
+volume -7.18dB ( 57 )
+volume -12.18dB ( 67 )
+volume -17.18dB ( 77 )
+volume -22.18dB ( 87 )
+volume -27.18dB ( 97 )
+volume -32.18dB ( A7 )
+volume -37.18dB ( B7 )
+volume -42.18dB ( C7 )
+volume -44.68dB ( CF )
+volume -47.18dB ( D7 )
+tvolume -49.68dB ( DF )
+volume -52.18dB ( E7 )
+volume -54.68dB ( EF )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+ion Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -54.37dB ( EE )
+volume -51.87dB ( E6 )
+volume -49.37dB ( DE )
+volume -46.87dB ( D6 )
+volume -44.37dB ( CE )
+volume -41.87dB ( C6 )
+volume -39.37dB ( BE )
+volume -36.87dB ( B6 )
+volume -34.37dB ( AE )
+volume -31.87dB ( A6 )
+volume -29.37dB ( 9E )
+volume -26.87dB ( 96 )
+volume -24.37dB ( 8E )
+volume -21.87dB ( 86 )
+
+volume -19.37dB ( 7E )
+volume -16.87dB ( 76 )
+volume -14.37dB ( 6E )
+volume -11.87dB ( 66 )
+volume -10.62dB ( 62 )
+volume -9.37dB ( 5E )
+volume -8.12dB ( 5A )
+volume -6.87dB ( 56 )
+volume -5.62dB ( 52 )
+volume -4.37dB ( 4E )
+volume -3.12dB ( 4A )
+volume -1.87dB ( 46 )
+volume -0.62dB ( 42 )
+
+volume 0.63dB ( 3E )
+volume 1.88dB ( 3A )
+volume 3.13dB ( 36 )
+volume 4.38dB ( 32 )
+volume 5.63dB ( 2E )
+volume 6.88dB ( 2A )
+volume 8.13dB ( 26 )
+volume 8.75dB ( 24 )
+volume 9.38dB ( 22 )
+
+volume 10.00dB ( 20 )
+volume 10.63dB ( 1E )
+volume 11.25dB ( 1C )
+
+volume 11.88dB ( 1A )
+volume 12.50dB ( 18 )
+volume 13.13dB ( 16 )
+volume 13.75dB ( 14 )
+
+volume 14.38dB ( 12 )
+volume 15.00dB ( 10 )
+volume 15.63dB ( E )
+volume 16.25dB ( C )
+volume 16.88dB ( A )
+volume 17.82dB ( 7 )
+
+
+
+
+sttation are search and store at position 1-6...
+
+
+search:
+
+volume 7.82dB ( 27 )
+volume -2.18dB ( 47 )
+volume -7.18dB ( 57 )
+volume -12.18dB ( 67 )
+volume -17.18dB ( 77 )
+volume -22.18dB ( 87 )
+volume -27.18dB ( 97 )
+volume -32.18dB ( A7 )
+volume -37.18dB ( B7 )
+volume -42.18dB ( C7 )
+volume -44.68dB ( CF )
+volume -47.18dB ( D7 )
+volume -49.68dB ( DF )
+volume -52.18dB ( E7 )
+volume -54.68dB ( EF )
+volume -59.37dB ( FE )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: -2dB, Trebble: 0dB
+volume -56.87dB ( F6 )
+volume -54.37dB ( EE )
+volume -51.87dB ( E6 )
+volume -49.37dB ( DE )
+volume -46.87dB ( D6 )
+volume -44.37dB ( CE )
+volume -41.87dB ( C6 )
+volume -39.37dB ( BE )
+volume -36.87dB ( B6 )
+volume -34.37dB ( AE )
+volume -31.87dB ( A6 )
+volume -29.37dB ( 9E )
+volume -26.87dB ( 96 )
+volume -24.37dB ( 8E )
+volume -21.87dB ( 86 )
+volume -19.37dB ( 7E )
+volume -16.87dB ( 76 )
+volume -14.37dB ( 6E )
+volume -11.87dB ( 66 )
+volume -10.62dB ( 62 )
+volume -9.37dB ( 5E )
+volume -8.12dB ( 5A )
+volume -6.87dB ( 56 )
+volume -5.62dB ( 52 )
+volume -4.37dB ( 4E )
+volume -3.12dB ( 4A )
+volume -1.87dB ( 46 )
+volume -0.62dB ( 42 )
+volume 0.63dB ( 3E )
+volume 1.88dB ( 3A )
+volume 3.13dB ( 36 )
+volume 4.38dB ( 32 )
+volume 5.63dB ( 2E )
+volume 6.88dB ( 2A )
+volume 8.13dB ( 26 )
+volume 8.75dB ( 24 )
+volume 9.38dB ( 22 )
+volume 10.00dB ( 20 )
+volume 10.63dB ( 1E )
+volume 11.25dB ( 1C )
+volume 11.88dB ( 1A )
+volume 12.50dB ( 18 )
+volume 13.13dB ( 16 )
+volume 13.75dB ( 14 )
+volume 14.38dB ( 12 )
+volume 15.00dB ( 10 )
+volume 15.63dB ( E )
+volume 16.25dB ( C )
+volume 16.88dB ( A )
+volume 17.82dB ( 7 )
+
+
+
+station was tuned up.

@@ -1,0 +1,80 @@
+Input selector: FM/AM selected (IN1) 
+Loudness: -16.2500000000dB
+volume -6.25dB ( 54 )
+Bass: 4dB, Trebble: -2dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Mute: Soft Mute with slow slope (I = Imin)
+Zero Crossing Mute On
+160mV ZC Window Threshold (WIN = 00)
+Nonsymmetrical Bass Cut
+
+
+so, TAPE DRIVE INSTALED ... just in case it will change something :D
+
+powering up:
+
+Input selector: FM/AM selected (IN1) 
+Loudness: -16.2500000000dB
+volume -6.25dB ( 54 )
+Bass: 4dB, Trebble: -2dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Mute: Soft Mute with slow slope (I = Imin)
+Zero Crossing Mute On
+160mV ZC Window Threshold (WIN = 00)
+Nonsymmetrical Bass Cut
+
+MODE:
+cd selected ...nothing here :/
+
+FM: again, nothing here:
+
+.... ok trying to fake pushing button for emulating inserting real tape:
+
+TAPE selected, display show: tape: ..... nothing here again... going for mode button:
+
+we are in CD and nothing here :(
+
+fm, nothing here:/ 
+
+
+
+is this still working? :
+
+
+Loudness: -15.0000000000dB
+volume -5.00dB ( 50 )
+Loudness: -13.7500000000dB
+volume -3.75dB ( 4C )
+Loudness: -12.5000000000dB
+volume -2.50dB ( 48 )
+Loudness: -11.2500000000dB
+volume -1.25dB ( 44 )
+Loudness: -10.0000000000dB
+volume 0.00dB ( 40 )
+Loudness: -11.2500000000dB
+volume -1.25dB ( 44 )
+Loudness: -12.5000000000dB
+volume -2.50dB ( 48 )
+Loudness: -13.7500000000dB
+volume -3.75dB ( 4C )
+Loudness: -15.0000000000dB
+volume -5.00dB ( 50 )
+Loudness: -16.2500000000dB
+volume -6.25dB ( 54 )
+Loudness: -17.5000000000dB
+volume -7.50dB ( 58 )
+Loudness: -18.7500000000dB
+volume -8.75dB ( 5C )
+
+
+shure we are grabing i2c, no problem..... so input selecting is not supported....
+
+
+--- exit ---
+

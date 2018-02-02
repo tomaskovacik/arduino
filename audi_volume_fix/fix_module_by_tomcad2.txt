@@ -1,0 +1,101 @@
+hello
+Input selector: FM/AM selected (IN1) 
+Loudness: -16.2500000000dB
+volume -6.25dB ( 54 )
+Bass: 4dB, Trebble: -2dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Mute: Soft Mute with slow slope (I = Imin)
+Zero Crossing Mute On
+160mV ZC Window Threshold (WIN = 00)
+Nonsymmetrical Bass Cut
+
+
+
+
+
+powerup
+
+Input selector: FM/AM selected (IN1) 
+Loudness: -16.2500000000dB
+volume -6.25dB ( 54 )
+Bass: 4dB, Trebble: -2dB
+Speaker Attenuator left front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: 0.00dB
+Speaker Attenuator left rear: 0.00dB
+Mute: Soft Mute with slow slope (I = Imin)
+Zero Crossing Mute On
+160mV ZC Window Threshold (WIN = 00)
+Nonsymmetrical Bass Cut
+
+
+mode:
+
+->TAPE->CD nothign here....
+
+
+radio selected...
+
+
+bass:
+Bass: 6dB, Trebble: -2dB
+Bass: 8dB, Trebble: -2dB
+Bass: 10dB, Trebble: -2dB
+Bass: 12dB, Trebble: -2dB
+Bass: 14dB, Trebble: -2dB
+Bass: 14dB, Trebble: -2dB
+Bass: 14dB, Trebble: -2dB
+Bass: 14dB, Trebble: -2dB
+Bass: 14dB, Trebble: -2dB
+Bass: 12dB, Trebble: -2dB
+Bass: 10dB, Trebble: -2dB
+Bass: 8dB, Trebble: -2dB
+Bass: 6dB, Trebble: -2dB
+Bass: 4dB, Trebble: -2dB
+Bass: 2dB, Trebble: -2dB
+Bass: 0dB, Trebble: -2dB
+Bass: 0dB, Trebble: 0dB
+Bass: 0dB, Trebble: 2dB
+Bass: 0dB, Trebble: 4dB
+Bass: 0dB, Trebble: 6dB
+Bass: 0dB, Trebble: 8dB
+Bass: 0dB, Trebble: 10dB
+Bass: 0dB, Trebble: 12dB
+
+
+
+
+
+
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+
+
+still pushing just FM..... and look:
+
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+Input selector: TAPE selected (IN2)
+Input selector: FM/AM selected (IN1) 
+ fucked ....
+
+grrr
