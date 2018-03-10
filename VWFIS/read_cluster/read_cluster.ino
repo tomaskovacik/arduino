@@ -149,8 +149,10 @@ void FIS_READ_detect_ena_line_falling(){
 void setup() { 
   lcd.begin(16,2);
   lcd.home();
-  lcd.print("FIS cluster emu");
-  delay (1000);
+  lcd.print("FIS cluster");
+  lcd.setCursor(0,1);
+  lcd.print("reader");
+  delay (2000);
   lcd.clear();
   Serial.begin(9600);
   pinMode(FIS_READ_CLK,INPUT_PULLUP);
