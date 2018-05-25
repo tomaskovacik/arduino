@@ -97,7 +97,9 @@ with level shifter interla pullups are 10k for this shifter:
 
 
 	RADIO DATA   o---------|5V  level shift 3V3|-----------o MCU
+
 	RADIO CLK    o---------|5V  level shift 3V3|-----------o MCU
+
 	RADIO ENABLE o----+----|5V  level shift 3V3|-----+-----o MCU
 	                  |                              |
         	         ---                            ---
