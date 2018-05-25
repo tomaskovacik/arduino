@@ -1,3 +1,10 @@
+/*
+ * (C) Tomas Kovacik
+ * https://github.com/tomaskovacik/
+ * GNU GPL3
+ */
+
+
 #include "VAGFISReader.h"
 #include <Arduino.h>
 
@@ -24,155 +31,50 @@ VAGFISReader::~VAGFISReader(){}
 void VAGFISReader::init()
 {
   //delay (2000);
-  pinMode(FIS_READ_CLK,INPUT_PULLUP);//_PULLUP ?
-  pinMode(FIS_READ_DATA,INPUT_PULLUP);//_PULLUP?
-  pinMode(FIS_READ_ENA,INPUT_PULLDOWN);//no pull up! this is inactive state low, active is high
-  attachInterrupt(FIS_READ_ENA,&VAGFISReader::detect_ena_line_rising,RISING);
-
+  pinMode(FIS_READ_CLK,INPUT_PULLUP);
+  pinMode(FIS_READ_DATA,INPUT_PULLUP);
+  pinMode(FIS_READ_ENA,INPUT);//no pull up! this is inactive state low, active is high
+  attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING);
 };
 
 void VAGFISReader::read_data_line(){ //fired on falling edge
+// The lines Data and Clock use negative logic, i.e. the logical unit corresponds to the low level on the line, the high level on the line corresponds to the logical zero. 
   newmsg_from_radio=0;
-/*    if(!adrok){
-      read_adr();
-    }
-    else if (!newmsg1){
-      read_msg1();
-    }
-    else if (!newmsg2){
-      read_msg2();
-    }
-    else if (!cksumok){
-      read_cksum();
-    }*/
 if(digitalRead(FIS_READ_DATA)){
-    data[msgbit/8] = (data[msgbit/8]<<1) | 0x00000001;
-    msgbit++;
-  }
-  else
-  {
     data[msgbit/8] = (data[msgbit/8]<<1);
     msgbit++;
   }
-}
-/*
-void VAGFISReader::read_cksum(){
-  if(digitalRead(FIS_READ_DATA)){
-    cksum = (cksum<<1) | 0x00000001;
-    msgbit++;
-  }
   else
   {
-    cksum = (cksum<<1);
+    data[msgbit/8] = (data[msgbit/8]<<1) | 0x00000001;
     msgbit++;
   }
-  if (msgbit==8)
-  {
-    newmsg1=0;
-    newmsg2=0;
-    adrok=0;
-    tmp_cksum=(0xFF^adr);
-	Serial.print(adr);
-    for (int i=56;i>=0;i=i-8){
-	      tmp_cksum=tmp_cksum+(0xFF^((msg1>>i) & 0xFF))
-		+(0xFF^((msg2>>i) & 0xFF));
-		Serial.write(0xFF^((msg1>>i) & 0xFF));
-		Serial.write(0xFF^((msg2>>i) & 0xFF));
-    }
-    if (!cksumok){//d we display what we reveived last time?
-    if((tmp_cksum%256)==cksum){
-    cksumok=1;
-    } else {
-      msg1 = 0x00000000;
-      msg2 = 0x00000000;
-      cksumok=0;
-    }
-    msgbit=0;
-    }
-Serial.println();
-  }
-
+  
 }
-
-void VAGFISReader::read_msg1(){
-  if(digitalRead(FIS_READ_DATA)){
-    msg1 = (msg1<<1) | 0x00000001;
-    msgbit++;
-  }
-  else
-  {
-    msg1 = (msg1<<1);
-    msgbit++;
-  }
-  if (msgbit==64)
-  {
-    newmsg1=1;
-    msgbit=0;
-  }
-}
-
-void VAGFISReader::read_msg2(){
-  if(digitalRead(FIS_READ_DATA)){
-    msg2 = (msg2<<1) | 0x00000001;
-    msgbit++;
-  }
-  else
-  {
-    msg2 = (msg2<<1);
-    msgbit++;
-  }
-  if (msgbit==64)
-  {
-    newmsg2=1;
-    msgbit=0;
-  }
-}
-
-void VAGFISReader::read_adr(){
-  if(digitalRead(FIS_READ_DATA)){
-    adr = (adr<<1) | 0x00000001;
-    msgbit++;
-  }
-  else
-  {
-    adr = (adr<<1);
-    msgbit++;
-  }
-  if (msgbit==8)
-  {
-    adrok=1;
-    msgbit=0;
-  }
-}
-*/
-
 
 void VAGFISReader::detect_ena_line_rising(){
-    //init all again
-    //msgbit=1; //0 position is size of packet
-//    newmsg1=0;
-//   newmsg2=0;
-//    adrok=0;
-//    cksumok=0;
-//    tmp_cksum=0;
-//    grabbing=1;
-    attachInterrupt(FIS_READ_CLK,&VAGFISReader::read_data_line,FALLING);//data are valid on falling edge of FIS_READ_CLK 
-    attachInterrupt(FIS_READ_ENA,&VAGFISReader::detect_ena_line_falling,FALLING); //if enable changed to low, data on data line are no more valid
+msgbit=0;
+newmsg_from_radio=0; 
+    attachInterrupt(digitalPinToInterrupt(FIS_READ_CLK),&VAGFISReader::read_data_line,FALLING);//data are valid on falling edge of FIS_READ_CLK 
+    attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_falling,FALLING); //if enable changed to low, data on data line are no more valid
 }
 
 void VAGFISReader::detect_ena_line_falling(){
-  //if (cksum == 1) grabbing=0;
-  detachInterrupt(FIS_READ_CLK);//enable is low, data on data line are no more valid
-  detachInterrupt(FIS_READ_ENA);
-data[0] = msgbit/8;
-    msgbit=8; //0 position is size of packet 8/8=1
-  newmsg_from_radio=1;
-  attachInterrupt(FIS_READ_ENA,&VAGFISReader::detect_ena_line_rising,RISING);
+  detachInterrupt(digitalPinToInterrupt(FIS_READ_CLK));//enable is low, data on data line are no more valid
+  detachInterrupt(digitalPinToInterrupt(FIS_READ_ENA));
+  packet_size=0;
+  //navi is same for all V.A.G. cars
+  if(msgbit>0){
+	packet_size = msgbit/8;
+	msgbit=0; // we are calculating array member position by divisoning msgbit by 8, so to start shift in on second member (id 1) we must start msgbit more or equal 8
+	if (check_data()) //check cksum...
+		newmsg_from_radio=1;
+}
+  attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING);
 }
 
 bool VAGFISReader::has_new_msg(){
-        if(newmsg_from_radio) return true; 
-	else return false;
+	return newmsg_from_radio;
 }
 
 void VAGFISReader::clear_new_msg_flag(){
@@ -180,20 +82,66 @@ void VAGFISReader::clear_new_msg_flag(){
 }
 
 uint8_t VAGFISReader::read_data(int8_t id){
-	if (id>0)
-	return (0xFF^data[id]);
-	else 
-	return data[0];
+		return data[id];
 }
-/*
-uint64_t VAGFISReader::GetMsg(int msgid){
-   if (!grabbing){
-	if(msgid==1)
-	return msg1;
-	else
-	return msg2;
-	} else {
+
+bool VAGFISReader::request(){
+if (!digitalRead(FIS_READ_ENA)) {//safe to ack/request another packet from radio	
+	detachInterrupt((FIS_READ_ENA));
+	pinMode(FIS_READ_ENA,OUTPUT);
+	digitalWrite(FIS_READ_ENA,HIGH);
+	delay(3);
+	digitalWrite(FIS_READ_ENA,LOW);
+	pinMode(FIS_READ_ENA,INPUT);
+	attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING);
+	return true;
+} else {
 	return false;
+}
+}
+
+bool VAGFISReader::msg_is_navi(){
+	return navi;
+}
+
+
+bool VAGFISReader::check_data(){
+	if (packet_size == 18 && data[0] == 0xF0){ // radio mode
+		navi = 0;
+		if(calc_checksum()) return true;
+	} else {
+		navi=1;
+		if (calc_checksum()) return true;
 	}
-	
-}*/
+	return false;
+}
+
+uint8_t VAGFISReader::get_msg_id(){
+	return data[1];
+}
+
+uint8_t VAGFISReader::get_size(){
+	return packet_size;
+}
+
+bool VAGFISReader::calc_checksum(){
+	uint8_t tmp=0;
+	if (!navi){
+		for (uint8_t i=0;i<17;i++){
+				tmp=tmp+data[i];
+		}
+		if (data[packet_size-1] == ((0xFF ^ tmp ) & 0xFF)){
+			return true;}
+	} else { //navi
+                for (uint8_t i=1;i<packet_size;i++){
+                                tmp ^= data[i];
+                }
+                if (data[packet_size-1] == tmp){
+                        return true;	}	
+	}
+	return false;
+}
+
+uint8_t VAGFISReader::get_checksum(){
+	return data[packet_size-1];
+}

@@ -1,30 +1,39 @@
+/* (C) T.Kovacik
+ *  http://github.com/tomaskovacik/
+ *  
+ *  example of using VAGFISREader.h on STM32, arduino untested, yet
+ *  
+ */
+
 #include <VAGFISReader.h>
+//arduino
+//#define RADIO_CLK 2
+//#define RADIO_DATA 4
+//#define RADIO_ENA 3
+//stm32
+#define RADIO_CLK PB0 //on EXTI0
+#define RADIO_DATA PA1 //no interrupt attached to this pin only using digitalRead here
+#define RADIO_ENA PB1 //on EXTI1
 
-#define RADIO_CLK PB0
-#define RADIO_DATA PA1
-#define RADIO_ENA PB1
-
-VAGFISReader radio_read(RADIO_CLK,RADIO_DATA,RADIO_ENA);
-
+VAGFISReader radio_read(RADIO_CLK, RADIO_DATA, RADIO_ENA);
+long last_update=0;
 void setup() {
-  digitalWrite(RADIO_ENA,LOW);
-
-  // put your setup code here, to run once:
-radio_read.init();
-Serial.begin(115200);
+  radio_read.init();
+  Serial.begin(115200);
 }
 
 void loop() {
-
-if (radio_read.has_new_msg()){
-  Serial.println("new msg");
-  uint8_t grg=radio_read.read_data(0);
-  Serial.print("pocet poli v data: ");Serial.println(grg);
-  for (uint8_t i = 0;i<grg;i++){
-    grg=radio_read.read_data(i);
-    Serial.write(grg);
+  if (radio_read.has_new_msg()) {    
+    for (uint8_t i = 1; i <radio_read.get_size()-1; i++) { //2st byte is "address"?, last is checksumm
+        Serial.write(radio_read.read_data(i));
+    }
+    Serial.println();
+    radio_read.clear_new_msg_flag();
+    last_update=millis();
   }
-  Serial.println();
-  radio_read.clear_new_msg_flag();
-}
+
+  if((millis()-last_update)>5000){
+    radio_read.request();
+    last_update=millis();
+  }
 }
