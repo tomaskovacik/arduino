@@ -117,7 +117,7 @@ bool VAGFISReader::check_data(){
 }
 
 uint8_t VAGFISReader::get_msg_id(){
-	return data[1];
+	return data[0];
 }
 
 uint8_t VAGFISReader::get_size(){
