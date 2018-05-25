@@ -66,7 +66,7 @@ void VAGFISReader::detect_ena_line_falling(){
   //navi is same for all V.A.G. cars
   if(msgbit>0){
 	packet_size = msgbit/8;
-	msgbit=0; // we are calculating array member position by divisoning msgbit by 8, so to start shift in on second member (id 1) we must start msgbit more or equal 8
+	msgbit=0;
 	if (check_data()) //check cksum...
 		newmsg_from_radio=1;
 }
