@@ -16,8 +16,7 @@ packet overvie: http://kovo-blog.blogspot.sk/2013/11/audi-fis-3-line-protocol.ht
 
 FULLY TESTED: radio mode on stm32 (bluepill board) over 3v resistor (10k to 47k) with 10k pullup on data and clk line, these pull up are required! I check lot of schematics of radios, and most of them do not have internall pullups, so if it works without nice ,but mostly it will not. In case of 5V board (AVR MCU) internal pull up is ok, in case of 3v3 mcu external pull up + divider is erquired, if transistor based level shifter with internal pullup is used, check what value are these pullups and make stronger pulldown (half value resistor will do) on both low a high level side of ENABLE line(tested with mosfet based level shifter)
 
-TODO:	test on arduino
-	implement NAVI MODE
+TODO:	implement NAVI MODE
 
 
   how it works:
