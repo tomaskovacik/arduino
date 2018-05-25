@@ -96,18 +96,18 @@ RADIO CLK:
 with level shifter interla pullups are 10k for this shifter:
 
 
-RADIO DATA   o---------|5V  level shift 3V3|-----------o MCU
-RADIO CLK    o---------|5V  level shift 3V3|-----------o MCU
-RADIO ENABLE o----+----|5V  level shift 3V3|-----+-----o MCU
-                  |                              |
-                 ---                            ---
-                 | |                            | |
-                 4k3                            4k3
-                 | |                            | |
-                 ---                            ---
-                  |                              |
-                 _|_                            _|_
-                 GND                            GND
+	RADIO DATA   o---------|5V  level shift 3V3|-----------o MCU
+	RADIO CLK    o---------|5V  level shift 3V3|-----------o MCU
+	RADIO ENABLE o----+----|5V  level shift 3V3|-----+-----o MCU
+	                  |                              |
+        	         ---                            ---
+                	 | |                            | |
+	                 4k3                            4k3
+        	         | |                            | |
+                	 ---                            ---
+	                  |                              |
+        	         _|_                            _|_
+                	 GND                            GND
 
 
 more for russion forum drive.ru translated on google:
