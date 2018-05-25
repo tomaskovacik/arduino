@@ -2,7 +2,7 @@ library for reading V.A.G. 3lb line from radio
 
 library in development, 
 
-inmputs: 3lines, ena/data/clk
+input are 3lines: ena/data/clk
 
 interupt on ena: rising edge enable falling edge detection on clk like
 
