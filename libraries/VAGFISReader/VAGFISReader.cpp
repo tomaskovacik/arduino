@@ -59,7 +59,6 @@ void VAGFISReader::read_data_line(){ //fired on falling edge
 				digitalWrite(FIS_READ_ENA,LOW);
 				pinMode(FIS_READ_ENA,INPUT);
   				attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING);
-				debug=0;
 				if (check_data()) //check cksum...
         	        	        newmsg_from_radio=1;
 				detachInterrupt(digitalPinToInterrupt(FIS_READ_CLK));
@@ -143,7 +142,6 @@ bool VAGFISReader::check_data(){
 		if(calc_checksum()) return true;
 	} else {
 		navi=1;
-		debug++;
 		if (calc_checksum()) return true;
 	}
 	return false;
@@ -177,8 +175,4 @@ bool VAGFISReader::calc_checksum(){
 
 uint8_t VAGFISReader::get_checksum(){
 	return data[packet_size-1];
-}
-
-uint8_t VAGFISReader::get_debug(){
-	return debug;
 }
