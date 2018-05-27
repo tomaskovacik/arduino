@@ -169,6 +169,7 @@ volatile static uint8_t msgbit;
 volatile static uint8_t navi=0;
 volatile static uint8_t newmsg_from_radio=0;
 volatile static uint8_t packet_size=0;
+volatile static uint8_t pre_navi=0;
 volatile static uint8_t data[255] ;
 static uint8_t FIS_READ_CLK;
 static uint8_t FIS_READ_DATA;
