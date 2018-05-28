@@ -131,7 +131,7 @@ RADIO ENABLE o----+----|5V  level shift 3V3|-----+-----o MCU
                  GND                            GND
 
 
-more for russion forum drive.ru translated on google:
+more for russion forum passatworld.ru translated on google:
 
 Data transmission is carried out on 3 lines (Data, Clock, Enable). Working voltage on 5V lines.
 Data and Clock lines are unidirectional, line management is performed by the master device. The default lines are high.
