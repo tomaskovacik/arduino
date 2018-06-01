@@ -539,10 +539,10 @@ uint16_t timeout_us;
   FIS_WRITE_3LB_sendByte(data[FIS_MSG_COMMAND]); //ID
   FIS_WRITE_stopENA();//setEnableLow();
   // Step 2 - wait for response from cluster to set ENA-High
-  timeout_us = 6000;
+  timeout_us = 1000;
   while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
-    delayMicroseconds(20);
-    timeout_us -= 20;
+    delayMicroseconds(1);
+    timeout_us -= 1;
   }
 //	if (timeout_us<=0) {
 //		Serial.println("timeout reached at sendRawData");
@@ -559,7 +559,7 @@ for (uint16_t a=1;a<data[1]+1;a++)
       crc ^= data[a];
     FIS_WRITE_3LB_sendByte(data[a]);
     // Step 10.2 - wait for response from cluster to set ENA-High
-    timeout_us = 1500;
+    timeout_us = 1000;
     while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
       delayMicroseconds(1);
       timeout_us -= 1;
@@ -622,10 +622,10 @@ uint16_t timeout_us;
   byte msg_end = msg_length + 1;
 
   // Step 2 - wait for response from cluster to set ENA-High
-  timeout_us = 1500;
+  timeout_us = 1000;
   while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
-    delayMicroseconds(20);
-    timeout_us -= 20;
+    delayMicroseconds(1);
+    timeout_us -= 1;
   }
 //if (timeout_us<=0) {
 //Serial.println("timeout reached at FIS_WRITE_send_3LB_msg");
@@ -649,7 +649,7 @@ uint16_t timeout_us;
     FIS_WRITE_3LB_sendByte(in_msg[i]);
 
     // Step 10.2 - wait for response from cluster to set ENA-High
-    timeout_us = 1500;
+    timeout_us = 1000;
     while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
       delayMicroseconds(1);
       timeout_us -= 1;
