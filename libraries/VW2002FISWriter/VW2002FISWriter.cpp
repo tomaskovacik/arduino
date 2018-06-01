@@ -1,3 +1,29 @@
+/*
+Data transmission is carried out on 3 lines (Data, Clock, Enable). Working voltage on 5V lines.
+Data and Clock lines are unidirectional, line management is performed by the master device. The default lines are high.
+The lines Data and Clock use negative logic, i.e. the logical unit corresponds to the low level on the line, the high level on the line corresponds to the logical zero.
+The Enable line is bi-directional, the master device initiates the transfer, the slave device confirms reception and is ready to receive the next data piece. The default line is low.
+The initiation of transmission and confirmation is carried out by a high level on the line. 
+
+The transmission speed is up to ~ 125-130kHz.
+On the bus there is a master and slave device. The dashboard always acts as a slave.
+Transmission is carried out by packages. The size of the packet depends on the data transmitted (see part 2).
+
+The master device before the start of transmission looks at the presence of a low signal level on the Enable line.
+Having a high level indicates that the line is busy or the slave device can not currently receive data.
+
+The master device sets the Enable line to a high level and begins sending the first byte of the sending.
+The next data bit from the line is read when the clock signal goes from high to low (from logical zero to one).
+After transmission of the first byte, the master sets the low level on the Enable line and waits for the slave device to "raise" the Enable line, indicating that it is ready to receive the next byte.
+By taking another byte slave, the device "drops" the Enable line, and the master device waits for the Enable line to "rise" again to transmit the next byte.
+Thus, the Master controls the Enable line only when transmitting the first byte of each packet, and then only controls the presence on it of a high level of the speaker saying that the slave is ready to receive.
+In case the slave did not raise the Enable line to receive the next byte within ~ 150-200us, it's necessary to start sending the packet again after waiting at least 3-4ms.
+Do not raise the slave line Enable can also mean that the slave detected an error in the transmitted data and is not ready to continue receiving.
+
+There is one more option for data transfer in which the master raises the Enable line before starting the transfer and drops it only after the transfer of the entire packet.
+It is necessary to pause between bytes of approximately 80-100us. And also to pause at least 4-5ms between packets, especially if packets go on continuously.
+Unfortunately, in this mode, it is not possible to control the transmitted data. A slave may simply not accept the package, and the master will not know about it.
+*/
 #include "VW2002FISWriter.h"
 //#include <MemoryFree.h>
 #include <Arduino.h>
@@ -43,7 +69,7 @@ void VW2002FISWriter::FIS_init() {
   //delay(200);
   //FIS_WRITE_send_3LB_singleByteCommand(0xC3);
   //delay(200);
- // FIS_WRITE_send_3LB_singleByteCommand(0xF0);
+  //FIS_WRITE_send_3LB_singleByteCommand(0xF0);
   //delay(200);
   //FIS_WRITE_send_3LB_singleByteCommand(0xC3);
   //delay(200);
@@ -507,34 +533,31 @@ uint16_t timeout_us;
 #ifdef ENABLE_IRQ
   cli();
 #endif
-  sendEnablePulse();
   // Send FIS-command
+  //setEnableHigh();
+  FIS_WRITE_startENA();
   FIS_WRITE_3LB_sendByte(data[FIS_MSG_COMMAND]); //ID
-  setDataHigh();
-
+  FIS_WRITE_stopENA();//setEnableLow();
   // Step 2 - wait for response from cluster to set ENA-High
-  timeout_us = 5000;
+  timeout_us = 6000;
   while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
     delayMicroseconds(20);
     timeout_us -= 20;
   }
-	if (timeout_us<=0) {
-		Serial.println("timeout reached at sendRawData");
-		setDataLow();
-		sendRawData(data);
-		return;
-	}
+//	if (timeout_us<=0) {
+//		Serial.println("timeout reached at sendRawData");
+//		sendRawData(data);
+//		return;
+//	}
 
   uint8_t crc =data[FIS_MSG_COMMAND];
 for (uint16_t a=1;a<data[1]+1;a++)
   {
     // Step 9.2 - ENA-Low detected
-      setDataLow();
     delayMicroseconds(40);
     // calculate checksum
       crc ^= data[a];
     FIS_WRITE_3LB_sendByte(data[a]);
-    setDataLow();
     // Step 10.2 - wait for response from cluster to set ENA-High
     timeout_us = 1500;
     while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
@@ -545,9 +568,6 @@ for (uint16_t a=1;a<data[1]+1;a++)
 crc--;
 FIS_WRITE_3LB_sendByte(crc);
 
-  // Step 9.5 - ENA-Low detected
-  setDataLow();
-//Serial.println();
 #ifdef ENABLE_IRQ
   sei();
 #endif
@@ -590,12 +610,13 @@ uint16_t timeout_us;
   cli();
 #endif
 
-  sendEnablePulse();
+//  sendEnablePulse();
 
-  // Send FIS-command
-  FIS_WRITE_3LB_sendByte(in_msg[FIS_MSG_COMMAND]);
-delay(1);  
-setDataHigh();
+	// Send FIS-command
+	FIS_WRITE_startENA();//setEnableHigh();
+	FIS_WRITE_3LB_sendByte(in_msg[FIS_MSG_COMMAND]);
+	FIS_WRITE_stopENA();//setEnableLow();
+	//delay(1);  
 
   byte msg_length = in_msg[FIS_MSG_LENGTH];
   byte msg_end = msg_length + 1;
@@ -606,20 +627,15 @@ setDataHigh();
     delayMicroseconds(20);
     timeout_us -= 20;
   }
-if (timeout_us<=0) {
-Serial.println("timeout reached at FIS_WRITE_send_3LB_msg");
-setDataLow();
-FIS_WRITE_send_3LB_msg(in_msg);
-return;
-}
+//if (timeout_us<=0) {
+//Serial.println("timeout reached at FIS_WRITE_send_3LB_msg");
+//FIS_WRITE_send_3LB_msg(in_msg);
+//return;
+//}
 
   uint8_t crc =in_msg[FIS_MSG_COMMAND];
   for (int i = 1; i <= msg_end; i++)
   {
-    // Step 9.2 - ENA-Low detected
-    if (i > 1) {
-      setDataLow();
-    }
     delayMicroseconds(40);
 
     // calculate checksum
@@ -631,7 +647,6 @@ return;
     }
 
     FIS_WRITE_3LB_sendByte(in_msg[i]);
-    setDataLow();
 
     // Step 10.2 - wait for response from cluster to set ENA-High
     timeout_us = 1500;
@@ -641,8 +656,7 @@ return;
     }
   }
   // Step 9.5 - ENA-Low detected
-  setDataLow();
-//Serial.println();
+
 #ifdef ENABLE_IRQ
   sei();
 #endif
@@ -678,13 +692,11 @@ void VW2002FISWriter::FIS_WRITE_send_3LB_singleByteCommand(uint8_t txByte) {
   cli();
 #endif
 
-  sendEnablePulse();
-
-  // Send FIS-command
-  FIS_WRITE_3LB_sendByte(txByte);
-
-  delayMicroseconds(30);
-  setDataLow();
+	FIS_WRITE_startENA();//setEnableHigh();
+	// Send FIS-command
+	FIS_WRITE_3LB_sendByte(txByte);
+	FIS_WRITE_stopENA();//setEnableLow();
+	delayMicroseconds(30);
 
 #ifdef ENABLE_IRQ
   sei();
@@ -704,10 +716,13 @@ void VW2002FISWriter::sendEnablePulse() {
 } // sendEnablePulse
 
 
-//void VW2002FISWriter::printFreeMem() {
-//  Serial.print(F("FIS:freeMemory()="));
-//  Serial.println(freeMemory());
-//}
+void VW2002FISWriter::setEnableHigh() {
+  FIS_WRITE_startENA();
+} // sendEnablePulse
+
+void VW2002FISWriter::setEnableLow() {
+  FIS_WRITE_stopENA();
+} // sendEnablePulse
 
 /**
 
@@ -726,14 +741,15 @@ void VW2002FISWriter::FIS_WRITE_3LB_sendByte(int in_byte) {
       case 0: setDataLow();
         break;
     }
-    delayMicroseconds(FIS_WRITE_PULSEW / 1);
+    delayMicroseconds(FIS_WRITE_PULSEW);
     //delayMicroseconds(20);
     setClockHigh();
-    delayMicroseconds(FIS_WRITE_PULSEW * 2);
+    //delayMicroseconds(FIS_WRITE_PULSEW * 2);
+    delayMicroseconds(FIS_WRITE_PULSEW);
     //delayMicroseconds(40);
   }
 delayMicroseconds(50);
-Serial.print(in_byte,HEX);Serial.print(",");
+//Serial.print(in_byte,HEX);Serial.print(",");
 }
 
 /**
@@ -747,7 +763,7 @@ void VW2002FISWriter::FIS_WRITE_startENA() {
    Set 3LB ENA paaive Low
 */
 void VW2002FISWriter::FIS_WRITE_stopENA() {
-  digitalWrite(_FIS_WRITE_ENA, LOW);
+//  digitalWrite(_FIS_WRITE_ENA, LOW);
   pinMode(_FIS_WRITE_ENA, INPUT);
 }
 
