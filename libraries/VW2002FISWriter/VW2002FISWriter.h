@@ -1,3 +1,6 @@
+//enhanced version of:
+//credits: https://github.com/arildlangseid/vw_t4_tcu_temp_to_fis
+
 #ifndef VW2002FISWriter_h
 #define VW2002FISWriter_h
 

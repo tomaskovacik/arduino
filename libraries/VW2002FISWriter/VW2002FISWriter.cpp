@@ -1,4 +1,7 @@
 /*
+enhanced version of:
+credits: https://github.com/arildlangseid/vw_t4_tcu_temp_to_fis
+
 Data transmission is carried out on 3 lines (Data, Clock, Enable). Working voltage on 5V lines.
 Data and Clock lines are unidirectional, line management is performed by the master device. The default lines are high.
 The lines Data and Clock use negative logic, i.e. the logical unit corresponds to the low level on the line, the high level on the line corresponds to the logical zero.
