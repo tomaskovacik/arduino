@@ -15,9 +15,6 @@ In case of 5V board (AVR MCU) internal pull up is used, in case of 3v3 mcu exter
 
 
 
-TODO:
-	implement NAVI MODE
-
 
 BASICS:
 
@@ -41,7 +38,7 @@ ACTUAL PACKET CONSIST OF:
 - ENA goes LOW
 
 NAVI MODE:
-TODO
+
 - we have to determinate that we are in NAVI mode, in this case only ID is sent as packet if ENA line is LOW  and other parts of packet are send as requested by cluster (or this SW) by pulling ENA line HIGH(this is latching right?)
 - so we got first packet, it's only 8bits and it is not 0xF0 (radio mode), so presume we are in NAVI mode store this packet and also put it in (CRC=1stByte) and lets "latch other data in":
 
