@@ -34,6 +34,7 @@ void VAGFISReader::init()
   pinMode(FIS_READ_CLK,INPUT_PULLUP);
   pinMode(FIS_READ_DATA,INPUT_PULLUP);
   pinMode(FIS_READ_ENA,INPUT);//no pull up! this is inactive state low, active is high
+  digitalWrite(FIS_READ_ENA,LOW);
   attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING);
 };
 
@@ -42,32 +43,33 @@ void VAGFISReader::read_data_line(){ //fired on falling edge
   newmsg_from_radio=0;
   if(digitalRead(FIS_READ_DATA)){
     data[msgbit/8] = (data[msgbit/8]<<1);
-    msgbit++;
   }
   else
   {
-    data[msgbit/8] = (data[msgbit/8]<<1) | 0x00000001;
-    msgbit++;
+    data[msgbit/8] = (data[msgbit/8]<<1) | 1;
   }
   if(pre_navi) {
-	if ((msgbit%8) == 0 ){
-		digitalWrite(FIS_READ_ENA,LOW); // we have anothe packet
-		delayMicroseconds(5);
-		if(msgbit>=16){ //we are after data[1] which tell us size of packet
-			if (msgbit/8 == (data[1]+2)){//
-				packet_size=msgbit/8;
-				digitalWrite(FIS_READ_ENA,LOW);
-				pinMode(FIS_READ_ENA,INPUT);
-  				attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING);
-				if (check_data()) //check cksum...
-        	        	        newmsg_from_radio=1;
-				detachInterrupt(digitalPinToInterrupt(FIS_READ_CLK));
-			} else {
-				digitalWrite(FIS_READ_ENA,HIGH); //get as another packet
-			}
+	if (((msgbit+1)%8) == 0 ){ //each 8bit we have to put ena low and back high..
+		digitalWrite(FIS_READ_ENA,LOW);
+		delayMicroseconds(100);
+		if(msgbit == 15){
+			packet_size = data[1] + 2;
 		}
+		if ((msgbit+1) != packet_size*8){
+			digitalWrite(FIS_READ_ENA,HIGH); //based on data[1]+2 which is packet size +id+actual byte with packet size, we can calculate if we need another byte receive
+		} else {	
+			pinMode(FIS_READ_ENA,INPUT);
+			digitalWrite(FIS_READ_ENA,LOW); //pull down, just in case
+			attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING); //standard start scenario
+			msgbit=0;
+			pre_navi=0;
+			if (check_data()) //check cksum...
+       	        	        newmsg_from_radio=1;
+			detachInterrupt(digitalPinToInterrupt(FIS_READ_CLK));
+			} 
 	}
   }
+msgbit++;
 }
 
 void VAGFISReader::detect_ena_line_rising(){
@@ -75,7 +77,8 @@ void VAGFISReader::detect_ena_line_rising(){
 	newmsg_from_radio=0;
 	navi=0;
 	pre_navi=0;
-	attachInterrupt(digitalPinToInterrupt(FIS_READ_CLK),&VAGFISReader::read_data_line,RISING);//data are valid on falling edge of FIS_READ_CLK 
+	
+	attachInterrupt(digitalPinToInterrupt(FIS_READ_CLK),&VAGFISReader::read_data_line,FALLING);//data are valid on falling edge of FIS_READ_CLK 
 	attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_falling,FALLING); //if enable changed to low, data on data line are no more valid
 }
 
@@ -90,13 +93,16 @@ void VAGFISReader::detect_ena_line_falling(){
 			newmsg_from_radio=1;
 		attachInterrupt(digitalPinToInterrupt(FIS_READ_ENA),&VAGFISReader::detect_ena_line_rising,RISING);
 	}
-	else  {
-    		attachInterrupt(digitalPinToInterrupt(FIS_READ_CLK),&VAGFISReader::read_data_line,RISING);//data are valid on falling edge of FIS_READ_CLK 
-		pre_navi=1;
-		pinMode(FIS_READ_ENA,OUTPUT);
-		digitalWrite(FIS_READ_ENA,LOW);
-		delayMicroseconds(5);
-		digitalWrite(FIS_READ_ENA,HIGH);
+	else  { 
+		if(!pre_navi){
+			packet_size=0;
+	    		attachInterrupt(digitalPinToInterrupt(FIS_READ_CLK),&VAGFISReader::read_data_line,FALLING);//data are valid on falling edge of FIS_READ_CLK 
+			pre_navi=1;
+			pinMode(FIS_READ_ENA,OUTPUT);
+			digitalWrite(FIS_READ_ENA,LOW);
+			delayMicroseconds(5);
+			digitalWrite(FIS_READ_ENA,HIGH);
+		}
 	}
   }
   else {

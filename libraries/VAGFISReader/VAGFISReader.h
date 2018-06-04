@@ -165,7 +165,7 @@ Unfortunately, in this mode, it is not possible to control the transmitted data.
 
 #include <inttypes.h>
 #include <Arduino.h>
-volatile static uint8_t msgbit;
+volatile static uint16_t msgbit;
 volatile static uint8_t navi=0;
 volatile static uint8_t newmsg_from_radio=0;
 volatile static uint8_t packet_size=0;
