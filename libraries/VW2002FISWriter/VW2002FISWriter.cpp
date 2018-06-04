@@ -63,9 +63,9 @@ void VW2002FISWriter::FIS_init() {
   digitalWrite(_FIS_WRITE_ENA, LOW);
   FIS_WRITE_stopENA();
   pinMode(_FIS_WRITE_CLK, OUTPUT);
-  setClockHigh(); //digitalWrite(_FIS_WRITE_CLK, HIGH);
+  setClockHigh();
   pinMode(_FIS_WRITE_DATA, OUTPUT);
-  setDataHigh();//digitalWrite(_FIS_WRITE_DATA, LOW);
+  setDataHigh();
 
   // init port
   //FIS_WRITE_send_3LB_singleByteCommand(0xF0);
@@ -84,10 +84,6 @@ static char tx_array[25];
 
 #ifdef USE_STRINGS
 void VW2002FISWriter::sendMsg(String line1, String line2, bool center) {
-  // char msg1[] = {0x81, 18, 240, ' ', 'N', 'R', 'K', ' ', 'P', '1', ' ', 'F', 'M', '1', '.', '1', ' ', ' ', 28, 75};
-
-  //Serial.println("d");
-
   // fill lines to 8 chars
   while (line1.length() < 8) line1 += " ";
   while (line2.length() < 8) line2 += " ";
@@ -122,7 +118,7 @@ void VW2002FISWriter::sendMsg(char msg[]) {
   tx_array[1] = 18; // Length of this message (command and this length not counted
   tx_array[2] = 240; // unsure what this is
 
-  for (int i = 0; i < 16; i++) { // TODO: use memcpy
+  for (uint8_t i = 0; i < 16; i++) { // TODO: use memcpy
     tx_array[3 + i] = msg[i];
   }
   tx_array[19] = (char)checksum((uint8_t*)tx_array);
@@ -130,13 +126,11 @@ void VW2002FISWriter::sendMsg(char msg[]) {
   sendRawMsg(tx_array);
 }
 
-//kovotest
-
-
 void VW2002FISWriter::initScreen(uint8_t mode,uint8_t X,uint8_t Y,uint8_t X1,uint8_t Y1) {
-/*--------------------------
-| | Initializing the screen |
---------------------------
+/*
+---------------------------
+| Initializing the screen |
+---------------------------
 
 Initialization is required to go into graphical mode and to be able to output data to any point on the screen.
 After initialization, you must constantly send data.
@@ -196,7 +190,7 @@ void VW2002FISWriter::sendMsgFS(uint8_t X,uint8_t Y,uint8_t font, uint8_t size,c
 /*
 
 ----------------
-| | Display text |
+| Display text |
 ----------------
 
 The text is displayed only after initialization and only in the initialized area of ​​the screen.
@@ -475,7 +469,7 @@ z is empty
   tx_array[2] = font; 
   tx_array[3] = X;
   tx_array[4] = Y;
-  for (int i = 0; i < size; i++) { // TODO: use memcpy
+  for (int16_t i = 0; i < size; i++) { // TODO: use memcpy
     tx_array[5 + i] = ' ';
     tx_array[5 + i] = msg[i];
   }
@@ -484,9 +478,9 @@ z is empty
 }
 
 /*
-------------------
-| | Graph Output |
-------------------
+----------------
+| Graph Output |
+----------------
 
 The output is available only after the screen is initialized and only in the initialized area.
 
@@ -514,6 +508,7 @@ bb ----> data bytes. With the bit set, the pixel lights up, one bit = one pixel.
 The minimum data size is 1 byte, i.e. 8 pixels. Filling is horizontal.
 
 xx ----> checksum
+
 */
 
 void VW2002FISWriter::GraphicOut(uint8_t x,uint8_t y,uint16_t size,uint8_t data[],uint8_t mode,uint8_t offset){
@@ -532,43 +527,32 @@ sendRawData(myArray);
 
 void VW2002FISWriter::sendRawData(uint8_t data[]){
 
-uint16_t timeout_us;
 #ifdef ENABLE_IRQ
   cli();
 #endif
   // Send FIS-command
-  //setEnableHigh();
-  FIS_WRITE_startENA();
-  FIS_WRITE_3LB_sendByte(data[FIS_MSG_COMMAND]); //ID
-  FIS_WRITE_stopENA();//setEnableLow();
-  // Step 2 - wait for response from cluster to set ENA-High
-  timeout_us = 1000;
-  while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
-    delayMicroseconds(1);
-    timeout_us -= 1;
-  }
-//	if (timeout_us<=0) {
-//		Serial.println("timeout reached at sendRawData");
-//		sendRawData(data);
-//		return;
-//	}
-
+  //FIS_WRITE_startENA();
+  //FIS_WRITE_3LB_sendByte(data[FIS_MSG_COMMAND]); //ID
+  //FIS_WRITE_stopENA(); 
+FIS_WRITE_send_3LB_singleByteCommand(data[FIS_MSG_COMMAND]);
   uint8_t crc =data[FIS_MSG_COMMAND];
-for (uint16_t a=1;a<data[1]+1;a++)
+
+  for (uint16_t a=1;a<data[1]+1;a++)
   {
-    // Step 9.2 - ENA-Low detected
-    delayMicroseconds(40);
-    // calculate checksum
-      crc ^= data[a];
-    FIS_WRITE_3LB_sendByte(data[a]);
-    // Step 10.2 - wait for response from cluster to set ENA-High
-    timeout_us = 1000;
-    while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
-      delayMicroseconds(1);
-      timeout_us -= 1;
-    }
+  // Step 2 - wait for response from cluster to set ENA-High
+  waitEnaHigh();
+  // Step 9.2 - ENA-Low detected
+  delayMicroseconds(40);
+  // calculate checksum
+  crc ^= data[a];
+  FIS_WRITE_3LB_sendByte(data[a]);
+/*    // Step 10.2 - wait for response from cluster to set ENA-High
+    waitEnaHigh();
+}*/
   }
 crc--;
+    // Step 10.2 - wait for response from cluster to set ENA-High
+waitEnaHigh();
 FIS_WRITE_3LB_sendByte(crc);
 
 #ifdef ENABLE_IRQ
@@ -608,37 +592,25 @@ void VW2002FISWriter::sendRawMsg(char in_msg[]) {
 
 */
 void VW2002FISWriter::FIS_WRITE_send_3LB_msg(char in_msg[]) {
-uint16_t timeout_us;
 #ifdef ENABLE_IRQ
   cli();
 #endif
 
-//  sendEnablePulse();
-
 	// Send FIS-command
-	FIS_WRITE_startENA();//setEnableHigh();
+	FIS_WRITE_startENA();
 	FIS_WRITE_3LB_sendByte(in_msg[FIS_MSG_COMMAND]);
-	FIS_WRITE_stopENA();//setEnableLow();
-	//delay(1);  
+	FIS_WRITE_stopENA();
 
   byte msg_length = in_msg[FIS_MSG_LENGTH];
   byte msg_end = msg_length + 1;
 
-  // Step 2 - wait for response from cluster to set ENA-High
-  timeout_us = 1000;
-  while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
-    delayMicroseconds(1);
-    timeout_us -= 1;
-  }
-//if (timeout_us<=0) {
-//Serial.println("timeout reached at FIS_WRITE_send_3LB_msg");
-//FIS_WRITE_send_3LB_msg(in_msg);
-//return;
-//}
-
   uint8_t crc =in_msg[FIS_MSG_COMMAND];
-  for (int i = 1; i <= msg_end; i++)
+  
+  for (uint16_t i = 1; i <= msg_end; i++)
   {
+  // Step 2 - wait for response from cluster to set ENA-High
+waitEnaHigh();
+
     delayMicroseconds(40);
 
     // calculate checksum
@@ -650,15 +622,7 @@ uint16_t timeout_us;
     }
 
     FIS_WRITE_3LB_sendByte(in_msg[i]);
-
-    // Step 10.2 - wait for response from cluster to set ENA-High
-    timeout_us = 1000;
-    while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
-      delayMicroseconds(1);
-      timeout_us -= 1;
-    }
   }
-  // Step 9.5 - ENA-Low detected
 
 #ifdef ENABLE_IRQ
   sei();
@@ -695,10 +659,10 @@ void VW2002FISWriter::FIS_WRITE_send_3LB_singleByteCommand(uint8_t txByte) {
   cli();
 #endif
 
-	FIS_WRITE_startENA();//setEnableHigh();
+	FIS_WRITE_startENA();
 	// Send FIS-command
 	FIS_WRITE_3LB_sendByte(txByte);
-	FIS_WRITE_stopENA();//setEnableLow();
+	FIS_WRITE_stopENA();
 	delayMicroseconds(30);
 
 #ifdef ENABLE_IRQ
@@ -708,35 +672,13 @@ void VW2002FISWriter::FIS_WRITE_send_3LB_singleByteCommand(uint8_t txByte) {
 
 /**
 
-   Send 3LB Enable pulse
-
-*/
-void VW2002FISWriter::sendEnablePulse() {
-  FIS_WRITE_startENA();
-  delayMicroseconds(41);
-  FIS_WRITE_stopENA();
-  delayMicroseconds(37);
-} // sendEnablePulse
-
-
-void VW2002FISWriter::setEnableHigh() {
-  FIS_WRITE_startENA();
-} // sendEnablePulse
-
-void VW2002FISWriter::setEnableLow() {
-  FIS_WRITE_stopENA();
-} // sendEnablePulse
-
-/**
-
    Send byte out on 3LB port to instrument cluster
 
 */
-void VW2002FISWriter::FIS_WRITE_3LB_sendByte(int in_byte) {
+void VW2002FISWriter::FIS_WRITE_3LB_sendByte(int16_t in_byte) {
 
-  int tx_byte = 0xff - in_byte;
-  for (int i = 7; i >= 0; i--) {
-    setClockLow();
+  uint16_t tx_byte = 0xff - in_byte;
+  for (int8_t i = 7; i >= 0; i--) {//must be signed! need -1 to stop "for"iing
 
     switch ((tx_byte & (1 << i)) > 0 ) {
       case 1: setDataHigh();
@@ -744,15 +686,13 @@ void VW2002FISWriter::FIS_WRITE_3LB_sendByte(int in_byte) {
       case 0: setDataLow();
         break;
     }
+    setClockLow();
     delayMicroseconds(FIS_WRITE_PULSEW);
-    //delayMicroseconds(20);
     setClockHigh();
-    //delayMicroseconds(FIS_WRITE_PULSEW * 2);
+    setDataHigh();
     delayMicroseconds(FIS_WRITE_PULSEW);
-    //delayMicroseconds(40);
   }
 delayMicroseconds(50);
-//Serial.print(in_byte,HEX);Serial.print(",");
 }
 
 /**
@@ -766,7 +706,6 @@ void VW2002FISWriter::FIS_WRITE_startENA() {
    Set 3LB ENA paaive Low
 */
 void VW2002FISWriter::FIS_WRITE_stopENA() {
-//  digitalWrite(_FIS_WRITE_ENA, LOW);
   pinMode(_FIS_WRITE_ENA, INPUT);
 }
 
@@ -774,28 +713,24 @@ void VW2002FISWriter::FIS_WRITE_stopENA() {
    Set 3LB CLK High
 */
 void VW2002FISWriter::setClockHigh() {
-  //PORT_3LB |= (1 << CLK);
   digitalWrite(_FIS_WRITE_CLK,HIGH);
 }
 /**
    Set 3LB CLK Low
 */
 void VW2002FISWriter::setClockLow() {
-//  PORT_3LB &= ~(1 << CLK);
 digitalWrite(_FIS_WRITE_CLK,LOW);
 }
 /**
    Set 3LB DATA High
 */
 void VW2002FISWriter::setDataHigh() {
-//  PORT_3LB |= (1 << DATA);
 digitalWrite(_FIS_WRITE_DATA,HIGH);
 }
 /**
    Set 3LB DATA Low
 */
 void VW2002FISWriter::setDataLow() {
-//  PORT_3LB &= ~(1 << DATA);
 digitalWrite(_FIS_WRITE_DATA,LOW);
 }
 
@@ -807,13 +742,22 @@ digitalWrite(_FIS_WRITE_DATA,LOW);
 
 */
 uint8_t VW2002FISWriter::checksum( volatile uint8_t in_msg[]) {
-/*  uint8_t crc = in_msg[0];
-  for (int i = 1; i < sizeof(in_msg); i++)
+  uint8_t crc = in_msg[0];
+  for (int16_t i = 1; i < sizeof(in_msg); i++)
   {
     crc ^= in_msg[i];
   }
   crc --;
 
-  return crc;*/
+  return crc;
 }
 
+
+void VW2002FISWriter::waitEnaHigh(){
+  uint16_t timeout_us = 1000;
+  while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
+    delayMicroseconds(1);
+    timeout_us -= 1;
+  }
+
+}

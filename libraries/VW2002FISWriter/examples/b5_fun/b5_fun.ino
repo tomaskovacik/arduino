@@ -114,30 +114,30 @@ void loop() {
 //    frameBuffer[i]=random(255);
 //}
 fisWriter.GraphicFromArray(0,0,64,88,b5f,1);
-//fisWriter.initScreen(0x82,0,0,64,88);
-//delay(100);
-//fisWriter.GraphicFromArray(0,0,64,65,Q,1);
-////delay(1000);
-//fisWriter.GraphicFromArray(0,70,64,16,QBSW,1);
-//delay(3000);
-//fisWriter.initScreen(0x82,0,0,1,1);
-//delay(100);
-//fisWriter.sendMsg("12345678  TEST  ");
+fisWriter.initScreen(0x82,0,0,64,88);
+delay(100);
+fisWriter.GraphicFromArray(0,0,64,65,Q,1);
 //delay(1000);
-//fisWriter.initScreen(0x82,0,0x1B,64,0x30);
-//fisWriter.GraphicFromArray(22,1,20,46,sedan,2);
-//for (uint8_t x=0;x<2;x++){
-//lf();
-//lr();
-//rf();
-//rr();
-//trunk();
-//lf();
-//lr();
-//rf();
-//rr();
-//trunk();
-//}
+fisWriter.GraphicFromArray(0,70,64,16,QBSW,1);
+delay(3000);
+fisWriter.initScreen(0x82,0,0,1,1);
+delay(100);
+fisWriter.sendMsg("12345678  TEST  ");
+delay(1000);
+fisWriter.initScreen(0x82,0,0x1B,64,0x30);
+fisWriter.GraphicFromArray(22,1,20,46,sedan,2);
+for (uint8_t x=0;x<2;x++){
+lf();
+lr();
+rf();
+rr();
+trunk();
+lf();
+lr();
+rf();
+rr();
+trunk();
+}
 //fisWriter.initScreen(0x82,0,0,1,1);
 //delay(1000);
 //fisWriter.sendMsg("  TEST  12345678");
@@ -160,9 +160,9 @@ fisWriter.GraphicFromArray(0,0,64,88,b5f,1);
 //
 //  }
 
-while(true){
-  fisWriter.sendKeepAliveMsg();
-  delay(1000);
-}
+//while(true){
+//  fisWriter.sendKeepAliveMsg();
+//  delay(1000);
+//}
 }
 

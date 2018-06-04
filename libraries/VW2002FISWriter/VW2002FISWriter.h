@@ -59,6 +59,7 @@ void sendRawData(uint8_t data[]);
     void setClockLow();
     void setDataHigh();
     void setDataLow();
+    void waitEnaHigh();
     uint8_t checksum( volatile uint8_t in_msg[]);
 
 };
