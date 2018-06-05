@@ -596,10 +596,11 @@ void VW2002FISWriter::FIS_WRITE_send_3LB_msg(char in_msg[]) {
   cli();
 #endif
 
-	// Send FIS-command
-	FIS_WRITE_startENA();
-	FIS_WRITE_3LB_sendByte(in_msg[FIS_MSG_COMMAND]);
-	FIS_WRITE_stopENA();
+//	FIS_WRITE_startENA();
+//	FIS_WRITE_3LB_sendByte(in_msg[FIS_MSG_COMMAND]);
+//	FIS_WRITE_stopENA();
+  // Send FIS-command
+FIS_WRITE_send_3LB_singleByteCommand(in_msg[FIS_MSG_COMMAND]);
 
   byte msg_length = in_msg[FIS_MSG_LENGTH];
   byte msg_end = msg_length + 1;
@@ -660,10 +661,10 @@ void VW2002FISWriter::FIS_WRITE_send_3LB_singleByteCommand(uint8_t txByte) {
 #endif
 
 	FIS_WRITE_startENA();
-	// Send FIS-command
 	FIS_WRITE_3LB_sendByte(txByte);
 	FIS_WRITE_stopENA();
-	delayMicroseconds(30);
+
+delayMicroseconds(30);
 
 #ifdef ENABLE_IRQ
   sei();
@@ -675,9 +676,9 @@ void VW2002FISWriter::FIS_WRITE_send_3LB_singleByteCommand(uint8_t txByte) {
    Send byte out on 3LB port to instrument cluster
 
 */
-void VW2002FISWriter::FIS_WRITE_3LB_sendByte(int16_t in_byte) {
+void VW2002FISWriter::FIS_WRITE_3LB_sendByte(uint8_t in_byte) {
 
-  uint16_t tx_byte = 0xff - in_byte;
+  uint8_t tx_byte = 0xff - in_byte;
   for (int8_t i = 7; i >= 0; i--) {//must be signed! need -1 to stop "for"iing
 
     switch ((tx_byte & (1 << i)) > 0 ) {

@@ -52,7 +52,7 @@ void sendRawData(uint8_t data[]);
     void FIS_WRITE_send_3LB_msg(char in_msg[]);
     void FIS_WRITE_send_3LB_singleByteCommand(uint8_t txByte);
     void sendEnablePulse();
-    void FIS_WRITE_3LB_sendByte(int in_byte);
+    void FIS_WRITE_3LB_sendByte(uint8_t in_byte);
     void FIS_WRITE_startENA();
     void FIS_WRITE_stopENA();
     void setClockHigh();

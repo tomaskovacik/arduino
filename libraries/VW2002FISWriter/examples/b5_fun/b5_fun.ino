@@ -6,9 +6,9 @@
 
 
 // FIS
-#define FIS_CLK 13  // - Arduino 13 - PB5
-#define FIS_DATA 11 // - Arduino 11 - PB3
-#define FIS_ENA 8   // - Arduino 8 - PB0
+#define FIS_CLK PB3
+#define FIS_DATA PB5
+#define FIS_ENA PA15
 VW2002FISWriter fisWriter( FIS_CLK, FIS_DATA, FIS_ENA );
 static char fisBuffer[10]= {'B','5',' ','F','A','M','I','L','I','A'} ;
 int myInit=2;
@@ -64,9 +64,9 @@ void trunk(){
 }
 
 void redrawFrameBuffer(){
- //fisWriter.initScreen(0x82,0,0,64,88);
   //fisWriter.GraphicFromArray(0,0,64,88,frameBuffer,1);
   for(uint8_t line=0; line<88;line=line+4){
+ fisWriter.initScreen(0x82,0,0,64,88);
   
   fisWriter.GraphicOut(0,line,32,frameBuffer,1,line*8);
   }    
@@ -139,8 +139,8 @@ rr();
 trunk();
 }
 //fisWriter.initScreen(0x82,0,0,1,1);
-//delay(1000);
-//fisWriter.sendMsg("  TEST  12345678");
+delay(1000);
+fisWriter.sendMsg("  TEST  12345678");
 //delay(MinRefresh);
 
 
