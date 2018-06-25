@@ -11,7 +11,7 @@ interupt on CLK line read data lina value and store it as input packet
 packet overvie: http://kovo-blog.blogspot.sk/2013/11/audi-fis-3-line-protocol.html
 
 
-FULLY TESTED: radio mode on stm32 (bluepill board) over 3v resistor (10k to 47k) with 10k pullup on data and clk line, these pull up are required! I check lot of schematics of radios, and most of them do not have internall pullups, so if it works without nice ,but mostly it will not. In case of 5V board (AVR MCU) internal pull up is ok, in case of 3v3 mcu external pull up + divider is erquired, if transistor based level shifter with internal pullup is used, check what value are these pullups and make stronger pulldown (half value resistor will do) on both low a high level side of ENABLE line(tested with mosfet based level shifter)
+FULLY TESTED: radio mode on stm32 (bluepill board) over 3v resistor devider (10k to 47k) with 10k pullup on data and clk line, these pull up are required! I checked lot of schematics of radios, and most of them do not have internall pullups, so if it works without nice ,but mostly it will not. In case of 5V board (AVR MCU) internal pull up is ok, in case of 3v3 mcu external pull up + divider is erquired, if transistor based level shifter with internal pullup is used, check what value are these pullups and make stronger pulldown (half value resistor will do) on both low a high level side of ENABLE line (tested with mosfet based level shifter)
 
 
 
@@ -108,7 +108,7 @@ with level shifter interla pullups are 10k for this shifter:
                 	 GND                            GND
 
 
-more for russion forum passatworld.ru translated on google:
+more from russion forum passatworld.ru translated on google:
 
 Data transmission is carried out on 3 lines (Data, Clock, Enable). Working voltage on 5V lines.
 Data and Clock lines are unidirectional, line management is performed by the master device. The default lines are high.
