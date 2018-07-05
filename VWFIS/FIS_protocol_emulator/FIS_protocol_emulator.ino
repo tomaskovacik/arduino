@@ -1,18 +1,28 @@
 /*
-   uncoment if you are using VW
-*/
+ * obsolete, check  version with lib based on modified lib from https://github.com/arildlangseid/vw_t4_tcu_temp_to_fis/tree/master/vw_t4_tcu_temp_to_fis
+ * 
+ * https://github.com/tomaskovacik/arduino/tree/master/VWFIS/FIS_protocol_emulator_with_lib
+ * 
+ * library can be found here: https://github.com/tomaskovacik/arduino/tree/master/libraries/VW2002FISWriter
+ * 
+ * 
+ * 
+ * uncoment if you are using VW
+ * 
+ */
 
-#define NAV
+//#define NAVI
 
 //data pin 4
 //clk  pin 3
 //ena  pin 2
 
+//stm32 ready? :)
+#define FIS_WRITE_CLK PB3
+#define FIS_WRITE_DATA PB5
+#define FIS_WRITE_ENA PA15
 //WRITE TO CLUSTER
-#define FIS_WRITE_ENA 2
-#define FIS_WRITE_ENAINT 0
-#define FIS_WRITE_CLK 3
-#define FIS_WRITE_DATA 4
+
 #define FIS_WRITE_PULSEW 50
 #define FIS_WRITE_STARTPULSEW 100
 #define FIS_WRITE_START 0xF0 //something like address, first byte is always 15
@@ -69,13 +79,13 @@ void setup() {
   digitalWrite(FIS_WRITE_ENA, LOW);
   pinMode(FIS_WRITE_ENA, INPUT);
   digitalWrite(FIS_WRITE_ENA, LOW); //disable pullup https://www.arduino.cc/en/Reference/DigitalWrite
-  attachInterrupt(FIS_WRITE_ENAINT, FIS_WRITE_ACK, FALLING);
+  attachInterrupt(digitalPinToInterrupt(FIS_WRITE_ENA), FIS_WRITE_ACK, FALLING);
   pinMode(FIS_WRITE_CLK, OUTPUT);
   digitalWrite(FIS_WRITE_CLK, HIGH);
   pinMode(FIS_WRITE_DATA, OUTPUT);
   digitalWrite(FIS_WRITE_DATA, HIGH);
   Serial.begin(9600);
-  //END WRITE TO CLUSTER
+  //END WRITE TO CLUSTE<M
 }
 
 void loop() {
@@ -166,7 +176,7 @@ void loop() {
 //WRITE TO CLUSTER
 
 void FIS_WRITE_ACK() {
-  detachInterrupt(FIS_WRITE_ENAINT);
+  detachInterrupt(digitalPinToInterrupt(FIS_WRITE_ENA));
   FIS_WRITE_ACKSTATE = 1;
 };
 
@@ -274,7 +284,7 @@ void FIS_WRITE_stopENA() {
   digitalWrite(FIS_WRITE_ENA, LOW);
   pinMode(FIS_WRITE_ENA, INPUT);
   digitalWrite(FIS_WRITE_ENA, LOW); //disable pullup
-  attachInterrupt(FIS_WRITE_ENAINT, FIS_WRITE_ACK, FALLING);
+  attachInterrupt(digitalPinToInterrupt(FIS_WRITE_ENA), FIS_WRITE_ACK, FALLING);
 }
 //END WRITE TO CLUSTER
 
