@@ -4,6 +4,12 @@
 	https://github.com/tomaskovacik/
 
 	F-6188 module library
+
+	supports SW and HW serial
+
+	to enable SW serial set USE_SW_SERIAL to 1
+	to enable debug output set DEBUG to 1, this is using HW Serial (hardcoded)
+
 */
 
 #ifndef F6188_h
@@ -12,7 +18,7 @@
 
 #define USE_SW_SERIAL 1
 
-#define DEBUG 0
+#define DEBUG 0 
 
 //cmds definitions:
 #define F6188_PAIRING_INIT "CA"            //  pairing   AT+CA\r\n     
