@@ -21,12 +21,6 @@
 #define CMD_Event_ACK 0x14
 #define CMD_Additional_Profiles_Link_Setup  0x15
 #define CMD_Read_Linked_Device_Information  0x16
-#define CRLDI_query_device_name 0x00
-#define CRLDI_query_in-band_ringtone_status 0x01
-#define CRLDI_query_if_remote_device_is_iAP_device 0x02
-#define CRLDI_query_if_remote_device_support_AVRCP_v1.3 0x03
-#define CRLDI_query_HF_A2DP_gain 0x04
-#define CRLDI_query_Line_In_gain 0x05
 #define CMD_Profiles_Link_Back  0x17
 #define CMD_Disconnect  0x18
 #define CMD_MCU_Status_Indication 0x19
