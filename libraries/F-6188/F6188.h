@@ -1,3 +1,11 @@
+/*
+	GNU GPL v3
+	(C) Tomas Kovacik [nail at nodomain dot sk]
+	https://github.com/tomaskovacik/
+
+	F-6188 module library
+*/
+
 #ifndef F6188_h
 #define F6188_h
 #include <Arduino.h>
