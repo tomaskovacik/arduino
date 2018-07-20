@@ -137,7 +137,7 @@ class F6188
     String returnBtModuleName(String receivedString); //return module name between : and \0
     String BT_ADDR;
     String BT_NAME;
-    uint16_t BT_PIN;
+    String BT_PIN;
 
   private:
     void DBG(String text);

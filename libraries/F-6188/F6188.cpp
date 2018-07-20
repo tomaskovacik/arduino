@@ -9,13 +9,13 @@
 #include "F6188.h"
 #include <Arduino.h>
 
-#if defined(__AVR__) && defined(USE_SW_SERIAL)
+#if defined(USE_SW_SERIAL)
 #include <SoftwareSerial.h>
 #endif
 
 
 
-#if defined(__AVR__) && defined(USE_SW_SERIAL)
+#if defined(USE_SW_SERIAL)
 #if ARDUINO >= 100
 F6188::F6188(SoftwareSerial *ser)
 #else
@@ -23,7 +23,7 @@ F6188::F6188(NewSoftSerial *ser)
 #endif
 #endif
 {
-#if defined(__AVR__) && defined(USE_SW_SERIAL)
+#if defined(USE_SW_SERIAL)
   btHwSerial = NULL;
   btSwSerial = ser;
 }
@@ -40,7 +40,7 @@ F6188::~F6188() {
 }
 
 void F6188::begin(uint32_t baudrate) {
-#if defined(__AVR__) && defined(USE_SW_SERIAL)
+#if defined(USE_SW_SERIAL)
   if (btSwSerial)
     btSwSerial->begin(baudrate);
   else
@@ -62,12 +62,9 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
     case 'A':
       {
         if (receivedString[1] == 'D' && receivedString[2] == ':') {
-          BT_ADDR = "";
-          for (uint8_t i = 3; i < 16; i++) {
-            BT_ADDR += receivedString[i];
-          }
+            BT_ADDR = receivedString.substring(5);
+            DBG("BT ADDRESS: " + BT_ADDR);
         }
-        DBG("BT ADDRESS: " + (String)BT_ADDR);
       }
       break;
     case 'C':
@@ -131,20 +128,19 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
           BT_NAME = F6188::returnBtModuleName(receivedString);
         }
       break;
-    case 'P': //outgoing call
+    case 'P':
       switch (receivedString[1]) {
-      case 'R':
+      case 'R': //outgoing call
         if (receivedString[2] == '-') CallState = OutgoingCall;
           CallerID = returnCallerID(receivedString);
-          break;
-        case 'N':
-          if (receivedString[2] == ':') {
-            BT_PIN = ((receivedString[3] * 1000) + (receivedString[4] * 100) + (receivedString[5] * 10) + receivedString[6]);
-          }
-          break;
-
-      }
       break;
+      case 'N':
+          if (receivedString[2] == ':') {
+            BT_PIN = receivedString.substring(4);
+          }
+      break;
+      }
+    break;
     case 'O': //BT On
         switch (receivedString[1]) {
         case 'N':
@@ -155,28 +151,24 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
           break;
       }
     break;
+    case 0xA: //\r
+	F6188::decodeReceivedString(receivedString.substring(1));
+    break;
+    case 0x20: //space
+	F6188::decodeReceivedString(receivedString.substring(1));
+    break;
 }
 return 1;
 }
 
 String F6188::returnCallerID(String receivedString) {
-  //DBG("Parameter: "+receivedString);
-  String output;
-  for ( uint8_t i = 4; i < receivedString.length() - 2; i++) { //start at 4 cose: IR-"+123456789" or PR-"+123456789" and one before end to remove " and \0
-    output += receivedString[i];
-  }
-  DBG("Calling: " + output + "\n");
-  return output;
+	DBG("Calling: " + receivedString.substring(4,(receivedString.length() - 2)) + "\n");
+	return receivedString.substring(4,(receivedString.length() - 2)); //start at 4 cose: IR-"+123456789" or PR-"+123456789" and one before end to remove " and \0
 }
 
 String F6188::returnBtModuleName(String receivedString) {
-  //DBG("Parameter: "+receivedString);
-  String output;
-  for ( uint8_t i = 3; i < receivedString.length() - 1; i++) { //start at 3 cose: NA:NAME and one before end to remove \0
-    output += receivedString[i];
-  }
-  DBG("Bluetooth module name: " + output + "\n");
-  return output;
+	DBG("Bluetooth module name: " + receivedString.substring(4) + "\n");
+	return receivedString.substring(4);
 }
 
 uint8_t F6188::getNextEventFromBT() {

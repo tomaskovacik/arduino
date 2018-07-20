@@ -19,10 +19,7 @@ SoftwareSerial swSerial(7, 6); //rxPin, txPin, inverse_logic
 
 F6188 BT(&swSerial);
 
-void setup() {
-  BT.begin(9600);
-  Serial.begin(115200);
-  Serial.println(F("press h for help"));
+void getInitStates() {
   BT.getName();
   BT.getConnectioStatus();
   BT.getPinCode();
@@ -30,6 +27,13 @@ void setup() {
   BT.getSoftwareVersion();
   BT.MusicGetStatus();
   BT.getHFPstatus();
+}
+
+void setup() {
+  BT.begin(9600);
+  Serial.begin(115200);
+  Serial.println(F("press h for help"));
+  getInitStates();
 }
 
 void loop() {
@@ -121,7 +125,7 @@ void loop() {
         Serial.println(F("switch input                 e"));
         Serial.println(F("send custom AT+command       f"));
         Serial.println(F("open_phone_voice             g"));
-        Serial.println(F("                 i"));
+        Serial.println(F("show info about module       i"));
         Serial.println(F("memoryClear                  j"));
         Serial.println(F("language_set_number      k+num"));
         Serial.println(F("musicTogglePlayPause         l"));
@@ -139,7 +143,10 @@ void loop() {
         Serial.println(F("getHFPstatus                 y"));
         break;
       case 'i':
-
+      getInitStates();
+        Serial.print(F("NAME: ")); Serial.println(BT.BT_NAME);
+        Serial.print(F("ADDR: ")); Serial.println(BT.BT_ADDR);
+        Serial.print(F("PIN: ")); Serial.println(BT.BT_PIN);
         break;
       case 'j':
         BT.memoryClear();
@@ -201,7 +208,7 @@ void loop() {
 
     }
   }
- 
+
   BT.getNextEventFromBT();
 
   if (BTState != BT.BTState) {
@@ -249,9 +256,11 @@ void loop() {
   if (PowerState != BT.PowerState) {
     switch (BT.PowerState) {
       case (BT.On):
+      getInitStates();
         Serial.println(F("Module ON"));
-        Serial.print(F("NAME: "));Serial.println(BT.BT_NAME);
-        Serial.print(F("PIN: "));Serial.println(BT.BT_PIN);
+        Serial.print(F("NAME: ")); Serial.println(BT.BT_NAME);
+        Serial.print(F("ADDR: ")); Serial.println(BT.BT_ADDR);
+        Serial.print(F("PIN: ")); Serial.println(BT.BT_PIN);
         break;
       case (BT.Off):
         Serial.println(F("Module OFF"));
