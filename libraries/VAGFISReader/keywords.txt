@@ -1,0 +1,13 @@
+VAGFISReader	KEYWORD1
+begin	KEYWORD2
+read_data	KEYWORD2
+has_new_msg	KEYWORD2
+msg_is_navi	KEYWORD2
+clear_new_msg_flag	KEYWORD2
+request	KEYWORD2
+get_msg_id	KEYWORD2
+get_size	KEYWORD2
+check_data	KEYWORD2
+calc_checksum	KEYWORD2
+get_checksum	KEYWORD2
+
