@@ -1,0 +1,13 @@
+VW2002FISWriter	KEYWORD1
+begin KEYWORD2
+sendMsg	KEYWORD2
+sendMsgFS	KEYWORD2
+initScreen	KEYWORD2
+sendRawMsg	KEYWORD2
+sendRawData	KEYWORD2
+sendKeepAliveMsg	KEYWORD2
+displayOff	KEYWORD2
+displayBlank	KEYWORD2
+GraphicFromArray	KEYWORD2
+printFreeMem	KEYWORD2
+GraphicOut	KEYWORD2
