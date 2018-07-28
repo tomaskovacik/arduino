@@ -164,9 +164,9 @@ Unfortunately, in this mode, it is not possible to control the transmitted data.
 #include <Arduino.h>
 volatile static uint16_t msgbit;
 volatile static uint8_t navi=0;
-volatile static uint8_t newmsg_from_radio=0;
-volatile static uint8_t packet_size=0;
-volatile static uint8_t pre_navi=0;
+volatile static uint8_t newMsgFromRadio=0;
+volatile static uint8_t packetSize=0;
+volatile static uint8_t preNavi=0;
 volatile static uint8_t data[255] ;
 static uint8_t FIS_READ_CLK;
 static uint8_t FIS_READ_DATA;
@@ -174,25 +174,24 @@ static uint8_t FIS_READ_ENA;
 
 class VAGFISReader
 {
-
- public:
+public:
 	VAGFISReader(uint8_t clkPin, uint8_t dataPin, uint8_t enaPin);
 	~VAGFISReader();
-	void init();
-	uint8_t read_data(int8_t id);
-	bool has_new_msg();
-	bool msg_is_navi();
-	void clear_new_msg_flag();
+	void begin();
+	uint8_t readData(int8_t id);
+	bool hasNewMsg();
+	bool msgIsNavi();
+	void clearNewMsgFlag();
 	bool request(); //3ms pulse on ENA line after 5s 
-	uint8_t get_msg_id();
-	uint8_t get_size();
-	static bool check_data();
-	static bool calc_checksum();
-	static uint8_t get_checksum();
+	uint8_t getMsgId();
+	uint8_t getSize();
+	static bool checkData();
+	static bool calcChecksum();
+	static uint8_t getChecksum();
 private:
-static void read_data_line();
-static void detect_ena_line_rising();
-static void detect_ena_line_falling();
+static void readDataLine();
+static void detectEnaLineRising();
+static void detectEnaLineFalling();
 
 };
 #endif

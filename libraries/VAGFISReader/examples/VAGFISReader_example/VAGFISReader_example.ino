@@ -18,23 +18,23 @@
 VAGFISReader radio_read(RADIO_CLK, RADIO_DATA, RADIO_ENA);
 long last_update=0;
 void setup() {
-  radio_read.init();
+  radio_read.begin();
   Serial.begin(115200);
 }
 
 void loop() {
-  if (radio_read.has_new_msg()) {
-    if (radio_read.msg_is_navi()) {
-     for (uint8_t i = 2; i <radio_read.get_size()-1; i++) { //1st byte is msg ID, second one is packet size, last is checksumm so we skip them
-        Serial.write(radio_read.read_data(i));
+  if (radio_read.hasNewMsg()) {
+    if (radio_read.msgIsNavi()) {
+     for (uint8_t i = 2; i <radio_read.getSize()-1; i++) { //1st byte is msg ID, second one is packet size, last is checksumm so we skip them
+        Serial.write(radio_read.readData(i));
     }
     } else {
-    for (uint8_t i = 1; i <radio_read.get_size()-1; i++) { //1st byte is msg ID, last is checksumm
-        Serial.write(radio_read.read_data(i));
+    for (uint8_t i = 1; i <radio_read.getSize()-1; i++) { //1st byte is msg ID, last is checksumm
+        Serial.write(radio_read.readData(i));
     }
     }
     Serial.println();
-    radio_read.clear_new_msg_flag();
+    radio_read.clearNewMsgFlag();
     last_update=millis();
   }
 
