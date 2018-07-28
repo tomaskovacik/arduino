@@ -85,7 +85,7 @@ void setup() {
 
 
 //Serial.begin(115200);  
-fisWriter.FIS_init();
+fisWriter.begin();
 //Serial.println("hello");
 //delay(3000);
 fisWriter.initScreen(0x82,0,0,1,1);

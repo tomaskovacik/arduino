@@ -57,7 +57,7 @@ VW2002FISWriter::~VW2002FISWriter()
    Initialize instrument-cluster
 
 */
-void VW2002FISWriter::FIS_init() {
+void VW2002FISWriter::begin() {
   // set port signals
   pinMode(_FIS_WRITE_ENA, OUTPUT);
   digitalWrite(_FIS_WRITE_ENA, LOW);
@@ -114,14 +114,14 @@ void VW2002FISWriter::sendMsg(String line1, String line2, bool center) {
 
 void VW2002FISWriter::sendMsg(char msg[]) {
   // build tx_array
-  tx_array[0] = 0x81; // command to set text-display in FIS
+  tx_array[0] = 0x81; // command to set text-display in FIS, only 0x81 works, none of 0x80,0x82,0x83 works ...
   tx_array[1] = 18; // Length of this message (command and this length not counted
-  tx_array[2] = 240; // unsure what this is
+  tx_array[2] = 240; // unsure what this is, this is 0x0F = 0xFF ^ 0xF0, same ID as in radio message...
 
   for (uint8_t i = 0; i < 16; i++) { // TODO: use memcpy
     tx_array[3 + i] = msg[i];
   }
-  tx_array[19] = (char)checksum((uint8_t*)tx_array);
+  //tx_array[19] = (char)checksum((uint8_t*)tx_array); //no need to calculate this, it's calculated in sendRawMsg() while sending data out
 
   sendRawMsg(tx_array);
 }
@@ -755,6 +755,8 @@ uint8_t VW2002FISWriter::checksum( volatile uint8_t in_msg[]) {
 
 
 void VW2002FISWriter::waitEnaHigh(){
+delayMicroseconds(50);
+
   uint16_t timeout_us = 1000;
   while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
     delayMicroseconds(1);

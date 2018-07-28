@@ -29,7 +29,7 @@ class VW2002FISWriter
   public:
     VW2002FISWriter(uint8_t clkPin, uint8_t dataPin, uint8_t enaPin);
     ~VW2002FISWriter();
-    void FIS_init();
+    void begin();
 
 // void sendMsg(String line1, String line2, bool center=true);
     void sendMsg(char msg[]);
