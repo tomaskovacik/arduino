@@ -70,7 +70,7 @@ openPhoneVoice(); //did not understand what is this doing based on provided info
 
 memoryClear(); //did not understand what is this doing based on provided info in datasheet (sending AT+CZ)
 
-languageSetNumber(uint8_t number) //did not understand what is this doing based on provided info in datasheet (sending AT+CM+number)
+languageSetNumber(uint8_t number); //did not understand what is this doing based on provided info in datasheet (sending AT+CM+number)
 
 musicTogglePlayPause(); //toggle play/pause music on mobile phone
 
