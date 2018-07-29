@@ -30,7 +30,7 @@ void getInitStates() {
 }
 
 void setup() {
-  BT.begin(9600);
+  BT.begin();
   Serial.begin(115200);
   Serial.println(F("press h for help"));
   getInitStates();
@@ -81,7 +81,7 @@ void loop() {
         BT.channelSwitch();
         break;
       case 'd':
-        BT.shutdown_BT();
+        BT.shutdownBT();
         break;
       case 'e':
         BT.switchInput();
@@ -106,7 +106,7 @@ void loop() {
         }
         break;
       case 'g':
-        BT.open_phone_voice();
+        BT.openPhoneVoice();
         break;
       case 'h': //help
         Serial.println(F("PairingInit                  1"));
@@ -121,13 +121,13 @@ void loop() {
         Serial.println(F("volumeDown                   a"));
         Serial.println(F("languageSwitch               b"));
         Serial.println(F("channelSwitch                c"));
-        Serial.println(F("shutdown_BT                  d"));
+        Serial.println(F("shutdownBT                  d"));
         Serial.println(F("switch input                 e"));
         Serial.println(F("send custom AT+command       f"));
-        Serial.println(F("open_phone_voice             g"));
+        Serial.println(F("openPhoneVoice             g"));
         Serial.println(F("show info about module       i"));
         Serial.println(F("memoryClear                  j"));
-        Serial.println(F("language_set_number      k+num"));
+        Serial.println(F("languageSetNumber      k+num"));
         Serial.println(F("musicTogglePlayPause         l"));
         Serial.println(F("musicStop                    m"));
         Serial.println(F("musicNextTrack               n"));
@@ -162,7 +162,7 @@ void loop() {
           if (Serial.available() > 0) {
             b = Serial.read();
           }
-          BT.language_set_number(b - 0x30);
+          BT.languageSetNumber(b - 0x30);
           c = 0;
         }
         break;
