@@ -25,7 +25,7 @@ void getInitStates() {
   BT.getPinCode();
   BT.getAddress();
   BT.getSoftwareVersion();
-  BT.MusicGetStatus();
+  BT.getMusicStatus();
   BT.getHFPstatus();
 }
 
