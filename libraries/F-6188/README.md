@@ -32,7 +32,7 @@ for more examples look ate examples/F-6188/F-6188.ino
 
 # supported functions
 ```c
-<a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F6188.cpp#L225">begin(uint32_t baudrate);</a> //parameter baudrate is communication speed between MCU and arduino, default 9600
+begin(uint32_t baudrate); //parameter baudrate is communication speed between MCU and arduino, default 9600
 
 sendData(String cmd); //construct string of AT+cmd and send it to serial port 
 
