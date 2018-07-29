@@ -8,7 +8,7 @@ F-6188 have AT command control support, supported commands are descriped <a href
 
 <a href="https://www.arduino.cc/en/Guide/Libraries">Information about using libraries on arduino site</a>
 
-Copy content of this repository directory or just this two files: <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F-6188.cpp">F6188.cpp</a>, <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F-6188.h">F6188.h</a> to ~/Arduino/libraries/F-6188/ directory (if did not exist, create one). Open new project in arduino and use this code, of check code in examples directory <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/examples/F-6188/F-6188.ino">F-6188.ino</a>:
+Copy content of this repository directory or just this two files: <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F6188.cpp">F6188.cpp</a>, <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F6188.h">F6188.h</a> to ~/Arduino/libraries/F-6188/ directory (if did not exist, create one). Open new project in arduino and use this code, of check code in examples directory <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/examples/F-6188/F-6188.ino">F-6188.ino</a>:
 
 ```c
 #include "F6188.h"
@@ -122,9 +122,9 @@ uint8_t MusicState; // enum, updated automatically  or by calling getMusicStatus
 uint8_t PowerState; // enum, updated automaticaly or by calling getHFPstatus(),getMusicStatus() or getConnectionStatus()
 ```
 If you init F6188 library as in example code this variables can be accessed directly from main sketch with prefix BT, for example:
-
+```c
 Serial.print(BT.BT_NAME);
-
+```
 
 BTState, CallState, MusicState and PowerState have these states, these are accessible from main sketch with prefix like other variable:
 ```c
@@ -149,7 +149,7 @@ BT.Off; // set if shutdownBT() is called
 BT.Pairing; // set if PairingInit() is called
 ```
 
-these can be used to triger actions in main sketch based on change of module state see F-6188.ino in examples directory.
+these can be used to triger actions in main sketch based on change of module state see <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/examples/F-6188/F-6188.ino">F-6188.ino</a> in examples directory.
 
 
 
