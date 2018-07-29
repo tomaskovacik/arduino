@@ -113,7 +113,7 @@ class F6188
     uint8_t volumeDown();
     uint8_t languageSwitch();
     uint8_t channelSwitch();
-    uint8_t shutdown_BT();
+    uint8_t shutdownBT();
     uint8_t switchInput();
     uint8_t openPhoneVoice();
     uint8_t memoryClear();

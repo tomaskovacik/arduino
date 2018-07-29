@@ -282,7 +282,7 @@ uint8_t F6188::channelSwitch() { //  Channel switching (invalid)   AT+CO\r\n    
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::shutdown_BT() { //  Shutdown  AT+CP\r\n
+uint8_t F6188::shutdownBT() { //  Shutdown  AT+CP\r\n
   F6188::sendData(F6188_SHUTDOWN);
   F6188::getNextEventFromBT();
 }
