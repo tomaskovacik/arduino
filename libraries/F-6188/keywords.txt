@@ -31,7 +31,4 @@ getAddress	KEYWORD2
 getSoftwareVersion	KEYWORD2
 MusicGetStatus	KEYWORD2
 getHFPstatus	KEYWORD2
-decodeReceivedString	KEYWORD2
-returnCallerID	KEYWORD2
-returnBtModuleName	KEYWORD2
 
