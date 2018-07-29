@@ -219,6 +219,9 @@ void loop() {
       case BT.Disconnected:
         Serial.println(F("Bluetooth disconnected"));
         break;
+      case BT.Pairing:
+        Serial.println(F("Bluetooth in pairing mode"));
+        break;
     }
     BTState = BT.BTState;
   }
