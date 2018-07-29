@@ -129,7 +129,7 @@ class F6188
     uint8_t getPinCode();
     uint8_t getAddress();
     uint8_t getSoftwareVersion();
-    uint8_t MusicGetStatus();
+    uint8_t getMusicStatus();
     uint8_t getHFPstatus();
 
     String BT_ADDR;

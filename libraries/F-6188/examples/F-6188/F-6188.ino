@@ -139,7 +139,7 @@ void loop() {
         Serial.println(F("getPinCode                   u"));
         Serial.println(F("getAddress                   v"));
         Serial.println(F("getSoftwareVersion           w"));
-        Serial.println(F("MusicGetStatus               x"));
+        Serial.println(F("getMusicStatus               x"));
         Serial.println(F("getHFPstatus                 y"));
         break;
       case 'i':
@@ -200,7 +200,7 @@ void loop() {
         BT.getSoftwareVersion();
         break;
       case 'x':
-        BT.MusicGetStatus();
+        BT.getMusicStatus();
         break;
       case 'y':
         BT.getHFPstatus();

@@ -29,6 +29,6 @@ getConnectioStatus	KEYWORD2
 getPinCode	KEYWORD2
 getAddress	KEYWORD2
 getSoftwareVersion	KEYWORD2
-MusicGetStatus	KEYWORD2
+getMusicStatus	KEYWORD2
 getHFPstatus	KEYWORD2
 

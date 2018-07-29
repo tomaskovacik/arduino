@@ -364,7 +364,7 @@ uint8_t F6188::getSoftwareVersion() { //  Query software version  AT+MQ\r\n   XZ
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::MusicGetStatus() { //  Bluetooth playback status inquiry   AT+MV\r\n   Play: "MB\r\n", time out:"MA\r\n", disconnect:" M0\r\n"
+uint8_t F6188::getMusicStatus() { //  Bluetooth playback status inquiry   AT+MV\r\n   Play: "MB\r\n", time out:"MA\r\n", disconnect:" M0\r\n"
   F6188::sendData(F6188_MUSIC_GET_STATUS);
   F6188::getNextEventFromBT();
 }
