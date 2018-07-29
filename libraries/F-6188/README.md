@@ -6,6 +6,8 @@ F-6188 have AT command control support, supported commands are descriped <a href
 
 # how to use it #
 
+<a href="https://www.arduino.cc/en/Guide/Libraries">Information about using libraries on arduino site</a>
+
 Copy content of this repository directory or just this two files: F6188.cpp, F6188.h to ~/Arduino/libraries/F-6188/ directory (if did not exist, create one). Open new project in arduino and put this line on top :
 
 ```
@@ -64,4 +66,49 @@ MusicGetStatus() - get playback status
 getHFPstatus() - get BT connection status
 returnCallerID(String receivedString)
 returnBtModuleName(String receivedString) 
+
+# handling responce from module #
+
+As far as getNextEventFromBT() is called periodicaly, (it is called in all of functions mentioned above, just to handle responce to send command ASAP) library handle responce like this:
+
+library has its own variables, which are set/updated when data are received from module:
+
+BT_ADDR (string), updated after getAddress() is called
+
+BT_NAME (string), updated after getName() is called
+
+BT_PIN (string), updated after getPinCode() is called
+
+CallerID  String, updated automatically or by calling getHFPstatus()
+
+BTState enum, updated automatically or by calling getHFPstatus() or getConnectionStatus()
+
+CallState enum, updated automatically or by calling callRedial() or getHFPstatus()
+
+MusicState enum, updated automatically  or by calling getMusicStatus()
+
+PowerState enum, updated automaticaly or by calling getHFPstatus(),getMusicStatus() or getConnectionStatus()
+
+if you init F6188 library as in example code this variables can be accessed directly from main sketch with prefix BT, for example:
+
+Serial.print(BT.BT_NAME);
+
+BTState, CallState, MusicState and PowerState have this states, these are accesible from main sketch with prefix like other variable:
+
+BT.Playing, responce from module "MA"
+BT.Idle, responce from module "MB"
+BT.IncomingCall, responce from module "IR- or M2"
+BT.OutgoingCall, responce from module "PR- or M3"
+BT.CallInProgress, responce from module "M4"
+BT.Connected, responce from module "M1"
+BT.Disconnected, responce from module "M0"
+BT.On, responce from module "ON"
+BT.Off, set if shutdownBT() is called
+BT.Pairing, set if PairingInit() is called
+
+these can be used to triger actions in main sketch based on change of module state see F-6188.ino in examples directory.
+
+
+
+
 
