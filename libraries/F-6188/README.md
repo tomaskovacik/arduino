@@ -8,7 +8,7 @@ F-6188 have AT command control support, supported commands are descriped <a href
 
 <a href="https://www.arduino.cc/en/Guide/Libraries">Information about using libraries on arduino site</a>
 
-Copy content of this repository directory or just this two files: F6188.cpp, F6188.h to ~/Arduino/libraries/F-6188/ directory (if did not exist, create one). Open new project in arduino and put this line on top :
+Copy content of this repository directory or just this two files: <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F-6188.cpp">F6188.cpp</a>, <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F-6188.h">F6188.h</a> to ~/Arduino/libraries/F-6188/ directory (if did not exist, create one). Open new project in arduino and use this code, of check code in examples directory <a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/examples/F-6188/F-6188.ino">F-6188.ino</a>:
 
 ```c
 #include "F6188.h"
@@ -32,7 +32,7 @@ for more examples look ate examples/F-6188/F-6188.ino
 
 # supported functions
 ```c
-begin(uint32_t baudrate); //parameter baudrate is communication speed between MCU and arduino, default 9600
+<a href="https://github.com/tomaskovacik/arduino/blob/master/libraries/F-6188/F6188.cpp#L225">begin(uint32_t baudrate);</a> //parameter baudrate is communication speed between MCU and arduino, default 9600
 
 sendData(String cmd); //construct string of AT+cmd and send it to serial port 
 
