@@ -31,7 +31,7 @@ for more examples look ate examples/F-6188/F-6188.ino
 
 # supported functions #
 
-begin(uint32_t baudrate) - parameter baudrate is communication speed between MCU and arduino, default 9600
+<p style='color:lightbrown'>begin(uint32_t baudrate)</p> - parameter baudrate is communication speed between MCU and arduino, default 9600
 
 sendData(String cmd) - construct string of AT+cmd and send it to serial port 
 
