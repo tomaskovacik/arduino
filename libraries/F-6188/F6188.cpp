@@ -344,7 +344,7 @@ uint8_t F6188::getName() { //  Query bluetooth name  AT+MN\r\n   NA:BK8000L\r\n 
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::getConnectioStatus() { //  Bluetooth connection status inquiry   AT+MO\rn  connection succeeded:" C1\r\n"no connection:"C0\r\n"
+uint8_t F6188::getConnectionStatus() { //  Bluetooth connection status inquiry   AT+MO\rn  connection succeeded:" C1\r\n"no connection:"C0\r\n"
   F6188::sendData(F6188_GET_CONNECTION_STATUS);
   F6188::getNextEventFromBT();
 }

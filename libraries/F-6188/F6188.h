@@ -125,7 +125,7 @@ class F6188
     uint8_t musicFastForward();
     uint8_t musicRewind();
     uint8_t getName();
-    uint8_t getConnectioStatus();
+    uint8_t getConnectionStatus();
     uint8_t getPinCode();
     uint8_t getAddress();
     uint8_t getSoftwareVersion();
