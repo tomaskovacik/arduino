@@ -104,50 +104,51 @@ getHFPstatus(); //get BT connection status
 As far as getNextEventFromBT() is called periodicaly, (it is called in all of functions mentioned above, just to handle responce to send command ASAP) library handle responce like this:
 
 library has its own variables, which are set/updated when data are received from module:
-```c
-BT_ADDR //string, updated after getAddress() is called
 
-BT_NAME //string, updated after getName() is called
+BT_ADDR - string, updated after getAddress() is called
 
-BT_PIN //string, updated after getPinCode() is called
+BT_NAME - string, updated after getName() is called
 
-CallerID //String, updated automatically or by calling getHFPstatus()
+BT_PIN - string, updated after getPinCode() is called
 
-BTState //enum, updated automatically or by calling getHFPstatus() or getConnectionStatus()
+CallerID - String, updated automatically or by calling getHFPstatus()
 
-CallState //enum, updated automatically or by calling callRedial() or getHFPstatus()
+BTState - enum, updated automatically or by calling getHFPstatus() or getConnectionStatus()
 
-MusicState //enum, updated automatically  or by calling getMusicStatus()
+CallState - enum, updated automatically or by calling callRedial() or getHFPstatus()
 
-PowerState //enum, updated automaticaly or by calling getHFPstatus(),getMusicStatus() or getConnectionStatus()
-```
+MusicState - enum, updated automatically  or by calling getMusicStatus()
+
+PowerState - enum, updated automaticaly or by calling getHFPstatus(),getMusicStatus() or getConnectionStatus()
+
 If you init F6188 library as in example code this variables can be accessed directly from main sketch with prefix BT, for example:
 
 Serial.print(BT.BT_NAME);
 
 
 BTState, CallState, MusicState and PowerState have these states, these are accessible from main sketch with prefix like other variable:
-```c
-BT.Playing //responce from module "MA"
 
-BT.Idle //responce from module "MB"
+BT.Playing - responce from module "MA"
 
-BT.IncomingCall //responce from module "IR- or M2"
+BT.Idle - responce from module "MB"
 
-BT.OutgoingCall //responce from module "PR- or M3"
+BT.IncomingCall - responce from module "IR- or M2"
 
-BT.CallInProgress //responce from module "M4"
+BT.OutgoingCall - responce from module "PR- or M3"
 
-BT.Connected //responce from module "M1"
+BT.CallInProgress - responce from module "M4"
 
-BT.Disconnected //responce from module "M0"
+BT.Connected - responce from module "M1"
 
-BT.On //responce from module "ON"
+BT.Disconnected - responce from module "M0"
 
-BT.Off //set if shutdownBT() is called
+BT.On - responce from module "ON"
 
-BT.Pairing //set if PairingInit() is called
-```
+BT.Off -set if shutdownBT() is called
+
+BT.Pairing - set if PairingInit() is called
+
+
 these can be used to triger actions in main sketch based on change of module state see F-6188.ino in examples directory.
 
 
