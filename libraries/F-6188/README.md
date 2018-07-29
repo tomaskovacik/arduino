@@ -10,7 +10,7 @@ F-6188 have AT command control support, supported commands are descriped <a href
 
 Copy content of this repository directory or just this two files: F6188.cpp, F6188.h to ~/Arduino/libraries/F-6188/ directory (if did not exist, create one). Open new project in arduino and put this line on top :
 
-```
+```arduino
 #include "F6188.h"
 #include <SoftwareSerial.h> //if using SW, with HW no need for this
 
