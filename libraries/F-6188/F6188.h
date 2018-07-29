@@ -44,7 +44,7 @@
 #define F6188_MUSIC_PREVIOUS_TRACK "ME"    //  previous track  AT+ME\r\n     
 #define F6188_MUSIC_FAST_FORWARD "MF"      //  fast forward  AT+MF\r\n     test how does this exacly works?
 #define F6188_MUSIC_REWIND "MH"            //  rewind  AT+MH\r\n     test how does this exacly works?
-#define F6188_GET_NAME "MN"                //  Query bluetooth name  AT+MN\r\n   NA:BK8000L\r\n  test this
+#define F6188_GET_NAME "MN"                //  Query bluetooth name  AT+MN\r\n   NA:BK8000L\r\n 
 #define F6188_GET_CONNECTION_STATUS "MO"   //  Bluetooth connection status inquiry   AT+MO\rn  connection succeeded:" C1\r\n"no connection:"C0\r\n"  
 #define F6188_GET_PIN_CODE "MP"            //  PIN Code query  AT+MP\r\n   PN:0000\r\n   
 #define F6188_GET_ADDRESS "MR"             //  Query bluetooth address   AT+MR\r\n   AD:111111111111\r\n   
@@ -132,14 +132,14 @@ class F6188
     uint8_t MusicGetStatus();
     uint8_t getHFPstatus();
 
-    uint8_t decodeReceivedString(String receivedString);
-    String returnCallerID(String receivedString); //return number between ""
-    String returnBtModuleName(String receivedString); //return module name between : and \0
     String BT_ADDR;
     String BT_NAME;
     String BT_PIN;
 
   private:
+    String returnBtModuleName(String receivedString); //return module name between : and \0
+    String returnCallerID(String receivedString); //return number between ""
+    uint8_t decodeReceivedString(String receivedString);
     void DBG(String text);
 
 #if  defined(USE_SW_SERIAL)
