@@ -200,7 +200,7 @@ void loop() {
         BT.getSoftwareVersion();
         break;
       case 'x':
-        BT.MusicGetStatus();
+        BT.getMusicStatus();
         break;
       case 'y':
         BT.getHFPstatus();
