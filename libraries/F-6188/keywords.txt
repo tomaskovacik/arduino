@@ -15,9 +15,9 @@ languageSwitch	KEYWORD2
 channelSwitch	KEYWORD2
 shutdown_BT	KEYWORD2
 switchInput	KEYWORD2
-open_phone_voice	KEYWORD2
+openPhoneVoice	KEYWORD2
 memoryClear	KEYWORD2
-language_set_number(uint8_t number);
+languageSetNumber(uint8_t number);
 musicTogglePlayPause	KEYWORD2
 musicStop	KEYWORD2
 musicNextTrack	KEYWORD2

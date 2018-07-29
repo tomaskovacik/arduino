@@ -292,7 +292,7 @@ uint8_t F6188::switchInput() { //  Enter the test mode   AT+CT\r\n
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::open_phone_voice() { //  Open phone VOICE  AT+CV\r\n
+uint8_t F6188::openPhoneVoice() { //  Open phone VOICE  AT+CV\r\n
   F6188::sendData(F6188_OPEN_PHONE_VOICE);
   F6188::getNextEventFromBT();
 }
@@ -302,7 +302,7 @@ uint8_t F6188::memoryClear() { //  Memory clear  AT+CZ\r\n
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::language_set_number(uint8_t number) { //  Number:( 0-4 )  Set the number of multi-lingual   AT+CMM4\r\n
+uint8_t F6188::languageSetNumber(uint8_t number) { //  Number:( 0-4 )  Set the number of multi-lingual   AT+CMM4\r\n
   //DBG((String)number);
   String command = F6188_LANGUAGE_SET_NUMBER + (String)number;
   F6188::sendData(command);
