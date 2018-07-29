@@ -21,7 +21,7 @@ F6188 BT(&swSerial);
 
 void getInitStates() {
   BT.getName();
-  BT.getConnectionStatus();
+  BT.getConnectioStatus();
   BT.getPinCode();
   BT.getAddress();
   BT.getSoftwareVersion();
@@ -135,11 +135,11 @@ void loop() {
         Serial.println(F("musicFastForward             q"));
         Serial.println(F("musicRewind                  r"));
         Serial.println(F("getName                      s"));
-        Serial.println(F("getConnectionStatus           t"));
+        Serial.println(F("getConnectioStatus           t"));
         Serial.println(F("getPinCode                   u"));
         Serial.println(F("getAddress                   v"));
         Serial.println(F("getSoftwareVersion           w"));
-        Serial.println(F("getMusicStatus               x"));
+        Serial.println(F("MusicGetStatus               x"));
         Serial.println(F("getHFPstatus                 y"));
         break;
       case 'i':
@@ -200,7 +200,7 @@ void loop() {
         BT.getSoftwareVersion();
         break;
       case 'x':
-        BT.getMusicStatus();
+        BT.MusicGetStatus();
         break;
       case 'y':
         BT.getHFPstatus();
