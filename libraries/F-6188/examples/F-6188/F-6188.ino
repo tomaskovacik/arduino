@@ -21,7 +21,7 @@ F6188 BT(&swSerial);
 
 void getInitStates() {
   BT.getName();
-  BT.getConnectioStatus();
+  BT.getConnectionStatus();
   BT.getPinCode();
   BT.getAddress();
   BT.getSoftwareVersion();
