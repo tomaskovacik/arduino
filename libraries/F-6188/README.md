@@ -1,16 +1,16 @@
-# arduino library for F-6188 #
+# arduino library for F-6188
 
 This directory contain all files needed to support F-6188 a2dp bluetooth module based on Beken BK8000L chip.
 
 F-6188 have AT command control support, supported commands are descriped <a href="https://github.com/tomaskovacik/kicad-library/tree/master/library/datasheet/F-6188_BK8000L">here</a>
 
-# how to use it #
+# how to use it
 
 <a href="https://www.arduino.cc/en/Guide/Libraries">Information about using libraries on arduino site</a>
 
 Copy content of this repository directory or just this two files: F6188.cpp, F6188.h to ~/Arduino/libraries/F-6188/ directory (if did not exist, create one). Open new project in arduino and put this line on top :
 
-```arduino
+```c
 #include "F6188.h"
 #include <SoftwareSerial.h> //if using SW, with HW no need for this
 
@@ -23,13 +23,14 @@ void(){
 }
 
 void loop(){
-BT.getNextEventFromBT(); //should be call periodically, to get notifications from module, for example if someone calling...
+//should be call periodically, to get notifications from module, for example if someone calling...
+BT.getNextEventFromBT();
 }
 ```
 
 for more examples look ate examples/F-6188/F-6188.ino
 
-# supported functions #
+# supported functions
 
 <p style='color:red'>begin(uint32_t baudrate)</p> - parameter baudrate is communication speed between MCU and arduino, default 9600
 
@@ -101,7 +102,7 @@ returnCallerID(String receivedString)
 
 returnBtModuleName(String receivedString) 
 
-# Handling responce from module #
+# Handling responce from module
 
 As far as getNextEventFromBT() is called periodicaly, (it is called in all of functions mentioned above, just to handle responce to send command ASAP) library handle responce like this:
 
