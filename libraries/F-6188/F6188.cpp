@@ -39,7 +39,7 @@ F6188::F6188(HardwareSerial *ser) {
 F6188::~F6188() {
 }
 
-void F6188::begin(uint32_t baudrate) {
+void F6188::begin(uint32_t baudrate = 9600) {
 #if defined(USE_SW_SERIAL)
   if (btSwSerial)
     btSwSerial->begin(baudrate);

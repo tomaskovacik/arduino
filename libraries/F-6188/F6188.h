@@ -96,7 +96,7 @@ class F6188
 #endif
 #endif
     F6188(HardwareSerial *ser);
-    void begin(uint32_t baudrate);
+    void begin(uint32_t baudrate = 9600);
     ~F6188();
     uint8_t sendData(String cmd);
     uint8_t getNextEventFromBT();
