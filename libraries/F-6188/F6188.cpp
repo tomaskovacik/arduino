@@ -61,6 +61,7 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
   switch (receivedString[0]) {
     case 'A':
       {
+      PowerState=On;
         if (receivedString[1] == 'D' && receivedString[2] == ':') {
             BT_ADDR = receivedString.substring(5);
             DBG("BT ADDRESS: " + BT_ADDR);
@@ -68,6 +69,8 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
       }
       break;
     case 'C':
+      {
+      PowerState=On;
       switch (receivedString[1]) {
         case '1':
           BTState = Connected;
@@ -76,15 +79,21 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
           BTState = Disconnected;
           break;
       }
+      }
       break;
     case 'E':
+      {
+      PowerState=On;
       switch (receivedString[1]) {
         case 'R':
           if (receivedString[2] == 'R') return 0;
           break;
       }
+      }
       break;
     case 'I':// connection info
+      {
+      PowerState=On;
       switch (receivedString[1]) {
         case 'I': //BT connected
           BTState = Connected;
@@ -97,8 +106,11 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
           CallerID = returnCallerID(receivedString);
           break;
       }
+      }
       break;
     case 'M': //music
+      {
+      PowerState=On;
       switch (receivedString[1]) {
         case 'B':
           MusicState = Playing;
@@ -122,33 +134,43 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
           CallState = CallInProgress;
           break;
       }
+      }
       break;
     case 'N':
+      {
+      PowerState=On;
         if (receivedString[1] == 'A' && receivedString[2] == ':') {//name
           BT_NAME = F6188::returnBtModuleName(receivedString);
         }
+      }
       break;
     case 'P':
+      {
+      PowerState=On;
       switch (receivedString[1]) {
-      case 'R': //outgoing call
-        if (receivedString[2] == '-') CallState = OutgoingCall;
+        case 'R': //outgoing call
+          if (receivedString[2] == '-') CallState = OutgoingCall;
           CallerID = returnCallerID(receivedString);
-      break;
-      case 'N':
+        break;
+        case 'N':
           if (receivedString[2] == ':') {
             BT_PIN = receivedString.substring(4);
           }
-      break;
+        break;
+      }
       }
     break;
     case 'O': //BT On
+      {
         switch (receivedString[1]) {
         case 'N':
           PowerState = On;
           break;
         case 'K':
+	  if (PowerState == ShutdownInProgress) PowerState=Off;
           return 1;
           break;
+      }
       }
     break;
     case 0xA: //\r
@@ -285,7 +307,7 @@ uint8_t F6188::channelSwitch() { //  Channel switching (invalid)   AT+CO\r\n    
 
 uint8_t F6188::shutdownBT() { //  Shutdown  AT+CP\r\n
   F6188::sendData(F6188_SHUTDOWN);
-  PowerState = Off; 
+  PowerState = ShutdownInProgress; 
   F6188::getNextEventFromBT();
 }
 

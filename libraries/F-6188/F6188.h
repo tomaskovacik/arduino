@@ -67,12 +67,7 @@ class F6188
 {
   public:
 
-    uint8_t BTState;
-    uint8_t CallState;
-    uint8_t MusicState;
-    uint8_t PowerState;
 
-    String CallerID;
 
     enum STATES
     {
@@ -85,8 +80,19 @@ class F6188
       Disconnected, //M0
       On,
       Off,
-      Pairing
+      Pairing,
+      ShutdownInProgress
     };
+
+    uint8_t BTState=Disconnected;
+    uint8_t CallState=Disconnected;
+    uint8_t MusicState=Idle;
+    uint8_t PowerState=Off;
+
+    String CallerID;
+    String BT_ADDR;
+    String BT_NAME;
+    String BT_PIN;
 
 #if defined(USE_SW_SERIAL)
 #if ARDUINO >= 100
@@ -131,10 +137,6 @@ class F6188
     uint8_t getSoftwareVersion();
     uint8_t getMusicStatus();
     uint8_t getHFPstatus();
-
-    String BT_ADDR;
-    String BT_NAME;
-    String BT_PIN;
 
   private:
     String returnBtModuleName(String receivedString); //return module name between : and \0
