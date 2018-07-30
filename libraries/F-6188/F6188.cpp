@@ -39,7 +39,7 @@ F6188::F6188(HardwareSerial *ser) {
 F6188::~F6188() {
 }
 
-void F6188::begin(uint32_t baudrate = 9600) {
+void F6188::begin(uint32_t baudrate) {
 #if defined(USE_SW_SERIAL)
   if (btSwSerial)
     btSwSerial->begin(baudrate);
@@ -224,6 +224,7 @@ uint8_t F6188::sendData(String cmd) {
 
 uint8_t F6188::PairingInit() { //  pairing   AT+CA\r\n
   F6188::sendData(F6188_PAIRING_INIT);
+  BTState=Pairing;
   F6188::getNextEventFromBT();
 }
 
