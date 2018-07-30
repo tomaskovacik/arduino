@@ -143,10 +143,51 @@ void loop() {
         Serial.println(F("getHFPstatus                 y"));
         break;
       case 'i':
-      getInitStates();
-        Serial.print(F("NAME: ")); Serial.println(BT.BT_NAME);
-        Serial.print(F("ADDR: ")); Serial.println(BT.BT_ADDR);
-        Serial.print(F("PIN: ")); Serial.println(BT.BT_PIN);
+        switch (BT.PowerState) {
+          case (BT.On):
+            getInitStates();
+            Serial.println(F("Module ON"));
+            Serial.print(F("NAME: ")); Serial.println(BT.BT_NAME);
+            Serial.print(F("ADDR: ")); Serial.println(BT.BT_ADDR);
+            Serial.print(F("PIN: ")); Serial.println(BT.BT_PIN);
+            break;
+          case (BT.Off):
+            Serial.println(F("Module OFF"));
+            break;
+        }
+        switch (BT.BTState) {
+          case BT.Connected:
+            Serial.println(F("Bluetooth connected"));
+            break;
+          case BT.Disconnected:
+            Serial.println(F("Bluetooth disconnected"));
+            break;
+          case BT.Pairing:
+            Serial.println(F("Bluetooth in pairing mode"));
+            break;
+        }
+        switch (BT.MusicState) {
+          case (BT.Playing):
+            Serial.println(F("Playing music"));
+            break;
+          case (BT.Idle):
+            Serial.println(F("Music stoped"));
+            break;
+        }
+        switch (BT.CallState) {
+          case (BT.IncomingCall):
+            Serial.println(F("Incoming call:"));
+            Serial.println(BT.CallerID);
+            break;
+          case (BT.OutgoingCall):
+            Serial.println(F("Dialing:"));
+            Serial.println(BT.CallerID);
+            break;
+          case (BT.CallInProgress):
+            Serial.println(F("Calling:"));
+            Serial.println(BT.CallerID);
+            break;
+        }
         break;
       case 'j':
         BT.memoryClear();
@@ -158,7 +199,7 @@ void loop() {
           Serial.println(F("give me number 0-4"));
           char b;
           c = 0;
-          while (!Serial.available()) {}; //wait until user input something ... then read it:
+          while (!Serial.available()) {}; //wait un   til user input something ... then read it:
           if (Serial.available() > 0) {
             b = Serial.read();
           }
@@ -259,7 +300,7 @@ void loop() {
   if (PowerState != BT.PowerState) {
     switch (BT.PowerState) {
       case (BT.On):
-      getInitStates();
+        getInitStates();
         Serial.println(F("Module ON"));
         Serial.print(F("NAME: ")); Serial.println(BT.BT_NAME);
         Serial.print(F("ADDR: ")); Serial.println(BT.BT_ADDR);
