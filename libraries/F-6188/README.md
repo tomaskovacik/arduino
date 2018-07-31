@@ -14,9 +14,11 @@ Copy content of this repository directory or just this two files: <a href="https
 #include "F6188.h"
 #include <SoftwareSerial.h> //if using SW, with HW no need for this
 
+#define resetBTPin 5
+ 
 SoftwareSerial swSerial(7, 6); //rxPin, txPin
 
-F6188 BT(&swSerial); //in case of HW serial use for example: (&Serial1)
+F6188 BT(&swSerial, resetBTPin); //in case of HW serial use for example: (&Serial1)
 
 void(){
   BT.begin(); //or BT.begin(9600); for specific baudrate
@@ -35,6 +37,8 @@ for more examples look ate examples/F-6188/F-6188.ino
 begin(uint32_t baudrate); //parameter baudrate is communication speed between MCU and arduino, default 9600
 
 sendData(String cmd); //construct string of AT+cmd and send it to serial port 
+
+sendAPTData(String cmd); //construct string of APT+cmd and send it to serial port 
 
 getNextEventFromBT(); //parse data send from module and send internal variales, call this periodicaly, to parse data received from module ASAP
 
