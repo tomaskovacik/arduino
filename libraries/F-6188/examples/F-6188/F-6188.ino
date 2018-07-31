@@ -142,6 +142,7 @@ void loop() {
         Serial.println(F("MusicGetStatus               x"));
         Serial.println(F("getHFPstatus                 y"));
         Serial.println(F("StartModule                  z"));
+        Serial.println(F("send APT data            A+data"));
         break;
       case 'i':
         switch (BT.PowerState) {
@@ -249,6 +250,25 @@ void loop() {
         break;
       case 'z':
         BT.resetModule();
+        break;
+      case 'A':
+        {
+          Serial.read(); //read \r
+          Serial.read(); //read \n
+          //Serial.println(F(""));
+          String str;
+          c = 0;
+          while (!Serial.available()) {}; //wait until user input something ... then read it:
+          while (Serial.available() > 0) {
+            c = Serial.read();
+            if ( c == 0xD ) {
+              break;
+            } else {
+              str = str + c;
+            }
+          }
+          BT.sendAPTData(str);
+        }
         break;
     }
   }

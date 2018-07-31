@@ -86,6 +86,9 @@ uint8_t F6188::decodeReceivedString(String receivedString) {
             BT_ADDR = receivedString.substring(5);
             DBG("BT ADDRESS: " + BT_ADDR);
         }
+        if (receivedString[1] == 'P' && receivedString[2] == 'R' && receivedString[2] == '+'){
+            DBG("SPP data received: " + receivedString.substring(5));
+	} 
       }
       break;
     case 'C':
@@ -263,6 +266,19 @@ uint8_t F6188::sendData(String cmd) {
 #endif
     btHwSerial -> print(Command);
 }
+
+uint8_t F6188::sendAPTData(String cmd) {
+  String Command = "APT+" + cmd + "\r\n";
+  DBG("sending APT " + Command);
+  delay(100);
+#if defined(USE_SW_SERIAL)
+  if (btSwSerial)
+    btSwSerial -> print(Command);
+  else
+#endif
+    btHwSerial -> print(Command);
+}
+
 
 uint8_t F6188::PairingInit() { //  pairing   AT+CA\r\n
   F6188::sendData(F6188_PAIRING_INIT);

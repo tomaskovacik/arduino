@@ -1,5 +1,6 @@
 F6188	KEYWORD1
 sendData	KEYWORD2
+sendAPTData	KEYWORD2
 getNextEventFromBT	KEYWORD2
 PairingInit	KEYWORD2
 PairingExit	KEYWORD2

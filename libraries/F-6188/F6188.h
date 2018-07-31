@@ -102,7 +102,10 @@ class F6188
     F6188(HardwareSerial *ser, uint8_t resetPin);
     void begin(uint32_t baudrate = 9600);
     ~F6188();
+
     uint8_t sendData(String cmd);
+    uint8_t sendAPTData(String cmd);
+
     uint8_t getNextEventFromBT();
 
     uint8_t PairingInit();
