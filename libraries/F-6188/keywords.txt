@@ -31,4 +31,5 @@ getAddress	KEYWORD2
 getSoftwareVersion	KEYWORD2
 getMusicStatus	KEYWORD2
 getHFPstatus	KEYWORD2
+resetModule	KEYWORD2
 

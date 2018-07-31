@@ -17,7 +17,7 @@ uint8_t PowerState;
 
 SoftwareSerial swSerial(7, 6); //rxPin, txPin, inverse_logic
 
-F6188 BT(&swSerial);
+F6188 BT(&swSerial, 5);
 
 void getInitStates() {
   BT.getName();
@@ -121,13 +121,13 @@ void loop() {
         Serial.println(F("volumeDown                   a"));
         Serial.println(F("languageSwitch               b"));
         Serial.println(F("channelSwitch                c"));
-        Serial.println(F("shutdownBT                  d"));
+        Serial.println(F("shutdownBT                   d"));
         Serial.println(F("switch input                 e"));
-        Serial.println(F("send custom AT+command       f"));
-        Serial.println(F("openPhoneVoice             g"));
+        Serial.println(F("send custom AT+command   f+CMD"));
+        Serial.println(F("openPhoneVoice               g"));
         Serial.println(F("show info about module       i"));
         Serial.println(F("memoryClear                  j"));
-        Serial.println(F("languageSetNumber      k+num"));
+        Serial.println(F("languageSetNumber        k+num"));
         Serial.println(F("musicTogglePlayPause         l"));
         Serial.println(F("musicStop                    m"));
         Serial.println(F("musicNextTrack               n"));
@@ -141,6 +141,7 @@ void loop() {
         Serial.println(F("getSoftwareVersion           w"));
         Serial.println(F("MusicGetStatus               x"));
         Serial.println(F("getHFPstatus                 y"));
+        Serial.println(F("StartModule                  z"));
         break;
       case 'i':
         switch (BT.PowerState) {
@@ -246,7 +247,9 @@ void loop() {
       case 'y':
         BT.getHFPstatus();
         break;
-
+      case 'z':
+        BT.resetModule();
+        break;
     }
   }
 
@@ -312,7 +315,6 @@ void loop() {
     }
     PowerState = BT.PowerState;
   }
-
 }
 
 

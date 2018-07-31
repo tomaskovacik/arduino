@@ -17,20 +17,22 @@
 
 #if defined(USE_SW_SERIAL)
 #if ARDUINO >= 100
-F6188::F6188(SoftwareSerial *ser)
+F6188::F6188(SoftwareSerial *ser, uint8_t resetPin)
 #else
-F6188::F6188(NewSoftSerial *ser)
+F6188::F6188(NewSoftSerial *ser, uint8_t resetPin)
 #endif
 #endif
 {
 #if defined(USE_SW_SERIAL)
   btHwSerial = NULL;
   btSwSerial = ser;
+  _reset=resetPin;
 }
 #endif
-F6188::F6188(HardwareSerial *ser) {
+F6188::F6188(HardwareSerial *ser, uint8_t resetPin) {
   btSwSerial = NULL;
   btHwSerial = ser;
+  _reset=resetPin;
 }
 
 /*
@@ -46,6 +48,24 @@ void F6188::begin(uint32_t baudrate) {
   else
 #endif
     btHwSerial->begin(baudrate);
+ 
+  pinMode(_reset,OUTPUT);
+  F6188::resetHigh();
+}
+
+void F6188::resetLow(){
+ digitalWrite(_reset,LOW);
+}
+
+void F6188::resetHigh(){
+ digitalWrite(_reset,HIGH);
+}
+
+void F6188::resetModule(){
+ DBG("reseting module");
+ resetLow();
+ delay(100);
+ resetHigh();
 }
 
 /*

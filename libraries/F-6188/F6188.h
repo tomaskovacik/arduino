@@ -18,7 +18,7 @@
 
 #define USE_SW_SERIAL 1
 
-#define DEBUG 0 
+#define DEBUG 1 
 
 //cmds definitions:
 #define F6188_PAIRING_INIT "CA"            //  pairing   AT+CA\r\n     
@@ -67,8 +67,6 @@ class F6188
 {
   public:
 
-
-
     enum STATES
     {
       Playing, //MA
@@ -96,12 +94,12 @@ class F6188
 
 #if defined(USE_SW_SERIAL)
 #if ARDUINO >= 100
-    F6188(SoftwareSerial *ser);
+    F6188(SoftwareSerial *ser, uint8_t resetPin);
 #else
-    F6188(NewSoftSerial  *ser);
+    F6188(NewSoftSerial  *ser, uint8_t resetPin);
 #endif
 #endif
-    F6188(HardwareSerial *ser);
+    F6188(HardwareSerial *ser, uint8_t resetPin);
     void begin(uint32_t baudrate = 9600);
     ~F6188();
     uint8_t sendData(String cmd);
@@ -137,12 +135,18 @@ class F6188
     uint8_t getSoftwareVersion();
     uint8_t getMusicStatus();
     uint8_t getHFPstatus();
+    void resetModule();
 
   private:
+    uint8_t _reset;
+
     String returnBtModuleName(String receivedString); //return module name between : and \0
     String returnCallerID(String receivedString); //return number between ""
     uint8_t decodeReceivedString(String receivedString);
     void DBG(String text);
+    void resetHigh();
+    void resetLow();
+
 
 #if  defined(USE_SW_SERIAL)
 #if ARDUINO >= 100

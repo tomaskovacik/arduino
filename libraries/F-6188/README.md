@@ -97,6 +97,8 @@ getSoftwareVersion(); //get SW version of module (this one did not work for me)
 MusicGetStatus(); //get playback status 
 
 getHFPstatus(); //get BT connection status
+
+resetModule(); //reset module, for example to start it again
 ```
 
 # Handling responce from module
