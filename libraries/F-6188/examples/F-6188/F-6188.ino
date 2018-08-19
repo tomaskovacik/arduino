@@ -45,16 +45,16 @@ void loop() {
     switch (c)
     {
       case '1':
-        BT.PairingInit();
+        BT.pairingInit();
         break;
       case '2':
-        BT.PairingExit();
+        BT.pairingExit();
         break;
       case '3':
-        BT.ConnectLastDevice();
+        BT.connectLastDevice();
         break;
       case '4':
-        BT.Disconnect();
+        BT.disconnect();
         break;
       case '5':
         BT.callAnsware();

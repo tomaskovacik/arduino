@@ -280,23 +280,23 @@ uint8_t F6188::sendAPTData(String cmd) {
 }
 
 
-uint8_t F6188::PairingInit() { //  pairing   AT+CA\r\n
+uint8_t F6188::pairingInit() { //  pairing   AT+CA\r\n
   F6188::sendData(F6188_PAIRING_INIT);
   BTState=Pairing;
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::PairingExit() {//  Exit pairing  AT+CB\r\n
+uint8_t F6188::pairingExit() {//  Exit pairing  AT+CB\r\n
   F6188::sendData(F6188_PAIRING_EXIT);
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::ConnectLastDevice() {//  The last paired device connected  AT+CC\r\n     what this should do? connect to last connected device?
+uint8_t F6188::connectLastDevice() {//  The last paired device connected  AT+CC\r\n     what this should do? connect to last connected device?
   F6188::sendData(F6188_CONNECT_LAST_DEVICE);
   F6188::getNextEventFromBT();
 }
 
-uint8_t F6188::Disconnect() {//  disconnect  AT+CD\r\n
+uint8_t F6188::disconnect() {//  disconnect  AT+CD\r\n
   F6188::sendData(F6188_DISCONNECT);
   F6188::getNextEventFromBT();
 }

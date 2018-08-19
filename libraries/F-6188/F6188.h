@@ -108,10 +108,10 @@ class F6188
 
     uint8_t getNextEventFromBT();
 
-    uint8_t PairingInit();
-    uint8_t PairingExit();
-    uint8_t ConnectLastDevice();
-    uint8_t Disconnect();
+    uint8_t pairingInit();
+    uint8_t pairingExit();
+    uint8_t connectLastDevice();
+    uint8_t disconnect();
     uint8_t callAnsware();
     uint8_t callReject();
     uint8_t callHangUp();
