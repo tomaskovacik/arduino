@@ -810,11 +810,9 @@ void decode_i2c(uint8_t data[howmanybytesinpacket]) {
     //autoincrement of subaddress:
     //packet is subbadress+data, data[0] is packet size , so number of incrementation is "packet_size - 1"
     increments = data[0] - 1;
-    //actual subaddress is only low 4bits:
-    data[1] = data[1] & 0xf;
   }
   for (uint8_t i = 0; i < increments; i++) {
-    uint8_t subaddress = data[1] + i;//subbadress is always 2nd field in array plus increment
+    uint8_t subaddress = (data[1] & 0xf) + i;//subbadress is always lower 4bits of 2nd field in array plus increment
     uint8_t c = data[i + 2];//0th byte -> size, 1st byte->subaddress
     //Serial.println(subaddress);
     switch (subaddress) {
