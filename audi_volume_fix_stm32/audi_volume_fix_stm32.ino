@@ -554,8 +554,6 @@ void decode_display_data(uint8_t _data[howmanybytesinpacket]) {
     case 0x61:
       {
         grab_volume = 1;
-        Serial.print(F("TAPE: "));
-        //TAPE mode
         switch (_data[2]) {
           case 0x01:
             Serial.println(F("TAPE: /\\"));
@@ -574,6 +572,9 @@ void decode_display_data(uint8_t _data[howmanybytesinpacket]) {
             break;
           case 0x10:
             Serial.println(F("TP-INFO"));
+            break;
+          case 0x0B:
+            Serial.println(F("SAFE"));
             break;
           default:
             dump = 1;
@@ -681,7 +682,16 @@ void decode_display_data(uint8_t _data[howmanybytesinpacket]) {
       {
         if (_data[2] == 0x00) Serial.println(F("Shutdown"));
       }
-      break;
+      break;  
+    case 0x92:
+      {
+        Serial.print(F("Entered safe code:"));
+        Serial.print(_data[2],HEX);
+        Serial.println(_data[3],HEX);
+        //Serial.print(_data[4],HEX);
+        //Serial.println(_data[5],HEX);
+      }
+      break; 
     default:
       {
         dump = 1;
