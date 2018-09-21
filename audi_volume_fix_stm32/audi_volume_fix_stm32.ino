@@ -688,8 +688,6 @@ void decode_display_data(uint8_t _data[howmanybytesinpacket]) {
         Serial.print(F("Entered safe code:"));
         Serial.print(_data[2],HEX);
         Serial.println(_data[3],HEX);
-        //Serial.print(_data[4],HEX);
-        //Serial.println(_data[5],HEX);
       }
       break; 
     default:
