@@ -19,8 +19,8 @@ uint8_t RADIO_txinptr;
 uint8_t RADIO_txoutptr;
 uint8_t DISPLAY_txinptr;
 uint8_t DISPLAY_txoutptr;
-volatile RADIO_capturing; //flag that  we are receiving, so no sending muchachos
-volatile DISPLAY_capturing;
+volatile uint8_t RADIO_capturing; //flag that  we are receiving, so no sending muchachos
+volatile uint8_t DISPLAY_capturing;
 
 void DISPLAY_STATUS_line_rising() {
   DISPLAY_myByte = 0;
@@ -113,7 +113,7 @@ void RADIO_send_cmd(int cmd) { //cheking if we can send somesing is done in main
   delayMicroseconds(200);
 
   digitalWrite(RADIO_STATUS, HIGH);
-}
+
 }
 
 
@@ -130,10 +130,10 @@ void setup() {
   RADIO_capturing = 0;
   DISPLAY_capturing = 0;
 
-  pinMode(SS, INPUT);
-  pinMode(SCK, INPUT);
-  pinMode(MISO, INPUT);
-  attachInterrupt(intSS_IN, SS_line_rising, RISING);
+//  pinMode(SS, INPUT);
+//  pinMode(SCK, INPUT);
+//  pinMode(MISO, INPUT);
+//  attachInterrupt(intSS_IN, SS_line_rising, RISING);
 }
 
 void loop() {
