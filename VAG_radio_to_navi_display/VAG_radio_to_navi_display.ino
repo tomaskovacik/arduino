@@ -32,6 +32,7 @@ long last_radio_update = 0;
 char radioBuffer[16];
 
 void setup() {
+  Serial.begin(115200);
   radio_read.init();
   fisWriter.FIS_init();
   fisWriter.initScreen(0x80, 0, 0, 1, 1);
