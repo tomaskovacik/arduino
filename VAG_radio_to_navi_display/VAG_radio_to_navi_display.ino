@@ -6,7 +6,7 @@
  * 
  */
 
-#include "VW2002FISWriter.h"
+#include <VAGFISWriter.h>
 #include <VAGFISReader.h>
 
 //arduino
@@ -23,7 +23,7 @@
 #define FIS_DATA PB5
 #define FIS_ENA PA15
 
-VW2002FISWriter fisWriter( FIS_CLK, FIS_DATA, FIS_ENA );
+VAGFISWriter fisWriter( FIS_CLK, FIS_DATA, FIS_ENA );
 VAGFISReader radio_read(RADIO_CLK, RADIO_DATA, RADIO_ENA);
 
 long last_fis_refresh = 0;
@@ -33,8 +33,8 @@ char radioBuffer[16];
 
 void setup() {
   Serial.begin(115200);
-  radio_read.init();
-  fisWriter.FIS_init();
+  radio_read.begin();
+  fisWriter.begin();
   fisWriter.initScreen(0x80, 0, 0, 1, 1);
   delay(2000);
   fisWriter.sendMsg(" RADIO   2 NAVI ");
@@ -45,14 +45,14 @@ void setup() {
 
 
 void loop() {
-  if (radio_read.has_new_msg()) {
+  if (radio_read.hasNewMsg()) {
     //we are using RADIO mode to NAVI mode, so msg from RADIO is probably not NAVI :), no need to check if it is or not
-    for (uint8_t i = 1; i < radio_read.get_size() - 1; i++) { //1st byte is msg ID, last is checksumm
-      radioBuffer[i - 1] = radio_read.read_data(i);
+    for (uint8_t i = 1; i < radio_read.getSize() - 1; i++) { //1st byte is msg ID, last is checksumm
+      radioBuffer[i - 1] = radio_read.readData(i);
       Serial.write(radioBuffer[i - 1]);
     }
     Serial.println();
-    radio_read.clear_new_msg_flag();
+    radio_read.clearNewMsgFlag();
     last_radio_update = millis();
 
   }
