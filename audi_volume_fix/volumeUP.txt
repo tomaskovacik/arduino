@@ -1,0 +1,174 @@
+ Knob + 
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: 6dB, Trebble: 12dB
+volume -59.68dB ( FF )
+ Knob + 
+volume -59.68dB ( FF )
+volume -59.68dB ( FF )
+volume -59.37dB ( FE )
+volume -58.75dB ( FC )
+volume -58.12dB ( FA )
+volume -57.50dB ( F8 )
+volume -56.87dB ( F6 )
+volume -56.25dB ( F4 )
+volume -55.62dB ( F2 )
+volume -55.00dB ( F0 )
+volume -54.37dB ( EE )
+volume -53.75dB ( EC )
+ Knob + 
+volume -53.12dB ( EA )
+volume -52.50dB ( E8 )
+volume -51.87dB ( E6 )
+volume -51.25dB ( E4 )
+volume -50.62dB ( E2 )
+volume -50.00dB ( E0 )
+volume -49.37dB ( DE )
+volume -48.75dB ( DC )
+volume -48.12dB ( DA )
+volume -47.50dB ( D8 )
+volume -46.87dB ( D6 )
+volume -46.25dB ( D4 )
+ Knob + 
+volume -45.62dB ( D2 )
+volume -45.00dB ( D0 )
+volume -44.37dB ( CE )
+volume -43.75dB ( CC )
+volume -43.12dB ( CA )
+volume -42.50dB ( C8 )
+volume -41.87dB ( C6 )
+volume -41.25dB ( C4 )
+volume -40.62dB ( C2 )
+volume -40.00dB ( C0 )
+volume -39.37dB ( BE )
+volume -38.75dB ( BC )
+ Knob + 
+volume -38.12dB ( BA )
+volume -37.50dB ( B8 )
+volume -36.87dB ( B6 )
+volume -36.25dB ( B4 )
+volume -35.62dB ( B2 )
+volume -35.00dB ( B0 )
+volume -34.37dB ( AE )
+volume -33.75dB ( AC )
+volume -33.12dB ( AA )
+volume -32.50dB ( A8 )
+volume -31.87dB ( A6 )
+volume -31.25dB ( A4 )
+ Knob + 
+volume -30.62dB ( A2 )
+volume -30.00dB ( A0 )
+volume -29.37dB ( 9E )
+volume -28.75dB ( 9C )
+volume -28.12dB ( 9A )
+volume -27.50dB ( 98 )
+volume -26.87dB ( 96 )
+volume -26.25dB ( 94 )
+ Knob + 
+volume -25.62dB ( 92 )
+volume -25.00dB ( 90 )
+volume -24.37dB ( 8E )
+volume -23.75dB ( 8C )
+volume -23.12dB ( 8A )
+volume -22.50dB ( 88 )
+volume -21.87dB ( 86 )
+volume -21.25dB ( 84 )
+ Knob + 
+volume -20.62dB ( 82 )
+volume -20.00dB ( 80 )
+volume -19.37dB ( 7E )
+volume -18.75dB ( 7C )
+volume -18.12dB ( 7A )
+volume -17.50dB ( 78 )
+volume -16.87dB ( 76 )
+volume -16.25dB ( 74 )
+ Knob + 
+volume -15.62dB ( 72 )
+volume -15.00dB ( 70 )
+volume -14.37dB ( 6E )
+volume -13.75dB ( 6C )
+volume -13.12dB ( 6A )
+volume -12.50dB ( 68 )
+ Knob + 
+Loudness:  - 17.5000000000dB
+volume -11.87dB ( 66 )
+volume -11.25dB ( 64 )
+volume -10.62dB ( 62 )
+volume -10.00dB ( 60 )
+ Knob + 
+Loudness:  - 16.2500000000dB
+volume -9.37dB ( 5E )
+volume -8.75dB ( 5C )
+ Knob + 
+Loudness:  - 15.0000000000dB
+volume -8.12dB ( 5A )
+volume -7.50dB ( 58 )
+ Knob + 
+Loudness:  - 13.7500000000dB
+volume -6.87dB ( 56 )
+volume -6.25dB ( 54 )
+ Knob + 
+Loudness:  - 12.5000000000dB
+volume -5.62dB ( 52 )
+volume -5.00dB ( 50 )
+ Knob + 
+Loudness:  - 11.2500000000dB
+volume -4.37dB ( 4E )
+volume -3.75dB ( 4C )
+ Knob + 
+Loudness:  - 10.0000000000dB
+volume -3.12dB ( 4A )
+volume -2.50dB ( 48 )
+ Knob + 
+Loudness:  - 8.7500000000dB
+volume -1.87dB ( 46 )
+volume -1.25dB ( 44 )
+ Knob + 
+Loudness:  - 7.5000000000dB
+volume -0.62dB ( 42 )
+volume 0.00dB ( 40 )
+ Knob + 
+volume 0.63dB ( 3E )
+volume 1.25dB ( 3C )
+ Knob + 
+volume 1.88dB ( 3A )
+volume 2.50dB ( 38 )
+ Knob + 
+volume 3.13dB ( 36 )
+volume 3.75dB ( 34 )
+ Knob + 
+volume 4.38dB ( 32 )
+volume 5.00dB ( 30 )
+ Knob + 
+volume 5.63dB ( 2E )
+volume 6.25dB ( 2C )
+ Knob + 
+volume 6.88dB ( 2A )
+volume 7.50dB ( 28 )
+ Knob + 
+volume 8.13dB ( 26 )
+volume 8.75dB ( 24 )
+ Knob + 
+volume 9.38dB ( 22 )
+volume 10.00dB ( 20 )
+ Knob + 
+volume 10.63dB ( 1E )
+volume 11.25dB ( 1C )
+ Knob + 
+volume 11.88dB ( 1A )
+volume 12.50dB ( 18 )
+ Knob + 
+volume 13.13dB ( 16 )
+volume 13.75dB ( 14 )
+ Knob + 
+volume 14.38dB ( 12 )
+volume 15.00dB ( 10 )
+ Knob + 
+ Knob + 
+ Knob + 
+ Knob + 
+ Knob + 
+ Knob + 
+ Knob + 
+ Knob + 

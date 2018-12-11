@@ -1,0 +1,50 @@
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+ uknown25
+volume -59.68dB ( FF )
+Speaker Attenuator left front: Muted
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: Muted
+Speaker Attenuator left rear: 0.00dB
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Input selector: CD selected (0dB diferential input gain (IN3))
+Input selector: FM / AM selected (IN1) 
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+volume -59.68dB ( FF )
+Speaker Attenuator left front: Muted
+Speaker Attenuator left rear: 0.00dB
+Speaker Attenuator right front: Muted
+Speaker Attenuator left rear: 0.00dB
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Loudness:  - 17.5000000000dB
+Bass: 6dB, Trebble: 12dB
+volume -59.68dB ( FF )
+Loudness:  - 18.7500000000dB
+volume -59.68dB ( FF )
+volume -59.68dB ( FF )
+volume -59.68dB ( FF )
+volume -59.06dB ( FD )
+volume -58.43dB ( FB )
+volume -57.81dB ( F9 )
+volume -57.18dB ( F7 )
+volume -56.56dB ( F5 )
+volume -55.93dB ( F3 )
+volume -55.31dB ( F1 )
+volume -54.68dB ( EF )
+volume -53.75dB ( EC )

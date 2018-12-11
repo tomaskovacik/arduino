@@ -1,0 +1,87 @@
+ Knob - 
+volume 13.75dB ( 14 )
+ Knob - 
+volume 12.50dB ( 18 )
+ Knob - 
+volume 11.25dB ( 1C )
+ Knob - 
+volume 10.00dB ( 20 )
+ Knob - 
+volume 8.75dB ( 24 )
+ Knob - 
+volume 7.50dB ( 28 )
+ Knob - 
+volume 6.25dB ( 2C )
+ Knob - 
+volume 5.00dB ( 30 )
+ Knob - 
+volume 3.75dB ( 34 )
+ Knob - 
+volume 2.50dB ( 38 )
+ Knob - 
+volume 1.25dB ( 3C )
+ Knob - 
+volume 0.00dB ( 40 )
+ Knob - 
+Loudness:  - 8.7500000000dB
+volume -1.25dB ( 44 )
+ Knob - 
+Loudness:  - 10.0000000000dB
+volume -2.50dB ( 48 )
+ Knob - 
+Loudness:  - 11.2500000000dB
+volume -3.75dB ( 4C )
+ Knob - 
+Loudness:  - 12.5000000000dB
+volume -5.00dB ( 50 )
+ Knob - 
+Loudness:  - 13.7500000000dB
+volume -6.25dB ( 54 )
+ Knob - 
+Loudness:  - 15.0000000000dB
+volume -7.50dB ( 58 )
+ Knob - 
+Loudness:  - 16.2500000000dB
+volume -8.75dB ( 5C )
+ Knob - 
+Loudness:  - 17.5000000000dB
+volume -10.00dB ( 60 )
+ Knob - 
+Loudness:  - 18.7500000000dB
+volume -12.50dB ( 68 )
+ Knob - 
+volume -16.25dB ( 74 )
+ Knob - 
+volume -21.25dB ( 84 )
+ Knob - 
+volume -26.25dB ( 94 )
+ Knob - 
+volume -31.25dB ( A4 )
+ Knob - 
+volume -31.87dB ( A6 )
+volume -32.50dB ( A8 )
+volume -38.75dB ( BC )
+ Knob - 
+volume -39.37dB ( BE )
+volume -40.00dB ( C0 )
+volume -46.25dB ( D4 )
+ Knob - 
+volume -46.87dB ( D6 )
+volume -47.50dB ( D8 )
+volume -53.75dB ( EC )
+ Knob - 
+volume -54.37dB ( EE )
+volume -55.00dB ( F0 )
+volume -59.68dB ( FF )
+ Knob - 
+volume -59.68dB ( FF )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+ Knob - 
+ Knob - 
+ Knob - 
+ Knob - 
+ Knob - 

@@ -1,0 +1,29 @@
+ MODE
+button release
+volume -56.25dB ( F4 )
+volume -59.68dB ( FF )
+Bass: 0dB, Trebble: 0dB
+Mute: Soft Mute with fast slope (I = Imax)
+Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+ MODE
+button release
+Input selector: CD selected (0dB diferential input gain (IN3))
+Mute: Zero Crossing Mute Off
+160mV ZC Window Threshold (WIN = 00)
+Symmetrical Bass Cut
+Bass: 6dB, Trebble: 12dB
+volume -59.68dB ( FF )
+volume -59.68dB ( FF )
+volume -59.68dB ( FF )
+volume -59.68dB ( FF )
+volume -59.06dB ( FD )
+volume -58.43dB ( FB )
+volume -57.81dB ( F9 )
+volume -57.18dB ( F7 )
+volume -56.56dB ( F5 )
+volume -55.93dB ( F3 )
+volume -55.31dB ( F1 )
+volume -54.68dB ( EF )
+volume -53.75dB ( EC )
