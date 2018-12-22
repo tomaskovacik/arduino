@@ -10,18 +10,23 @@
 #include <VAGFISReader.h>
 
 //arduino
-//#define RADIO_CLK 2
-//#define RADIO_DATA 4
-//#define RADIO_ENA 3
+#define RADIO_CLK 2
+#define RADIO_DATA 4
+#define RADIO_ENA 3
 //stm32
-#define RADIO_CLK PB0 //on EXTI0
-#define RADIO_DATA PA1 //no interrupt attached to this pin only using digitalRead here
-#define RADIO_ENA PB1 //on EXTI1
+//#define RADIO_CLK PB0 //on EXTI0
+//#define RADIO_DATA PA1 //no interrupt attached to this pin only using digitalRead here
+//#define RADIO_ENA PB1 //on EXTI1
 
 // FIS
-#define FIS_CLK PB3
-#define FIS_DATA PB5
-#define FIS_ENA PA15
+//arduino
+#define FIS_CLK 5
+#define FIS_DATA 6
+#define FIS_ENA 7
+//stm32
+//#define FIS_CLK PB3
+//#define FIS_DATA PB5
+//#define FIS_ENA PA15
 
 VAGFISWriter fisWriter( FIS_CLK, FIS_DATA, FIS_ENA );
 VAGFISReader radio_read(RADIO_CLK, RADIO_DATA, RADIO_ENA);
