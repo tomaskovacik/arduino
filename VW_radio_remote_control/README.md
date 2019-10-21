@@ -1,5 +1,10 @@
 # VW Radio Remote Control
 
+## arduino library
+
+Repository with arduino library(send support only for now): https://github.com/tomaskovacik/VAGRadioRemote
+
+
 Arduino (1.0 and up) stuff related to Audi radios (probably also for VW, Skoda, Seat)
 remote control protocol.  This information is for vehicles where the radio
 does not use CAN bus.
