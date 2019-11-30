@@ -33,7 +33,7 @@
 //                          |
 //                         _|_ GND
 //
-// video: 
+// video: https://www.youtube.com/watch?v=0d18H4fjk1M
 
 
 int tranIdent=5;
