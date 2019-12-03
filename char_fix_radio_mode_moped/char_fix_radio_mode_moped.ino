@@ -110,9 +110,9 @@ void setup() {
   mode = digitalRead(MODE);
   if (mode == NAVI) {
     radio_write.reset();
-    delay(1000);
+    //delay(1000);
     radio_write.initFullScreen();
-    delay(1000);
+    //delay(1000);
     radio_write.GraphicFromArray_P(0, 27, 64, 34, audi_sport2, 2);
     delay(2000);
   }
@@ -128,13 +128,13 @@ void loop() {
         char tmp;
         for (uint8_t i = 3; i < radio_read.getSize() - 1; i++) { //1st byte is msg ID, second one is packet size,3th is second msg id (sort of) last is checksumm so we skip them
         tmp = radio_read.readData(i);
-        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] ->");
+        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] -> ");
         if (digitalRead(TOUPPER)) //DO CONVERSION TO UPPER CASE
         {
           if ( tmp > 96 && tmp < 123) // a = 97, Z = 122 , other chars are ommited
             tmp = tmp - 'a' + 'A';
         }
-        c
+        Serial.write(tmp);Serial.println("["+String(tmp,HEX)+"]");
         radioData[i] = tmp;
         }
       }
@@ -151,7 +151,7 @@ void loop() {
       char tmp;
       for (uint8_t i = 0; i < 16; i++) { //1st byte is msg ID, last is checksumm
         tmp = radio_read.readData(1 + i);
-        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] ->");
+        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] -> ");
         if (!digitalRead(TOUPPER)) //DO CONVERSION TO UPPER CASE
         {
           if ( tmp > 96 && tmp < 123) // a = 97, Z = 122 , other chars are ommited
