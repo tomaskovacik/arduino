@@ -1,5 +1,5 @@
-#include <VAGFISReader.h>
-#include <VAGFISWriter.h>
+#include "VAGFISReader.h"
+#include "VAGFISWriter.h"
 #include "bitmaps.h"
 
 #define RADIOIN_ENA 2
@@ -39,7 +39,7 @@ bool displayedFR=0;
 bool displayedRL=0;
 bool displayedRR=0;
 bool displayedTRUNK=0;
-
+/*
 void draw_car(void) {
   if (displayedCAR) return;
   radio_write.reset();
@@ -92,7 +92,7 @@ void draw_trunk(){
     }
     displayedTRUNK=1;
 }
-
+*/
 void setup() {
   radio_read.begin();
   radio_write.begin();
@@ -124,14 +124,17 @@ void loop() {
       // Navi text
       if (radio_read.msgIsRadioText()) {
         //radio msg(upper 2lines) in navi mode
+        Serial.println("prijate navi data:");
         char tmp;
         for (uint8_t i = 3; i < radio_read.getSize() - 1; i++) { //1st byte is msg ID, second one is packet size,3th is second msg id (sort of) last is checksumm so we skip them
         tmp = radio_read.readData(i);
+        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] ->");
         if (digitalRead(TOUPPER)) //DO CONVERSION TO UPPER CASE
         {
           if ( tmp > 96 && tmp < 123) // a = 97, Z = 122 , other chars are ommited
             tmp = tmp - 'a' + 'A';
         }
+        c
         radioData[i] = tmp;
         }
       }
@@ -140,17 +143,21 @@ void loop() {
       } else {
         if (!radio_write.sendRadioMsg(radioData)) Serial.println("seng radio msg failed!");
       }
+      Serial.println();Serial.println();
       last_update = millis();
     } else {
       //radio mode, 16 characters which are important for us
+      Serial.println("prijate radio data:");
       char tmp;
       for (uint8_t i = 0; i < 16; i++) { //1st byte is msg ID, last is checksumm
         tmp = radio_read.readData(1 + i);
+        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] ->");
         if (!digitalRead(TOUPPER)) //DO CONVERSION TO UPPER CASE
         {
           if ( tmp > 96 && tmp < 123) // a = 97, Z = 122 , other chars are ommited
             tmp = tmp - 'a' + 'A';
         }
+        Serial.write(tmp);Serial.println("["+String(tmp,HEX)+"]");
         radioData[i] = tmp;
       }
       if (mode == NAVI) {
@@ -159,11 +166,12 @@ void loop() {
       } else {
         if (!radio_write.sendRadioMsg(radioData)) Serial.println("seng radio msg failed!");
       }
+      Serial.println();Serial.println();
       last_update = millis();
     }
     radio_read.clearNewMsgFlag();
   }
-
+/*
   if (digitalRead(DOORFL) == OPENED) {
     draw_car();
     fl();
@@ -227,7 +235,7 @@ void loop() {
   {
     radio_write.reset();
     displayedCAR=0;
-  }
+  }*/
   
   if ((millis() - last_update) > 10) {
     Serial.println(F("Sending keep alive and ack packet for radio"));
