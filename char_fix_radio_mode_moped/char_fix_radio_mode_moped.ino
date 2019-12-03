@@ -109,6 +109,8 @@ void setup() {
   model = digitalRead(MODEL);
   mode = digitalRead(MODE);
   if (mode == NAVI) {
+    radio_write.sendMsg("  AUDI   SPORT  ");
+    delay(1000);
     radio_write.reset();
     //delay(1000);
     radio_write.initFullScreen();
