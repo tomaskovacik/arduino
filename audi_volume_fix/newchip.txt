@@ -381,21 +381,21 @@ volume -26.56dB ( 95 )
 volume -25.31dB ( 91 )
 volume -24.06dB ( 8D )
 volume -22.81dB ( 89 )
-Loudness: -17.5000000000dB
+Loudness: -17.5000000000dB (0xE)
 volume -21.56dB ( 85 )
 volume -20.31dB ( 81 )
 volume -19.06dB ( 7D )
-Loudness: -16.2500000000dB
+Loudness: -16.2500000000dB (0xD)
 volume -17.81dB ( 79 )
-Loudness: -15.0000000000dB
+Loudness: -15.0000000000dB (0xC)
 volume -16.56dB ( 75 )
-Loudness: -13.7500000000dB
+Loudness: -13.7500000000dB (0xB)
 volume -15.31dB ( 71 )
-Loudness: -12.5000000000dB
+Loudness: -12.5000000000dB (0xA)
 volume -14.06dB ( 6D )
-Loudness: -11.2500000000dB
+Loudness: -11.2500000000dB (0x9)
 volume -12.81dB ( 69 )
-Loudness: -10.0000000000dB
+Loudness: -10.0000000000dB (0x8)
 volume -11.56dB ( 65 )
 volume -10.31dB ( 61 )
 volume -9.06dB ( 5D )
@@ -409,9 +409,9 @@ volume -4.68dB ( 4F )
 volume -4.06dB ( 4D )
 volume -3.43dB ( 4B )
 volume -2.81dB ( 49 )
-Loudness: -8.7500000000dB
+Loudness: -8.7500000000dB (0x7)
 volume -2.18dB ( 47 )
-Loudness: -7.5000000000dB
+Loudness: -7.5000000000dB (0x6)
 volume -1.56dB ( 45 )
 volume -0.93dB ( 43 )
 volume -0.31dB ( 41 )
