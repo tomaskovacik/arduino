@@ -3,11 +3,11 @@
  * 
  * https://github.com/tomaskovacik/arduino/tree/master/VWFIS/FIS_protocol_emulator_with_lib
  * 
- * library can be found here: https://github.com/tomaskovacik/arduino/tree/master/libraries/VW2002FISWriter
+ * library can be found here: https://github.com/tomaskovacik/VAGFISWriter
  * 
  * 
  * 
- * uncoment if you are using VW
+ * uncoment if you are using NAVI
  * 
  */
 
@@ -18,9 +18,9 @@
 //ena  pin 2
 
 //stm32 ready? :)
-#define FIS_WRITE_CLK PB3
-#define FIS_WRITE_DATA PB5
-#define FIS_WRITE_ENA PA15
+#define FIS_WRITE_CLK 3//PB3
+#define FIS_WRITE_DATA 4//PB5
+#define FIS_WRITE_ENA 2//PA15
 //WRITE TO CLUSTER
 
 #define FIS_WRITE_PULSEW 50
