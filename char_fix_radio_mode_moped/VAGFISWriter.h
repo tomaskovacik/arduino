@@ -32,7 +32,7 @@
 class VAGFISWriter
 {
   public:
-    VAGFISWriter(uint8_t clkPin, uint8_t dataPin, uint8_t enaPin);
+    VAGFISWriter(uint8_t clkPin, uint8_t dataPin, uint8_t enaPin, uint8_t forced);
     ~VAGFISWriter();
     void begin();
 
@@ -76,7 +76,7 @@ class VAGFISWriter
     uint8_t waitEnaHigh( uint16_t timeout_us = 1500);
     uint8_t waitEnaLow( uint16_t timeout_us = 1500);
     uint8_t checkSum( volatile uint8_t in_msg[]);
-
+    uint8_t __forced=0;
 };
 
 

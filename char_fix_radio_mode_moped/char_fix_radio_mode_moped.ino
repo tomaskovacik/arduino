@@ -27,10 +27,10 @@
 #define CLOSED 1
 
 VAGFISReader radio_read(RADIOIN_CLK, RADIOIN_DATA, RADIOIN_ENA);
-VAGFISWriter radio_write(RADIOOUT_CLK, RADIOOUT_DATA, RADIOOUT_ENA);
+VAGFISWriter radio_write(RADIOOUT_CLK, RADIOOUT_DATA, RADIOOUT_ENA, 1);
 long last_update = 0;
 char radioData[16];
-bool model = SEDAN;
+bool model = AVANT;
 bool mode = NAVI;
 
 bool displayedCAR = 0;
@@ -39,7 +39,7 @@ bool displayedFR=0;
 bool displayedRL=0;
 bool displayedRR=0;
 bool displayedTRUNK=0;
-/*
+
 void draw_car(void) {
   if (displayedCAR) return;
   radio_write.reset();
@@ -47,7 +47,7 @@ void draw_car(void) {
   radio_write.initMiddleScreen();
   delay(100);
   if (model == SEDAN) {
-    radio_write.GraphicFromArray_P(22, 1, 20, 46, sedan, 2);
+    //radio_write.GraphicFromArray_P(22, 1, 20, 46, sedan, 2);
   } else { // avant
     radio_write.GraphicFromArray_P(22, 1, 20, 46, avant, 2);
   }
@@ -88,16 +88,16 @@ void draw_trunk(){
     if (model == AVANT) {
       radio_write.GraphicFromArray_P(25, 41, 14, 4, avant_trunc, 1);
     } else {
-      radio_write.GraphicFromArray_P(23, 38, 18, 7, sedan_trunc, 1);
+//      radio_write.GraphicFromArray_P(23, 38, 18, 7, sedan_trunc, 1);
     }
     displayedTRUNK=1;
 }
-*/
+
 void setup() {
   radio_read.begin();
   radio_write.begin();
-  Serial.begin(115200);
-  Serial.println("grg");
+ // Serial.begin(115200);
+  //Serial.println("grg");
   pinMode(TOUPPER, INPUT_PULLUP);
   pinMode(MODE, INPUT_PULLUP);
   pinMode(MODEL, INPUT_PULLUP);
@@ -106,65 +106,70 @@ void setup() {
   pinMode(DOORRL, INPUT_PULLUP);
   pinMode(DOORRR, INPUT_PULLUP);
   pinMode(DOORTRUNK, INPUT_PULLUP);
-  model = digitalRead(MODEL);
-  mode = digitalRead(MODE);
+  //model = digitalRead(MODEL);
+  //mode = digitalRead(MODE);
   if (mode == NAVI) {
-    radio_write.sendMsg("  AUDI   SPORT  ");
-    delay(1000);
-    radio_write.reset();
-    //delay(1000);
-    radio_write.initFullScreen();
-    //delay(1000);
-    radio_write.GraphicFromArray_P(0, 27, 64, 34, audi_sport2, 2);
-    delay(2000);
+    //radio_write.radioDisplayOff();
+    //radio_write.reset();
+  //   radio_write.sendMsg("  AUDI   SPORT  ");
+     //delay(1000);
+     //delay(1000);
+    //radio_write.radioDisplayOff();
+    // radio_write.initFullScreen();
+     //delay(1000);
+     //radio_write.GraphicFromArray(0, 0, 64, 88, B5familia, 2);
+     //delay(2000);
+    //radio_write.reset();
   }
 }
 
 void loop() {
+
   if (radio_read.hasNewMsg()) {
     if (radio_read.msgIsNavi()) {
       // Navi text
       if (radio_read.msgIsRadioText()) {
         //radio msg(upper 2lines) in navi mode
-        Serial.println("prijate navi data:");
+        //Serial.println("prijate navi data:");
         char tmp;
         for (uint8_t i = 3; i < radio_read.getSize() - 1; i++) { //1st byte is msg ID, second one is packet size,3th is second msg id (sort of) last is checksumm so we skip them
         tmp = radio_read.readData(i);
-        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] -> ");
-        if (digitalRead(TOUPPER)) //DO CONVERSION TO UPPER CASE
+       // Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] -> ");
+        if (!digitalRead(TOUPPER)) //DO CONVERSION TO UPPER CASE
         {
           if ( tmp > 96 && tmp < 123) // a = 97, Z = 122 , other chars are ommited
             tmp = tmp - 'a' + 'A';
         }
-        Serial.write(tmp);Serial.println("["+String(tmp,HEX)+"]");
+        //Serial.write(tmp);Serial.println("["+String(tmp,HEX)+"]");
         radioData[i] = tmp;
         }
       }
       if (mode == NAVI) {
         if (!radio_write.sendMsg(radioData)) Serial.println(F("seng navi msg failed!"));
       } else {
-        if (!radio_write.sendRadioMsg(radioData)) Serial.println("seng radio msg failed!");
+        if (!radio_write.sendRadioMsg(radioData)) Serial.println(F("seng radio msg failed!"));
       }
-      Serial.println();Serial.println();
+//      Serial.println();Serial.println();
       last_update = millis();
     } else {
       //radio mode, 16 characters which are important for us
-      Serial.println("prijate radio data:");
+  //    Serial.println("prijate radio data:");
       char tmp;
       for (uint8_t i = 0; i < 16; i++) { //1st byte is msg ID, last is checksumm
         tmp = radio_read.readData(1 + i);
-        Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] -> ");
+    //    Serial.write(tmp);Serial.print("["+String(tmp,HEX)+"] -> ");
         if (!digitalRead(TOUPPER)) //DO CONVERSION TO UPPER CASE
         {
           if ( tmp > 96 && tmp < 123) // a = 97, Z = 122 , other chars are ommited
             tmp = tmp - 'a' + 'A';
         }
-        Serial.write(tmp);Serial.println("["+String(tmp,HEX)+"]");
+      //  Serial.write(tmp);Serial.println("["+String(tmp,HEX)+"]");
         radioData[i] = tmp;
       }
       if (mode == NAVI) {
         delay(10);
-        if (!radio_write.sendMsg(radioData)) Serial.println(F("seng navi msg failed!"));
+        //if (!
+        radio_write.sendMsg(radioData);//) Serial.println(F("seng navi msg failed!"));
       } else {
         if (!radio_write.sendRadioMsg(radioData)) Serial.println("seng radio msg failed!");
       }
@@ -173,7 +178,7 @@ void loop() {
     }
     radio_read.clearNewMsgFlag();
   }
-/*
+
   if (digitalRead(DOORFL) == OPENED) {
     draw_car();
     fl();
@@ -237,7 +242,7 @@ void loop() {
   {
     radio_write.reset();
     displayedCAR=0;
-  }*/
+  }
   
   if ((millis() - last_update) > 10) {
     Serial.println(F("Sending keep alive and ack packet for radio"));

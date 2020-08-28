@@ -36,11 +36,12 @@ Unfortunately, in this mode, it is not possible to control the transmitted data.
 /**
    Constructor
 */
-VAGFISWriter::VAGFISWriter(uint8_t clkPin, uint8_t dataPin, uint8_t enaPin)
+VAGFISWriter::VAGFISWriter(uint8_t clkPin, uint8_t dataPin, uint8_t enaPin, uint8_t forced = 0)
 {
   _FIS_WRITE_CLK = clkPin;
   _FIS_WRITE_DATA = dataPin;
   _FIS_WRITE_ENA = enaPin;
+  __forced = forced;
 
 }
 
@@ -401,13 +402,16 @@ uint8_t VAGFISWriter::sendRawData(char data[]){
   cli();
 #endif
   // Send FIS-command
+  if(!__forced){
   if (!sendSingleByteCommand(data[FIS_MSG_COMMAND])) return false;
 
   if(!waitEnaHigh(100)) {
   delay(2);
   return sendRawData(data);
   }
-
+  } else 
+     sendByte(data[FIS_MSG_COMMAND]);
+  
   uint8_t crc =data[FIS_MSG_COMMAND];
   for (uint16_t a=1;a<data[1]+1;a++)
   {
@@ -422,6 +426,8 @@ uint8_t VAGFISWriter::sendRawData(char data[]){
   }
   crc--;
   sendByte(crc);
+  if (__forced)delay(3);
+  
   if(!waitEnaLow()) return false;
 
 #ifdef ENABLE_IRQ
@@ -557,6 +563,7 @@ return true;
 
 */
 void VAGFISWriter::sendByte(uint8_t in_byte) {
+  if (__forced)startENA();
 	uint8_t tx_byte = 0xff - in_byte;
 	for (int8_t i = 7; i >= 0; i--) {//must be signed! need -1 to stop "for"iing
 
@@ -572,7 +579,11 @@ void VAGFISWriter::sendByte(uint8_t in_byte) {
 		setClockHigh();
 		delayMicroseconds(FIS_WRITE_PULSEW);
 	}
-Serial.write(in_byte);Serial.print(" ");
+if (__forced){
+  stopENA();
+  delayMicroseconds(80);
+}
+
 }
 
 /**
@@ -581,7 +592,7 @@ Serial.write(in_byte);Serial.print(" ");
 
 */
 void VAGFISWriter::startENA() {
-  detachInterrupt(digitalPinToInterrupt(_FIS_WRITE_ENA));
+  if (!__forced) detachInterrupt(digitalPinToInterrupt(_FIS_WRITE_ENA));
   digitalWrite(_FIS_WRITE_ENA, HIGH);// avoid spikes
   pinMode(_FIS_WRITE_ENA, OUTPUT);
   digitalWrite(_FIS_WRITE_ENA, HIGH);
@@ -592,12 +603,19 @@ void VAGFISWriter::startENA() {
 
 */
 uint8_t VAGFISWriter::stopENA() {
-  //digitalWrite(_FIS_WRITE_ENA, LOW);
-  detachInterrupt(digitalPinToInterrupt(_FIS_WRITE_ENA));
-  //digitalWrite(_FIS_WRITE_ENA, LOW);
-  pinMode(_FIS_WRITE_ENA, INPUT);
-  //digitalWrite(_FIS_WRITE_ENA, LOW);
-  attachInterrupt(digitalPinToInterrupt(_FIS_WRITE_ENA),&VAGFISWriter::enableGoesHigh,RISING);
+  if (!__forced)
+  {
+    detachInterrupt(digitalPinToInterrupt(_FIS_WRITE_ENA));
+    //digitalWrite(_FIS_WRITE_ENA, LOW);
+    pinMode(_FIS_WRITE_ENA, INPUT);
+    //digitalWrite(_FIS_WRITE_ENA, LOW);
+    attachInterrupt(digitalPinToInterrupt(_FIS_WRITE_ENA),&VAGFISWriter::enableGoesHigh,RISING);
+  }
+  else
+  {
+    digitalWrite(_FIS_WRITE_ENA, LOW);
+    delayMicroseconds(100);
+  }
 }
 
 /**
@@ -646,27 +664,25 @@ uint8_t VAGFISWriter::checkSum( volatile uint8_t in_msg[]) {
 
 uint8_t VAGFISWriter::waitEnaHigh(uint16_t timeout_us)
 {
-  while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
+  /*while (!digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
     delayMicroseconds(1);
     timeout_us -= 1;
   }
-  if (timeout_us == 0) return false;
+  if (timeout_us == 0) return false;*/
 return true;
 }
 
 uint8_t VAGFISWriter::waitEnaLow(uint16_t timeout_us){
-  while (digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
+  /*while (digitalRead(_FIS_WRITE_ENA) && timeout_us > 0) {
     delayMicroseconds(1);
     timeout_us -= 1;
   }
-  if (timeout_us == 0) return false;
+  if (timeout_us == 0) return false;*/
 return true;
 }
-
-/*bool VAGFISWriter::sendRadioMsg(char msg[16]){
-//if(!waitEnaLow()) return false;
-startENA();
-delayMicroseconds(100);
+/*
+bool VAGFISWriter::sendRadioMsg(char msg[16]){
+if(!waitEnaLow()) return false;
 stopENA();
 delayMicroseconds(100);
 startENA();
@@ -709,11 +725,11 @@ void VAGFISWriter::enableGoesLow(void)
 	}
 }
 
-void VAGFISWriter::sendRadioData(uint8_t force)
+void VAGFISWriter::sendRadioData(uint8_t forced)
 {
-	if (force) _sendOutData=1;
+	if (forced or __forced) _sendOutData=1;
 	else delay(100); //in future we will use timer for this ...
-
+  
 	if (_radioDataOK && _sendOutData)
 	{
 	detachInterrupt(digitalPinToInterrupt(_FIS_WRITE_ENA));
