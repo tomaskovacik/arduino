@@ -28,7 +28,7 @@
 //#define FIS_DATA PB5
 //#define FIS_ENA PA15
 
-VAGFISWriter fisWriter( FIS_CLK, FIS_DATA, FIS_ENA );
+VAGFISWriter fisWriter( FIS_CLK, FIS_DATA, FIS_ENA, 1);
 VAGFISReader radio_read(RADIO_CLK, RADIO_DATA, RADIO_ENA);
 
 long last_fis_refresh = 0;
@@ -68,8 +68,7 @@ void loop() {
   }
 
   if ((millis() - last_radio_update) > 3000) {
-    radio_read.request();
+    radio_read.ACK();
     last_radio_update = millis();
   }
 }
-
