@@ -19,7 +19,7 @@
 //
 // pin 2 of arduino uno is connected to base of NPN transistor (2n5551 in my case) via 1k resistor
 // emitor of transistor to ground
-// collector on pin to pin 6 of 20pin red connector of audi a4 1998 cluster (or black connector in early models)
+// collector to pin 6 of 20pin red connector of audi a4 1998 cluster (or black connector in early models)
 
 //                       cluster 
 //                          |
