@@ -1,10 +1,10 @@
 /*
  * based on modified lib from https://github.com/arildlangseid/vw_t4_tcu_temp_to_fis/tree/master/vw_t4_tcu_temp_to_fis
  * 
- * library can be found here: https://github.com/tomaskovacik/arduino/tree/master/libraries/VW2002FISWriter
+ * library can be found here: https://github.com/tomaskovacik/VAGFISWriter
  * 
  */
-#include "VW2002FISWriter.h"
+#include "VAGFISWriter.h"
 #include "bitmaps.h"
 //#include <TimerOne.h>
 
