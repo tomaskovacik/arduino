@@ -117,7 +117,7 @@ void setup() {
     //radio_write.radioDisplayOff();
     // radio_write.initFullScreen();
      //delay(1000);
-     //radio_write.GraphicFromArray(0, 0, 64, 88, B5familia, 2);
+     radio_write.GraphicFromArray(0, 0, 64, 88, B5familia,2);
      //delay(2000);
     //radio_write.reset();
   }

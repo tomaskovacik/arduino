@@ -365,7 +365,7 @@ xx ----> checksum
 
 */
 
-void VAGFISWriter::GraphicOut(uint8_t x,uint8_t y,uint16_t size,char data[],uint8_t mode){
+void VAGFISWriter::GraphicOut(uint8_t x,uint8_t y,uint16_t size,uint8_t data[],uint8_t mode){
 tx_array[0] = 0x55;
 tx_array[1] = size+4;
 tx_array[2] = mode;
@@ -385,7 +385,7 @@ memcpy(&tx_array[5],data,size);
 sendRawData(tx_array);
 }
 
-void VAGFISWriter::GraphicOut_P(uint8_t x,uint8_t y,uint16_t size,const char * const data,uint8_t mode){
+void VAGFISWriter::GraphicOut_P(uint8_t x,uint8_t y,uint16_t size,const uint8_t * const data,uint8_t mode){
 tx_array[0] = 0x55;
 tx_array[1] = size+4;
 tx_array[2] = mode;
@@ -470,7 +470,7 @@ else
 }
 }
 
-void VAGFISWriter::GraphicFromArray_P(uint8_t x,uint8_t y, uint8_t sizex, uint8_t sizey, const char * const data,uint8_t mode)
+void VAGFISWriter::GraphicFromArray_P(uint8_t x,uint8_t y, uint8_t sizex, uint8_t sizey, const uint8_t * const data,uint8_t mode)
 {
 // 22x32bytes = 704 
 if (sizex == 64) // send jumbo packets
@@ -493,7 +493,7 @@ uint8_t packet_size = (sizex+7)/8; // how much byte per packet
 }
 
 
-void VAGFISWriter::GraphicFromArray(uint8_t x,uint8_t y, uint8_t sizex, uint8_t sizey, char data[],uint8_t mode)
+void VAGFISWriter::GraphicFromArray(uint8_t x,uint8_t y, uint8_t sizex, uint8_t sizey, uint8_t data[],uint8_t mode)
 {
 // 22x32bytes = 704 
 if (sizex == 64) // send jumbo packets
